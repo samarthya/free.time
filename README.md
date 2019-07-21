@@ -1,6 +1,6 @@
 # FreeTime
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1. The intention behind this project is to learn new techstack while trying to solve a real life probelm. You should be able to use git and employ various commands to commit.
 
 ## Development server
 
