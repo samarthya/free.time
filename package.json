@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "docs": "npx compodoc -p src/tsconfig.app.json -n \"Free Time\""
+    "docs": "npx compodoc -p tsconfig.app.json -n \"Free Time\""
   },
   "private": true,
   "dependencies": {
