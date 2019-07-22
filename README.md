@@ -10,7 +10,7 @@ Install angular client version [8.1.2](https://www.npmjs.com/package/@angular/cl
 
 The command used to create this application.
 
-```
+```bash
 ng new --help
 arguments:
   name
@@ -19,54 +19,53 @@ arguments:
 options:
   --collection (-c)
     A collection of schematics to use in generating the initial app.
-  --commit 
+  --commit
     Initial git repository commit information.
-  --create-application 
+  --create-application
     When true (the default), creates a new initial app project in the src folder of the new workspace. When false, creates an empty workspace with no initial app. You can then use the generate application command so that all apps are created in the projects folder.
-  --defaults 
+  --defaults
     When true, disables interactive input prompts for options with a default.
-  --directory 
+  --directory
     The directory name to create the workspace in.
   --dry-run (-d)
     When true, runs through and reports activity without writing out results.
-  --enable-ivy 
+  --enable-ivy
     When true, creates a new app that uses the Ivy rendering engine.
   --force (-f)
     When true, forces overwriting of existing files.
-  --help 
+  --help
     Shows a help message for this command in the console.
   --inline-style (-s)
     When true, includes styles inline in the component TS file. By default, an external styles file is created and referenced in the component TS file.
   --inline-template (-t)
     When true, includes template inline in the component TS file. By default, an external template file is created and referenced in the component TS file.
-  --interactive 
+  --interactive
     When false, disables interactive input prompts.
-  --minimal 
+  --minimal
     When true, creates a project without any testing frameworks. (Use for learning purposes only.)
-  --new-project-root 
+  --new-project-root
     The path where new projects will be created, relative to the new workspace root.
   --prefix (-p)
     The prefix to apply to generated selectors for the initial project.
-  --routing 
+  --routing
     When true, generates a routing module for the initial project.
   --skip-git (-g)
     When true, does not initialize a git repository.
-  --skip-install 
+  --skip-install
     When true, does not install dependency packages.
   --skip-tests (-S)
-    When true, does not generate "spec.ts" test files for the new project. 
-  --style 
+    When true, does not generate "spec.ts" test files for the new project.
+  --style
     The file extension or preprocessor to use for style files.
   --verbose (-v)
     When true, adds more details to output logging.
-  --view-encapsulation 
+  --view-encapsulation
     The view encapsulation strategy to use in the initial project.
   ```
 
 ## Development server
 
 You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
 
 ## Build
 
@@ -80,10 +79,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## What are we building & why?
+## What are we building & why
 
-The expectation is to start with a simple SPA that will employ Angular and some cascading style sheet framework that can either be Bootstrap or Angular Material and shall have a Navigation bar at the top. The basic topics that it should cover are 
+The expectation is to start with a simple SPA that will employ Angular and some cascading style sheet framework that can either be Bootstrap or Angular Material and shall have a Navigation bar at the top. The basic topics that it should cover are
 ..* Introduction/Mission statement
 ..* About (The stakeholders)
 ..* Highlights (May be link to the individual blogs)
-
