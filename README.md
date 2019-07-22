@@ -1,10 +1,17 @@
 # FreeTime
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.1. The intention behind this project is to learn new techstack while trying to solve a real life probelm. You should be able to use git and employ various commands to commit.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2. The intention behind this project is to learn new techstack while trying to solve a real life probelm. You should be able to use git and employ various commands to commit.
 
 ## History
 
 Install angular client version [8.1.2](https://www.npmjs.com/package/@angular/cli) and you are almost set. You can navigate to any folder of your choice or if reuquired you can create one. I prefer to have my own folder and that way I can ensure what I am creating and where.
+
+Things you should know
+
+* Angular bootstrapping
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and [Angular Modules]
+* Some knowledge of CommonJS, AMD (*Asynchronous Module Definition*)  - RequireJS, Webpack and Babel would be encouraging. [ref-link](https://www.redairship.com/2015/05/making-sense-difference-amd-commonjs-requirejs-browserify/)
+* 
 
 ### ng new free.version
 
@@ -62,6 +69,8 @@ options:
   --view-encapsulation
     The view encapsulation strategy to use in the initial project.
   ```
+  
+  Pretty much delete everything in the `app.component.html` file and will start from there.
 
 ## Development server
 
@@ -82,6 +91,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## What are we building & why
 
 The expectation is to start with a simple SPA that will employ Angular and some cascading style sheet framework that can either be Bootstrap or Angular Material and shall have a Navigation bar at the top. The basic topics that it should cover are
-..* Introduction/Mission statement
-..* About (The stakeholders)
-..* Highlights (May be link to the individual blogs)
+
+* Introduction/Mission statement
+* About (The stakeholders)
+* Highlights (May be link to the individual blogs)
