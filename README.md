@@ -107,7 +107,24 @@ The basic question that everyone asks is why you went ahead with that specific c
 
 Basic guidelines to be followed
 
-1. No componet code to be checked in without the unit testing code (spec)
-2. Angualr style guideline to be employed, use lint before every commit.
-3. E2E to be decided.
+* No component code to be checked in without the unit [testing](https://angular.io/guide/testing) code (spec). [helper link](https://onehungrymind.com/writing-basic-component-test-angular-testing-utilities/)
+   
+   * Understand ComponentFixture which gives us a reference to the component instance being tested, as well as the component’s template.
+   * Do understand the TestBed utility, which is responsible for initializing the environment.
+   * Do go through the Angular Testing.
+   * Undestand the [Jasmine](https://jasmine.github.io/2.0/introduction.html) Syntax.
+   * Understand Behavior driven development.
+
+```javascript
+
+beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ PersonComponent ]
+    })
+    .compileComponents();
+  }
+  ```
+
+* Angualr style guideline to be employed, use lint before every commit.
+* E2E to be decided.
 
