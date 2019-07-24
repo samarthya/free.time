@@ -94,3 +94,20 @@ The expectation is to start with a simple SPA that will employ Angular and some 
 * Introduction/Mission statement
 * About (The stakeholders)
 * Highlights (May be link to the individual blogs)
+
+## Why choose Angular
+
+The basic question that everyone asks is why you went ahead with that specific choice of framework, when the others had similar or slightly better offerring? We had a similar dilemma and we chose Angular because of the following reasons
+
+* Resources available.
+* Existing expertise.
+* Time at hand.
+
+## Guidelines
+
+Basic guidelines to be followed
+
+1. No componet code to be checked in without the unit testing code (spec)
+2. Angualr style guideline to be employed, use lint before every commit.
+3. E2E to be decided.
+
