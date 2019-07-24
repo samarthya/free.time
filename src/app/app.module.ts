@@ -3,10 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AboutComponent } from './about/about.component';
+import { PersonComponent } from './shared/person/person.component';
+
 
 /**
  * The root module to be bootstrapped by angular for more information
  * look at https://angular.io/guide/bootstrapping
+ * NgModules are the compilation context for all the components
+ * declared, defined for consumption.
  */
 @NgModule({
   /**
@@ -15,7 +20,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
    */
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    PersonComponent,
   ],
   /**
    * For browser specific functionality you need this module.
