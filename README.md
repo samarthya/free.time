@@ -70,14 +70,19 @@ options:
   ```
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
-### Git quickups
+
+## Git quick checks
 
 Always before you commit you should chceck the status
 
 ```bash
-  git staus
-  It will give an outout like
   git status
+  ```
+
+It will give an output like
+
+```bash
+git status
 On branch v1.0
 Your branch is up-to-date with 'origin/v1.0'.
 
