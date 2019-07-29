@@ -47,6 +47,4 @@ describe('Component AppComponent', () => {
     expect(htmlElement.childElementCount).toBe(2);
     console.log(htmlElement);
   });
-
-
 });
