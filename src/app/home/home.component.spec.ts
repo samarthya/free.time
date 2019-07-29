@@ -32,6 +32,9 @@ describe('Component HomeComponent', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(1);
+
+    const introSection = debugElement.queryAll(By.css('#intro'));
+    expect(introSection).toBeDefined();
   });
 
   it('Should validate the dom section content', () => {
