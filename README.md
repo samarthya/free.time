@@ -70,6 +70,161 @@ options:
   ```
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
+### Git quickups
+
+Always before you commit you should chceck the status
+
+```bash
+  git staus
+  It will give an outout like
+  git status
+On branch v1.0
+Your branch is up-to-date with 'origin/v1.0'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+        modified:   src/app/app.component.html
+        modified:   src/app/app.module.ts
+        modified:   src/app/shared/navbar/navbar.component.css
+        modified:   src/app/shared/navbar/navbar.component.html
+        modified:   src/index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        __readymade/
+        src/app/footer/
+        src/app/home/
+        src/app/routes/
+        src/app/shared/log.service.ts
+        src/assets/images/home.png
+  ```
+
+Add the files you wish to add before you push the commit
+
+```bash
+git add .
+```
+
+followed by
+
+```bash
+git status
+```
+
+which should give an output like
+
+```bash
+git status
+On branch v1.0
+Your branch is up-to-date with 'origin/v1.0'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README.md
+        new file:   __readymade/Groovin/assets/color/default.css
+        new file:   __readymade/Groovin/assets/css/animate.css
+        new file:   __readymade/Groovin/assets/css/bootstrap-theme.css
+        new file:   __readymade/Groovin/assets/css/bootstrap.css
+        new file:   __readymade/Groovin/assets/css/custom-fonts.css
+        new file:   __readymade/Groovin/assets/css/fancybox/blank.gif
+        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_loading.gif
+        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_overlay.png
+        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_sprite.png
+        new file:   __readymade/Groovin/assets/css/fancybox/jquery.fancybox.css
+        new file:   __readymade/Groovin/assets/css/font-awesome.css
+        new file:   __readymade/Groovin/assets/css/overwrite.css
+        new file:   __readymade/Groovin/assets/css/prettyPhoto.css
+        new file:   __readymade/Groovin/assets/css/slippry.css
+        new file:   __readymade/Groovin/assets/css/style.css
+        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.eot
+        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.svg
+        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.ttf
+        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.woff
+        new file:   __readymade/Groovin/assets/fonts/fontawesome/FontAwesome.otf
+        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.eot
+        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.svg
+        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.ttf
+        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.woff
+        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.eot
+        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.eot@
+        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.svg
+        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.ttf
+        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.woff
+        new file:   __readymade/Groovin/assets/img/arrows.svg
+        new file:   __readymade/Groovin/assets/img/cursor.png
+        new file:   __readymade/Groovin/assets/img/dummies/team1.jpg
+        new file:   __readymade/Groovin/assets/img/dummies/team2.jpg
+        new file:   __readymade/Groovin/assets/img/dummies/team3.jpg
+        new file:   __readymade/Groovin/assets/img/dummies/team4.jpg
+        new file:   __readymade/Groovin/assets/img/glyphicons-halflings-white.png
+        new file:   __readymade/Groovin/assets/img/glyphicons-halflings.png
+        new file:   __readymade/Groovin/assets/img/portfolio/1.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/10.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/11.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/12.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/13.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/14.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/2.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/3.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/4.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/5.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/6.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/7.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/8.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/9.jpg
+        new file:   __readymade/Groovin/assets/img/portfolio/app-design.png
+        new file:   __readymade/Groovin/assets/img/slide/1.jpg
+        new file:   __readymade/Groovin/assets/img/slide/2.jpg
+        new file:   __readymade/Groovin/assets/img/slide/3.jpg
+        new file:   __readymade/Groovin/assets/img/sy-loader.gif
+        new file:   __readymade/Groovin/assets/js/AnimOnScroll.js
+        new file:   __readymade/Groovin/assets/js/animate.js
+        new file:   __readymade/Groovin/assets/js/bootstrap.js
+        new file:   __readymade/Groovin/assets/js/classie.js
+        new file:   __readymade/Groovin/assets/js/custom.js
+        new file:   __readymade/Groovin/assets/js/imagesloaded.js
+        new file:   __readymade/Groovin/assets/js/jquery-1.9.1.min.js
+        new file:   __readymade/Groovin/assets/js/jquery.easing.js
+        new file:   __readymade/Groovin/assets/js/jquery.fancybox-media.js
+        new file:   __readymade/Groovin/assets/js/jquery.fancybox.pack.js
+        new file:   __readymade/Groovin/assets/js/jquery.min.js
+        new file:   __readymade/Groovin/assets/js/jquery.nav.js
+        new file:   __readymade/Groovin/assets/js/jquery.nicescroll.min.js
+        new file:   __readymade/Groovin/assets/js/jquery.scrollTo.js
+        new file:   __readymade/Groovin/assets/js/masonry.pkgd.min.js
+        new file:   __readymade/Groovin/assets/js/modernizr.custom.js
+        new file:   __readymade/Groovin/assets/js/nagging-menu.js
+        new file:   __readymade/Groovin/assets/js/slippry.min.js
+        new file:   __readymade/Groovin/contactform/contactform.js
+        new file:   __readymade/Groovin/index.html
+        modified:   src/app/app.component.html
+        modified:   src/app/app.module.ts
+        new file:   src/app/footer/footer.component.css
+        new file:   src/app/footer/footer.component.html
+        new file:   src/app/footer/footer.component.spec.ts
+        new file:   src/app/footer/footer.component.ts
+        new file:   src/app/home/home.component.css
+        new file:   src/app/home/home.component.html
+        new file:   src/app/home/home.component.spec.ts
+        new file:   src/app/home/home.component.ts
+        new file:   src/app/routes/main.routes.ts
+        new file:   src/app/shared/log.service.ts
+        modified:   src/app/shared/navbar/navbar.component.css
+        modified:   src/app/shared/navbar/navbar.component.html
+        new file:   src/assets/images/home.png
+        modified:   src/index.html
+```
+
+Always provide comment to any changes that you shall commit.
+
+```bash
+git commit -m "Added some basic components and guidelines"
+```
 
 ## Development server
 
@@ -114,6 +269,10 @@ Basic guidelines to be followed
    * Do go through the Angular Testing.
    * Undestand the [Jasmine](https://jasmine.github.io/2.0/introduction.html) Syntax.
    * Understand Behavior driven development.
+   * Tools that we shall use for testing will be as provided by the Angular CLI
+      * Karma - The test runner.
+      * Jasmine - The basic syntax.
+      * You can explore the other options like Sinon and Wallaby, Cypress etc.
 
 ```javascript
 
@@ -125,6 +284,5 @@ beforeEach(async(() => {
   }
   ```
 
-* Angualr style guideline to be employed, use lint before every commit.
+* Angular style guideline to be employed, use lint before every commit.
 * E2E to be decided.
-

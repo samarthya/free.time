@@ -1,0 +1,36 @@
+#bodyPara {
+  background: lightblue url("../../assets/images/home.png") no-repeat fixed center;
+  max-width: 1024px;
+}
+
+section#intro a>img {
+  max-width: 1024px;
+}
+
+section#intro{
+	position: relative;
+	width:100%;
+	height:auto;
+	margin:0;
+}
+
+section#intro{
+	padding:0 0 0 0;
+
+}
+
+section#intro.inner {
+	padding:140px 0 30px;
+}
+
+section#intro.inner h2 strong  {
+	color:#fff;
+}
+section#intro.inner h2  {
+	font-size:32px;
+}
+
+
+section#intro  {
+	text-align:center;
+}
