@@ -70,6 +70,44 @@ options:
   ```
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
+### Git quickups
+
+Always before you commit you should chceck the status
+
+```bash
+  git staus
+  It will give an outout like
+  git status
+On branch v1.0
+Your branch is up-to-date with 'origin/v1.0'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+        modified:   src/app/app.component.html
+        modified:   src/app/app.module.ts
+        modified:   src/app/shared/navbar/navbar.component.css
+        modified:   src/app/shared/navbar/navbar.component.html
+        modified:   src/index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        __readymade/
+        src/app/footer/
+        src/app/home/
+        src/app/routes/
+        src/app/shared/log.service.ts
+        src/assets/images/home.png
+  ```
+
+Always provide comment to any changes that you shall commit.
+
+```bash
+git commit -m "Added some basic components and guidelines"
+```
 
 ## Development server
 
@@ -114,6 +152,10 @@ Basic guidelines to be followed
    * Do go through the Angular Testing.
    * Undestand the [Jasmine](https://jasmine.github.io/2.0/introduction.html) Syntax.
    * Understand Behavior driven development.
+   * Tools that we shall use for testing will be as provided by the Angular CLI
+      * Karma - The test runner.
+      * Jasmine - The basic syntax.
+      * You can explore the other options like Sinon and Wallaby, Cypress etc.
 
 ```javascript
 
@@ -125,6 +167,5 @@ beforeEach(async(() => {
   }
   ```
 
-* Angualr style guideline to be employed, use lint before every commit.
+* Angular style guideline to be employed, use lint before every commit.
 * E2E to be decided.
-

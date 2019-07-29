@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { PersonComponent } from './shared/person/person.component';
+import { HomeComponent } from './home/home.component';
+import { appRoutes } from './routes/main.routes';
+import { FooterComponent } from './footer/footer.component';
+import { Logger } from './shared/log.service';
 
 
 /**
@@ -23,14 +27,17 @@ import { PersonComponent } from './shared/person/person.component';
     NavbarComponent,
     AboutComponent,
     PersonComponent,
+    HomeComponent,
+    FooterComponent
   ],
   /**
    * For browser specific functionality you need this module.
    */
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [Logger],
   /**
    * Root component that is inserted in the index.html.
    * Each component bootstrapped is root of its complete application components.
