@@ -11,7 +11,7 @@ import { By } from '@angular/platform-browser';
  * 1. Describe : Desscribes a test suite.
  * Helpful Link - https://onehungrymind.com/writing-basic-component-test-angular-testing-utilities/
  */
-describe('PersonComponent', () => {
+describe('Component PersonComponent', () => {
   let component: PersonComponent;
   let fixture: ComponentFixture<PersonComponent>;
   let de: DebugElement;
@@ -34,6 +34,7 @@ describe('PersonComponent', () => {
      * Added a dummy profile component value.
      */
     component.profile = userProfile1;
+
     de = fixture.debugElement;
     fixture.detectChanges();
   });
@@ -41,7 +42,7 @@ describe('PersonComponent', () => {
   /**
    * Spec defintion.
    */
-  it('Component Person should be created.', () => {
+  it('Should create Component Person.', () => {
     expect(component).toBeTruthy();
   });
 
@@ -57,8 +58,7 @@ describe('PersonComponent', () => {
     spanFace.forEach(element => {
       expect(element.attributes.class).toEqual('card-link');
       element.childNodes.forEach( node => {
-        expect(node.nativeNode.childElementCount()).toEqual(1);
-        console.log(node + '\n');
+        expect(node.nativeNode.childElementCount).toEqual(1);
       });
     });
 

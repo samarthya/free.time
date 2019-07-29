@@ -268,16 +268,16 @@ The basic question that everyone asks is why you went ahead with that specific c
 Basic guidelines to be followed
 
 * No component code to be checked in without the unit [testing](https://angular.io/guide/testing) code (spec). [helper link](https://onehungrymind.com/writing-basic-component-test-angular-testing-utilities/)
-   
-   * Understand ComponentFixture which gives us a reference to the component instance being tested, as well as the component’s template.
-   * Do understand the TestBed utility, which is responsible for initializing the environment.
-   * Do go through the Angular Testing.
-   * Undestand the [Jasmine](https://jasmine.github.io/2.0/introduction.html) Syntax.
-   * Understand Behavior driven development.
-   * Tools that we shall use for testing will be as provided by the Angular CLI
-      * Karma - The test runner.
-      * Jasmine - The basic syntax.
-      * You can explore the other options like Sinon and Wallaby, Cypress etc.
+
+  * Understand ComponentFixture which gives us a reference to the component instance being tested, as well as the component’s template.
+  * Do understand the TestBed utility, which is responsible for initializing the environment.
+  * Do go through the Angular Testing.
+  * Undestand the [Jasmine](https://jasmine.github.io/2.0/introduction.html) Syntax.
+  * Understand Behavior driven development.
+  * Tools that we shall use for testing will be as provided by the Angular CLI
+    * Karma - The test runner.
+    * Jasmine - The basic syntax.
+    * You can explore the other options like Sinon and [Wallaby](https://wallabyjs.com/docs/intro/install.html#visual-studio-code), Cypress etc.
 
 ```javascript
 
