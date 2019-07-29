@@ -5,7 +5,6 @@ import { PersonComponent } from '../shared/person/person.component';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
-  let personComponent: PersonComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async(() => {
