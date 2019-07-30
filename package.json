@@ -1,6 +1,19 @@
 {
   "name": "free-time",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": {
+    "name": "Saurabh Sharma",
+    "email": "saurabh777@gmail.com",
+    "url": "https://www.samarthya.me/"
+  },
+  "keywords": [
+    "Angular",
+    "UnitTesting",
+    "Machine Learning",
+    "Social score"
+  ],
+  "contributors": [{ "name": "Bhawna Bhardwaj"}, {"name": "Vasu Sharma"}],
+  "description": "A Angular project to launch a platform for establishing the social score of professional contribution available from different sources.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -20,7 +33,9 @@
     "@angular/platform-browser": "^8.1.2",
     "@angular/platform-browser-dynamic": "^8.1.2",
     "@angular/router": "^8.1.2",
-    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/angular-fontawesome": "^0.4.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.20",
+    "@fortawesome/free-solid-svg-icons": "^5.10.0",
     "bootstrap": "^4.3.1",
     "ionic": "^5.2.3",
     "jquery": "^1.9.1",

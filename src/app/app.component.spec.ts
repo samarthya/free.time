@@ -5,6 +5,7 @@ import { PersonComponent } from './shared/person/person.component';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FooterComponent } from './footer/footer.component';
 
 describe('Component AppComponent', () => {
   let dtVar: Date;
@@ -17,7 +18,8 @@ describe('Component AppComponent', () => {
       declarations: [
         AppComponent,
         NavbarComponent,
-        PersonComponent
+        PersonComponent,
+        FooterComponent
       ],
       imports: [RouterTestingModule]
     }).compileComponents();
