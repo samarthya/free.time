@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Logger } from '../shared/log.service';
 
 @Component({
   selector: 'ft-footer',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loggerService: Logger) { }
 
   ngOnInit() {
+    this.loggerService.log(' FooterComponent: OnInit called.');
   }
 
 }

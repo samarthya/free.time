@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2. The intention behind this project is to learn new techstack while trying to solve a real life probelm. You should be able to use git and employ various commands to commit.
 
+## Angular
+
+Angular is a feature rich JS framework with various built-in capabilities like HTTP communication, routing, observables and dependency injection. It enhances productivity and reusability for development teams by eliminating the need to implement boilerplate code common to modern web apps.
+
+Angular is an opinionated framework, with loads of recommendations or prescriptions, this facilitates consistent application logic building with increased productivity.
+
 ## Chronology
 
 Install angular client version [8.1.2](https://www.npmjs.com/package/@angular/cli) and you are almost set. You can navigate to any folder of your choice or if reuquired you can create one. I prefer to have my own folder and that way I can ensure what I am creating and where.

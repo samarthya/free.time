@@ -12,7 +12,14 @@
     "Machine Learning",
     "Social score"
   ],
-  "contributors": [{ "name": "Bhawna Bhardwaj"}, {"name": "Vasu Sharma"}],
+  "contributors": [
+    {
+      "name": "Bhawna Bhardwaj"
+    },
+    {
+      "name": "Vasu Sharma"
+    }
+  ],
   "description": "A Angular project to launch a platform for establishing the social score of professional contribution available from different sources.",
   "scripts": {
     "ng": "ng",
@@ -35,6 +42,7 @@
     "@angular/router": "^8.1.2",
     "@fortawesome/angular-fontawesome": "^0.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.20",
+    "@fortawesome/free-brands-svg-icons": "^5.10.0",
     "@fortawesome/free-solid-svg-icons": "^5.10.0",
     "bootstrap": "^4.3.1",
     "ionic": "^5.2.3",
