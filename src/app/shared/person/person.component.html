@@ -1,13 +1,14 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
+    <img class="card-img-top" [src]="profile.imageUrl" alt="Card image cap">
     <h5 class="card-title">{{ profile.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ profile.subTitle }}</h6>
     <p class="card-text">{{ profile.description }}</p>
     <a href="#" class="card-link">
-      <fa-icon [icon]="['fab', 'linkedin']" class="border-bottom"></fa-icon>
+      <fa-icon [icon]="['fab', 'linkedin']" class="align-content-start"></fa-icon>
     </a>
     <a href="#" class="card-link">
-      <fa-icon [icon]="['fab', 'git']" class="border-bottom"></fa-icon>
+      <fa-icon [icon]="['fab', 'git']" class="align-content-end"></fa-icon>
     </a>
   </div>
 </div>

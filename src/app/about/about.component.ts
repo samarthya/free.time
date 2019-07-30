@@ -15,15 +15,42 @@ import { Logger } from '../shared/log.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  private _descriptionContent: string;
 
   public profiles: IProfile[] = [
-    {title: 'Software Engineer', subTitle: ' Lead 1', description: 'I am Saurabh', image: '', linkedIn: '', giturl: ''},
-    {title: 'Software Engineer', subTitle: 'Lead 2', description: 'I am Bhawna', image: '', linkedIn: '', giturl: ''},
-    {title: 'Software Engineer', subTitle: 'Lead 3', description: 'I am Vasu', image: '', linkedIn: '', giturl: ''}
- ];
+    {
+      title: 'Software Engineer',
+      subTitle: ' Lead 1',
+      description: 'I am Saurabh',
+      imageUrl: '../../assets/images/1.png',
+      linkedIn: '',
+      giturl: ''
+    },
+    {
+      title: 'Software Engineer',
+      subTitle: 'Lead 2',
+      description: 'I am Bhawna',
+      imageUrl: '../../assets/images/1.png',
+      linkedIn: '',
+      giturl: ''
+    },
+    {
+      title: 'Software Engineer',
+      subTitle: 'Lead 3',
+      description: 'I am Vasu',
+      imageUrl: '../../assets/images/1.png',
+      linkedIn: '',
+      giturl: ''
+    }
+  ];
 
-  constructor(private logger: Logger) { }
+  constructor(private logger: Logger) {
+    this._descriptionContent = "A short introduction to the about page, which can be moderated later through a service or any other source.";
+  }
 
+  get description() : string {
+    return this._descriptionContent;
+  }
   ngOnInit() {
     this.logger.log(' ngOnInit called for AboutComponent.');
   }

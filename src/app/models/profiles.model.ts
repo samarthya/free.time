@@ -2,7 +2,7 @@ export interface IProfile {
   title: string;
   subTitle: string;
   description: string;
-  image: string;
+  imageUrl: string;
   linkedIn: string;
   giturl: string;
 }
