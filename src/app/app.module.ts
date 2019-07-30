@@ -11,7 +11,6 @@ import { FooterComponent } from './footer/footer.component';
 import { Logger } from './shared/log.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
 /**
  * The root module to be bootstrapped by angular for more information
@@ -38,7 +37,7 @@ import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brand
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [Logger],
   /**
@@ -49,7 +48,6 @@ import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brand
 })
 export class AppModule {
   constructor() {
-    library.add(faCoffee);
     library.add(faTwitter, faLinkedin, faGit, faBlogger);
   }
 }

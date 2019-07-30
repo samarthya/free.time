@@ -2,14 +2,17 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';
 import { PersonComponent } from '../shared/person/person.component';
+import { Logger } from '../shared/log.service';
+import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 
-describe('AboutComponent', () => {
+describe('Component AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent, PersonComponent ]
+      declarations: [ AboutComponent, PersonComponent, FaIconComponent ],
+      providers: [Logger]
     })
     .compileComponents();
   }));

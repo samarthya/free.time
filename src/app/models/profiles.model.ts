@@ -1,4 +1,4 @@
-export class Profile {
+export interface Profile {
   title: string;
   subTitle: string;
   description: string;

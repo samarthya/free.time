@@ -4,6 +4,8 @@ import { PersonComponent } from './person.component';
 import { DebugElement } from '@angular/core';
 import { userProfile1 } from 'src/app/data/test/data.values';
 import { By } from '@angular/platform-browser';
+import { Logger } from '../log.service';
+import { FaIconComponent, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 /**
@@ -22,7 +24,8 @@ describe('Component PersonComponent', () => {
      * that we want our component under test to live in
      */
     TestBed.configureTestingModule({
-      declarations: [ PersonComponent ]
+      declarations: [ PersonComponent, FaIconComponent],
+      providers: [ Logger ]
     })
     .compileComponents();
   }));
