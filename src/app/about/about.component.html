@@ -4,7 +4,8 @@
   <p>Some blabber comments about us with some card containers.</p>
 
   <div class="card-deck">
-      <ft-person profile=profile *ngFor="let profile of profiles"></ft-person>
+    <!-- NGFOR Structure directive.-->
+      <ft-person [profile]=ele *ngFor="let ele of profiles"></ft-person>
   </div>
 
 </div>

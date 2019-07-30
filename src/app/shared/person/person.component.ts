@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Profile } from 'src/app/models/profiles.model';
+import { IProfile } from 'src/app/models/profiles.model';
 import { Logger } from '../log.service';
 
 
@@ -16,7 +16,7 @@ import { Logger } from '../log.service';
 
 export class PersonComponent implements OnInit {
 
-  @Input() profile: Profile;
+  @Input() profile: IProfile;
 
   constructor(private logger: Logger) {
 
