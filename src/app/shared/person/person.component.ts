@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Profile } from 'src/app/models/profiles.model';
+import { Logger } from '../log.service';
 
 
 /**
@@ -17,12 +18,12 @@ export class PersonComponent implements OnInit {
 
   @Input() profile: Profile;
 
-  constructor() {
+  constructor(private logger: Logger) {
 
   }
 
   ngOnInit() {
-
+    this.logger.log(' ngOnInit called for PersonComponent');
   }
 
 }

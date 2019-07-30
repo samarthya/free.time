@@ -51,7 +51,7 @@ describe('Component HomeComponent', () => {
     infoNode = debugElement.queryAll(By.css('card-img-overlay'));
     expect(infoNode).toBeDefined();
 
-    console.log(htmlElement);
+    // console.log(htmlElement);
   });
 
   it('Should validate the dom text contents', () => {

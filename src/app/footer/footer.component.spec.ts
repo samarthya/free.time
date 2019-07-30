@@ -35,7 +35,7 @@ describe('Component FooterComponent', () => {
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(2);
 
-    console.log(htmlElement);
+    // console.log(htmlElement);
     let hrLine: DebugElement[] = debugElement.queryAll(By.css('hr'));
     expect(hrLine).toBeDefined();
     hrLine = debugElement.queryAll(By.css('.container'));

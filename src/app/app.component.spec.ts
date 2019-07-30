@@ -10,11 +10,13 @@ import { Logger } from './shared/log.service';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBlogger, faTwitter, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
+library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
 describe('Component AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
   let debugElement: DebugElement;
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,12 +29,6 @@ describe('Component AppComponent', () => {
       providers: [Logger],
       imports: [RouterTestingModule, FontAwesomeModule]
     }).compileComponents();
-
-    library.add(faBlogger);
-    library.add(faTwitter);
-    library.add(faGit);
-    library.add(faLinkedin);
-
   }));
 
   beforeEach(() => {
@@ -56,6 +52,6 @@ describe('Component AppComponent', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(2);
-    console.log(htmlElement);
+    // console.log(htmlElement);
   });
 });
