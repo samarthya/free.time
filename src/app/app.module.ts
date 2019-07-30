@@ -9,7 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes/main.routes';
 import { FooterComponent } from './footer/footer.component';
 import { Logger } from './shared/log.service';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * The root module to be bootstrapped by angular for more information
@@ -35,6 +37,7 @@ import { Logger } from './shared/log.service';
    */
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [Logger],
@@ -44,4 +47,8 @@ import { Logger } from './shared/log.service';
    */
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(faCoffee);
+  }
+}

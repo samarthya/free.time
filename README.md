@@ -11,6 +11,7 @@ Things you should know
 * Angular bootstrapping
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and [Angular Modules]
 * Some knowledge of CommonJS, AMD (*Asynchronous Module Definition*)  - RequireJS, Webpack and Babel would be encouraging. [ref-link](https://www.redairship.com/2015/05/making-sense-difference-amd-commonjs-requirejs-browserify/)
+* It is recommended to understand what is [package.json](https://flaviocopes.com/package-json/) and how to maintain it.
 
 ### ng new free.version
 
