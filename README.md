@@ -10,9 +10,9 @@ Angular is an opinionated framework, with loads of recommendations or prescripti
 
 ## Chronology
 
-Install angular client version [8.1.2](https://www.npmjs.com/package/@angular/cli) and you are almost set. You can navigate to any folder of your choice or if reuquired you can create one. I prefer to have my own folder and that way I can ensure what I am creating and where.
+Install angular client version [8.1.2](https://www.npmjs.com/package/@angular/cli) and you are almost set. You can navigate to any folder of your choice or if required you can create one. I prefer to have my own folder and that way I can ensure what I am creating and where.
 
-Things you should know
+Things you should know before you start contributing.
 
 * Angular bootstrapping
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) and [Angular Modules]
@@ -21,9 +21,9 @@ Things you should know
 * Learn about the [styleguide](https://github.com/johnpapa/angular-styleguide).
 * Angular Lifecycle [hooks](https://angular.io/guide/lifecycle-hooks).
 
-### ng new free.version
+### Application creation
 
-The command used to create this application.
+The command (Angular CLI) used to create this application.
 
 ```bash
 ng new --help
@@ -80,7 +80,25 @@ options:
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
 
-## Git quick checks
+### Running the development server - Application testing.
+
+You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Build - Use --prod for production build.
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+### Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Run tests before any commit or push to the branch.
+
+### Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Git - Tips
 
 Always before you commit you should chceck the status
 
@@ -100,21 +118,9 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   README.md
-        modified:   src/app/app.component.html
-        modified:   src/app/app.module.ts
-        modified:   src/app/shared/navbar/navbar.component.css
-        modified:   src/app/shared/navbar/navbar.component.html
-        modified:   src/index.html
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-
-        __readymade/
-        src/app/footer/
-        src/app/home/
-        src/app/routes/
-        src/app/shared/log.service.ts
-        src/assets/images/home.png
   ```
 
 Add the files you wish to add before you push the commit
@@ -140,98 +146,6 @@ Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
         modified:   README.md
-        new file:   __readymade/Groovin/assets/color/default.css
-        new file:   __readymade/Groovin/assets/css/animate.css
-        new file:   __readymade/Groovin/assets/css/bootstrap-theme.css
-        new file:   __readymade/Groovin/assets/css/bootstrap.css
-        new file:   __readymade/Groovin/assets/css/custom-fonts.css
-        new file:   __readymade/Groovin/assets/css/fancybox/blank.gif
-        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_loading.gif
-        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_overlay.png
-        new file:   __readymade/Groovin/assets/css/fancybox/fancybox_sprite.png
-        new file:   __readymade/Groovin/assets/css/fancybox/jquery.fancybox.css
-        new file:   __readymade/Groovin/assets/css/font-awesome.css
-        new file:   __readymade/Groovin/assets/css/overwrite.css
-        new file:   __readymade/Groovin/assets/css/prettyPhoto.css
-        new file:   __readymade/Groovin/assets/css/slippry.css
-        new file:   __readymade/Groovin/assets/css/style.css
-        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.eot
-        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.svg
-        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.ttf
-        new file:   __readymade/Groovin/assets/fonts/customicon/Icons.woff
-        new file:   __readymade/Groovin/assets/fonts/fontawesome/FontAwesome.otf
-        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.eot
-        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.svg
-        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.ttf
-        new file:   __readymade/Groovin/assets/fonts/fontawesome/fontawesome-webfont.woff
-        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.eot
-        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.eot@
-        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.svg
-        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.ttf
-        new file:   __readymade/Groovin/assets/fonts/glyphicons-halflings-regular.woff
-        new file:   __readymade/Groovin/assets/img/arrows.svg
-        new file:   __readymade/Groovin/assets/img/cursor.png
-        new file:   __readymade/Groovin/assets/img/dummies/team1.jpg
-        new file:   __readymade/Groovin/assets/img/dummies/team2.jpg
-        new file:   __readymade/Groovin/assets/img/dummies/team3.jpg
-        new file:   __readymade/Groovin/assets/img/dummies/team4.jpg
-        new file:   __readymade/Groovin/assets/img/glyphicons-halflings-white.png
-        new file:   __readymade/Groovin/assets/img/glyphicons-halflings.png
-        new file:   __readymade/Groovin/assets/img/portfolio/1.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/10.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/11.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/12.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/13.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/14.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/2.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/3.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/4.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/5.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/6.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/7.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/8.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/9.jpg
-        new file:   __readymade/Groovin/assets/img/portfolio/app-design.png
-        new file:   __readymade/Groovin/assets/img/slide/1.jpg
-        new file:   __readymade/Groovin/assets/img/slide/2.jpg
-        new file:   __readymade/Groovin/assets/img/slide/3.jpg
-        new file:   __readymade/Groovin/assets/img/sy-loader.gif
-        new file:   __readymade/Groovin/assets/js/AnimOnScroll.js
-        new file:   __readymade/Groovin/assets/js/animate.js
-        new file:   __readymade/Groovin/assets/js/bootstrap.js
-        new file:   __readymade/Groovin/assets/js/classie.js
-        new file:   __readymade/Groovin/assets/js/custom.js
-        new file:   __readymade/Groovin/assets/js/imagesloaded.js
-        new file:   __readymade/Groovin/assets/js/jquery-1.9.1.min.js
-        new file:   __readymade/Groovin/assets/js/jquery.easing.js
-        new file:   __readymade/Groovin/assets/js/jquery.fancybox-media.js
-        new file:   __readymade/Groovin/assets/js/jquery.fancybox.pack.js
-        new file:   __readymade/Groovin/assets/js/jquery.min.js
-        new file:   __readymade/Groovin/assets/js/jquery.nav.js
-        new file:   __readymade/Groovin/assets/js/jquery.nicescroll.min.js
-        new file:   __readymade/Groovin/assets/js/jquery.scrollTo.js
-        new file:   __readymade/Groovin/assets/js/masonry.pkgd.min.js
-        new file:   __readymade/Groovin/assets/js/modernizr.custom.js
-        new file:   __readymade/Groovin/assets/js/nagging-menu.js
-        new file:   __readymade/Groovin/assets/js/slippry.min.js
-        new file:   __readymade/Groovin/contactform/contactform.js
-        new file:   __readymade/Groovin/index.html
-        modified:   src/app/app.component.html
-        modified:   src/app/app.module.ts
-        new file:   src/app/footer/footer.component.css
-        new file:   src/app/footer/footer.component.html
-        new file:   src/app/footer/footer.component.spec.ts
-        new file:   src/app/footer/footer.component.ts
-        new file:   src/app/home/home.component.css
-        new file:   src/app/home/home.component.html
-        new file:   src/app/home/home.component.spec.ts
-        new file:   src/app/home/home.component.ts
-        new file:   src/app/routes/main.routes.ts
-        new file:   src/app/shared/log.service.ts
-        modified:   src/app/shared/navbar/navbar.component.css
-        modified:   src/app/shared/navbar/navbar.component.html
-        new file:   src/assets/images/home.png
-        modified:   src/index.html
 ```
 
 Always provide comment to any changes that you shall commit.
@@ -239,22 +153,6 @@ Always provide comment to any changes that you shall commit.
 ```bash
 git commit -m "Added some basic components and guidelines"
 ```
-
-## Development server
-
-You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## What are we building & why
 
