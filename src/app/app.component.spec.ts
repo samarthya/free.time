@@ -52,6 +52,5 @@ describe('Component AppComponent', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(2);
-    // console.log(htmlElement);
   });
 });

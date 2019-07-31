@@ -2,4 +2,12 @@
   .size-check {
     display: none;
   }
+  #intro {
+    min-height: 640px;
+    width:100%;
+  }
+}
+
+.dimCheck {
+  min-height: 640px;
 }
