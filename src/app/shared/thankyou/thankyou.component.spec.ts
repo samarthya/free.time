@@ -47,6 +47,7 @@ describe('Component ThankyouComponent', () => {
 
   it('should check for a thank you P element.', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
-    expect(fixture.nativeElement.getAll('p').length).toBe(2);
+    expect(fixture.nativeElement.querySelectorAll('p').length).toBe(2);
+    expect(fixture.nativeElement.querySelectorAll('p')[1].textContent).toContain('Thank you');
   });
 });
