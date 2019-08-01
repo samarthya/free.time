@@ -13,6 +13,7 @@ import { Logger } from './shared/log.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
+import { faAnchor, faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/thankyou/thankyou.component';
 import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
@@ -60,6 +61,6 @@ import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
 })
 export class AppModule {
   constructor() {
-    library.add(faTwitter, faLinkedin, faGit, faBlogger);
+    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor);
   }
 }

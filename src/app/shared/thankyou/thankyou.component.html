@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center">
   <div class="container">
     <div class="alert alert-success">
-      <p>{{ messageString }}</p>
+      <p>
+          <fa-icon [icon]="['fas', 'thumbs-up']" size="6x" class="mr-2"></fa-icon><span>{{ messageString }}</span>
+      </p>
       <hr/>
       <p>Thank you!</p>
     </div>

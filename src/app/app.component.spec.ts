@@ -26,6 +26,10 @@ describe('Component AppComponent', () => {
 
 
   beforeEach(async(() => {
+    /**
+     * TestBed - allows running component and template together.
+     * configrueTestingModule: Allows configuring a module specifically for testing.
+     */
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule.withRoutes(appRoutes),

@@ -3,12 +3,14 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ThankyouComponent } from './thankyou.component';
 import { Logger } from '../log.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 
-describe('ThankyouComponent', () => {
+describe('Component ThankyouComponent', () => {
   let component: ThankyouComponent;
   let fixture: ComponentFixture<ThankyouComponent>;
-  let mockActivatedRoute, mockRouteService;
+  let mockActivatedRoute: any;
+  let mockRouteService: any;
 
   beforeEach(async(() => {
     mockActivatedRoute = {
@@ -19,8 +21,11 @@ describe('ThankyouComponent', () => {
       }
     };
 
+    mockRouteService = jasmine.createSpyObj('Router', ['navigate']);
+
     TestBed.configureTestingModule({
       declarations: [ThankyouComponent],
+      schemas: [ NO_ERRORS_SCHEMA ],
       providers: [
         Logger,
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
@@ -36,7 +41,12 @@ describe('ThankyouComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the object.', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should check for a thank you P element.', () => {
+    const htmlElement: HTMLElement = fixture.nativeElement;
+    expect(fixture.nativeElement.getAll('p').length).toBe(2);
   });
 });

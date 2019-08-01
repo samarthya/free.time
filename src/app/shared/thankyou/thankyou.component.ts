@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { MESSAGE } from '../constants/variables.constant';
 
 @Component({
-  selector: 'app-thankyou',
   templateUrl: './thankyou.component.html',
   styleUrls: ['./thankyou.component.css']
 })
