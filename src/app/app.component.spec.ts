@@ -9,6 +9,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Logger } from './shared/log.service';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBlogger, faTwitter, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { appRoutes } from './routes/main.routes';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ThankyouComponent } from './shared/thankyou/thankyou.component';
+import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
 
 library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
@@ -19,15 +26,29 @@ describe('Component AppComponent', () => {
 
 
   beforeEach(async(() => {
+    /**
+     * TestBed - allows running component and template together.
+     * configrueTestingModule: Allows configuring a module specifically for testing.
+     */
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule.withRoutes(appRoutes),
+        FontAwesomeModule,
+        FormsModule,
+        ReactiveFormsModule
+      ],
       declarations: [
         AppComponent,
         NavbarComponent,
         PersonComponent,
-        FooterComponent
+        FooterComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        ErrorpageComponent,
+        ThankyouComponent
       ],
-      providers: [Logger],
-      imports: [RouterTestingModule, FontAwesomeModule]
+      providers: [Logger]
     }).compileComponents();
   }));
 
@@ -52,6 +73,5 @@ describe('Component AppComponent', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(2);
-    // console.log(htmlElement);
   });
 });

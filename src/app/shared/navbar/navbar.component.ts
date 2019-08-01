@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '../log.service';
+import { FormControl } from '@angular/forms';
 
 /**
  * Navigation component that holds the navigation links,

@@ -5,7 +5,7 @@ export const userProfile1: IProfile = {
   subTitle: 'Software Engineer.',
   description: 'I am good engineer.',
   giturl: 'https://samarthya.github.io',
-  image: 'https://dummyimage.io',
+  imageUrl: '../../../assets/images/1.png',
   linkedIn: 'https://www.linkedin.com/in/samarthyasaurabh'
 
 }
