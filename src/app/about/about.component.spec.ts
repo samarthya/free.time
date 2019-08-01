@@ -4,7 +4,7 @@ import { AboutComponent } from './about.component';
 import { PersonComponent } from '../shared/person/person.component';
 import { Logger } from '../shared/log.service';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('Component AboutComponent', () => {
@@ -14,7 +14,8 @@ describe('Component AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent, PersonComponent, FaIconComponent ],
+      declarations: [ AboutComponent],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [Logger]
     })
     .compileComponents();
