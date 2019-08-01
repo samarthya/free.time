@@ -1,0 +1,14 @@
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.errorInput {
+  border-right: 4px solid red;
+}
+
+img {
+  max-width: 305;
+  max-height: 180;
+  align-content: center;
+}

@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/thankyou/thankyou.component';
+import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
 
 library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
@@ -30,7 +31,8 @@ describe('Component AppComponent', () => {
         RouterTestingModule.withRoutes(appRoutes),
         FontAwesomeModule,
         FormsModule,
-        ReactiveFormsModule],
+        ReactiveFormsModule
+      ],
       declarations: [
         AppComponent,
         NavbarComponent,
@@ -39,6 +41,7 @@ describe('Component AppComponent', () => {
         HomeComponent,
         AboutComponent,
         ContactComponent,
+        ErrorpageComponent,
         ThankyouComponent
       ],
       providers: [Logger]

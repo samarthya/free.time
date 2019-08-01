@@ -15,6 +15,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
 import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/thankyou/thankyou.component';
+import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
 /**
  * The root module to be bootstrapped by angular for more information
  * look at https://angular.io/guide/bootstrapping
@@ -33,8 +34,9 @@ import { ThankyouComponent } from './shared/thankyou/thankyou.component';
     PersonComponent,
     HomeComponent,
     FooterComponent,
+    ThankyouComponent,
     ContactComponent,
-    ThankyouComponent
+    ErrorpageComponent
   ],
   /**
    * For browser specific functionality you need this module.
@@ -44,9 +46,12 @@ import { ThankyouComponent } from './shared/thankyou/thankyou.component';
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    // RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes)
   ],
+
   providers: [Logger],
+
   /**
    * Root component that is inserted in the index.html.
    * Each component bootstrapped is root of its complete application components.

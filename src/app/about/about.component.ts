@@ -17,6 +17,8 @@ import { Logger } from '../shared/log.service';
 export class AboutComponent implements OnInit {
   private _descriptionContent: string;
 
+
+
   public profiles: IProfile[] = [
     {
       title: 'Software Engineer',
@@ -45,12 +47,18 @@ export class AboutComponent implements OnInit {
   ];
 
   constructor(private logger: Logger) {
-    this._descriptionContent = "A short introduction to the about page, which can be moderated later through a service or any other source.";
+    this._descriptionContent = 'A short introduction to the about page, which can be moderated later'
+                                + ' through a service or any other source.';
   }
 
-  get description() : string {
+  get description(): string {
     return this._descriptionContent;
   }
+
+  set description(value: string) {
+    this._descriptionContent = value;
+  }
+
   ngOnInit() {
     this.logger.log(' ngOnInit called for AboutComponent.');
   }

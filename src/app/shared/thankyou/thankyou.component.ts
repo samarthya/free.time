@@ -12,7 +12,7 @@ import { MESSAGE } from '../constants/variables.constant';
 })
 export class ThankyouComponent implements OnInit {
   private message: string;
-  private message$: Observable<string>;
+  // private message$: Observable<string>;
 
   constructor(private logger: Logger, private route: ActivatedRoute, private router: Router) { }
 

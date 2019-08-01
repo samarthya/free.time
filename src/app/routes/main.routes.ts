@@ -4,6 +4,7 @@ import { HomeComponent } from '../home/home.component';
 import { ContactComponent } from '../contact/contact.component';
 import { ThankyouComponent } from '../shared/thankyou/thankyou.component';
 import { ThankyouResolver } from '../shared/thankyou/thankyou.resolver.service';
+import { ErrorpageComponent } from '../shared/errorpage/errorpage.component';
 
 /**
  * Defines the routes for the main application.
@@ -12,10 +13,13 @@ import { ThankyouResolver } from '../shared/thankyou/thankyou.resolver.service';
  * The order of the routes in the configuration matters and this is by design.
  */
 export const appRoutes: Routes = [
-  { path: 'tyu', component: ThankyouComponent },
+  { path: 'tyu', component: ThankyouComponent, data: {
+    message: 'Thank you for contacting us.'
+  } },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: ErrorpageComponent}
 ];
 
