@@ -9,6 +9,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Logger } from './shared/log.service';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBlogger, faTwitter, faGit, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { appRoutes } from './routes/main.routes';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ThankyouComponent } from './shared/thankyou/thankyou.component';
 
 library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
@@ -20,14 +26,22 @@ describe('Component AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule.withRoutes(appRoutes),
+        FontAwesomeModule,
+        FormsModule,
+        ReactiveFormsModule],
       declarations: [
         AppComponent,
         NavbarComponent,
         PersonComponent,
-        FooterComponent
+        FooterComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        ThankyouComponent
       ],
-      providers: [Logger],
-      imports: [RouterTestingModule, FontAwesomeModule]
+      providers: [Logger]
     }).compileComponents();
   }));
 

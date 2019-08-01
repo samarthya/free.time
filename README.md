@@ -20,6 +20,7 @@ Things you should know before you start contributing.
 * It is recommended to understand what is [package.json](https://flaviocopes.com/package-json/) and how to maintain it.
 * Learn about the [styleguide](https://github.com/johnpapa/angular-styleguide).
 * Angular Lifecycle [hooks](https://angular.io/guide/lifecycle-hooks).
+* [Property binding](https://angular.io/guide/template-syntax#property-binding)
 
 ### Application creation
 

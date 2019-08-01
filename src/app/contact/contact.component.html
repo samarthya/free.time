@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="card justify-content-center" style="width: 25rem;">
+    <img class="card-img-top" src="../../assets/images/contactus.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Contact Form</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmission()">
+        <li class="list-group-item">
+          <input type="text" name="name" #name formControlName="name" placeholder="Name" required />
+        </li>
+        <li class="list-group-item">
+          <input type="email" #email name="email" formControlName="email" placeholder="Email" required />
+        </li>
+
+        <li class="list-group-item">
+          <textarea name="comment" #comment id="taComments" formControlName="comment" placeholder="Comments" rows="10"
+            class="form-control" required></textarea>
+        </li>
+      </form>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link"><input type="submit" value="Submit" [disabled]="!contactForm.valid"></a>
+      <a href="#" class="card-link"><input type="button" value="Reset"></a>
+    </div>
+    <!-- <p>
+      Form Valid: {{ contactForm.valid }}
+    </p>
+    <p>
+      Form Status: {{ contactForm.value| json}}
+    </p> -->
+  </div>
+</div>

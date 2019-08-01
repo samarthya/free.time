@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { HomeComponent } from '../home/home.component';
+import { ContactComponent } from '../contact/contact.component';
+import { ThankyouComponent } from '../shared/thankyou/thankyou.component';
+import { ThankyouResolver } from '../shared/thankyou/thankyou.resolver.service';
 
 /**
  * Defines the routes for the main application.
@@ -9,8 +12,10 @@ import { HomeComponent } from '../home/home.component';
  * The order of the routes in the configuration matters and this is by design.
  */
 export const appRoutes: Routes = [
-  { path: 'home', component:  HomeComponent},
-  { path: 'about', component: AboutComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  { path: 'tyu', component: ThankyouComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
