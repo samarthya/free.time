@@ -1,6 +1,5 @@
 <div class="d-flex justify-content-center">
-  <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmission(contactForm.value)"
-    (submit)="onSubmission(contactForm.value)" aria-autocomplete="none">
+  <form (ngSubmit)="onSubmission()" [formGroup]="contactForm"  aria-autocomplete="none">
     <div class="card justify-content-center" style="width: 35rem;">
       <img class="card-img-top" src="../../assets/images/contactus.png" alt="Card image cap" width="305" height="180">
       <div class="card-body">
@@ -40,7 +39,7 @@
           <input type="submit" value="Submit" [disabled]="!contactForm.valid" class="btn btn-primary">
         </a>
         <a href="#" class="card-link">
-          <input type="button" value="Reset">
+          <input type="button" value="Reset" class="btn btn-secondary" (click)="onReset()">
         </a>
       </div>
     </div>

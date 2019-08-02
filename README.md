@@ -199,3 +199,7 @@ beforeEach(async(() => {
 
 * Angular style guideline to be employed, use lint before every commit.
 * E2E to be decided.
+
+## Good links to read
+
+* Jasmine how to [spy](https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612)

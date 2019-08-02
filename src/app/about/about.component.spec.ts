@@ -11,7 +11,13 @@ describe('Component AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
   let debugElement: DebugElement;
+  let spyOnDescriptionSet: any;
+  let spyOnDescriptionGet: any;
+  let originalContent: string;
 
+  /**
+   * Before each IT runs - initialize some properties.
+   */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AboutComponent, PersonComponent, FaIconComponent ],
@@ -24,27 +30,56 @@ describe('Component AboutComponent', () => {
     fixture = TestBed.createComponent(AboutComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
+    originalContent = component.descriptionStr;
+
+    spyOnDescriptionSet = spyOnProperty(component, 'descriptionStr', 'set').and.callThrough();
+    spyOnDescriptionGet = spyOnProperty(component, 'descriptionStr', 'get').and.returnValue('should change the description');
 
     fixture.detectChanges();
   });
 
-  it('Creation of the object should be performed.', () => {
-    expect(component).toBeTruthy();
+  //////////////////////////////////////////////////////
+
+
+  it('Check for description value and did the getter function get called. (Using mock value)', () => {
+
+    expect(component.descriptionStr).toContain('should change the description');
+    expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).not.toBeNull();
+    expect(spyOnDescriptionGet).toHaveBeenCalled();
+  });
+
+  it('Check for description value in the DOM element.', () => {
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).toContain(originalContent);
+  });
+
+  it('Check for the Description P and setter', () => {
+    component.descriptionStr = 'Change value';
+    fixture.detectChanges();
+
+    expect(spyOnDescriptionSet).toHaveBeenCalled();
+    expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).toContain('Change value');
+    expect(true).toBeTruthy();
   });
 
   it('Check for the child component DOM is present, by checking the child element count.', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
+
     expect(htmlElement.childElementCount).toBe(1);
-    console.log(debugElement);
     expect(debugElement.queryAll(By.css('h1'))).toBeDefined();
     expect(debugElement.queryAll(By.css('hr'))).toBeDefined();
   });
 
   it('Check for the child component DOM is valid, by checking the HTML.', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
+
     expect(debugElement.queryAll(By.css('h1'))).toBeDefined();
     expect(debugElement.queryAll(By.css('hr'))).toBeDefined();
     expect(debugElement.queryAll(By.css('p'))).toBeDefined();
     expect(debugElement.queryAll(By.css('.card-deck'))).toBeDefined();
+  });
+
+  it('Should check for the child component - PersonComponent (By directive)', () => {
+    expect(debugElement.queryAll(By.directive(PersonComponent)).length).toBe(3);
   });
 });

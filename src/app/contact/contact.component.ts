@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
 
   constructor(private logger: Logger, private route: ActivatedRoute, private router: Router) {
     this.contactForm = new FormGroup({
-      comment : this.comment
+      comment: this.comment
     });
 
     this.contactForm.addControl('name', this.name);
@@ -45,14 +45,26 @@ export class ContactComponent implements OnInit {
    * Function that is called when you submit the form.
    * @param value  string Value of form control elements binded in the form group.
    */
-  public onSubmission(value: string): void {
+  public onSubmission(): void {
+    const values = this.contactForm.value;
+
     this.logger.log(' Submit called from contactcomponent.');
-    this.logger.log(' Values: ' + this.contactForm.value);
+    this.logger.log(' Values: ' + JSON.stringify(values));
     this.router.navigate(['/tyu'], {
       queryParams: { message: 'Your message has been sent.' }
     });
   }
 
+  /**
+   * Resets the contact form.
+   */
+  public onReset($event: Event): void {
+    this.name.reset();
+    this.email.reset();
+    this.comment.reset();
+    this.contactForm.reset();
+    $event.stopImmediatePropagation();
+  }
   /**
    * A declarative way of validating the Name is supplied and is correct to apply CSS using
    * ngClass.
