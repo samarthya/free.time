@@ -69,7 +69,8 @@
     </p>
     <p class="comment">
         <p>Reactive form to allow user to add details to be allowed to contacted.
-<a href="https://angular.io/guide/reactive-forms">Reactive</a></p>
+<a href="https://angular.io/guide/reactive-forms">see this link</a>
+Reactive form is built around observable streams.</p>
 
     </p>
 
@@ -129,6 +130,33 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#comment">comment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#contactForm">contactForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#email">email</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#name">name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -139,7 +167,23 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isEmailValid">isEmailValid</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isNameValid">isNameValid</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onReset">onReset</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSubmission">onSubmission</a>
                             </li>
                         </ul>
                     </td>
@@ -159,15 +203,69 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(logger: <a href="../injectables/Logger.html">Logger</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/contact/contact.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/contact/contact.component.ts:28</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/Logger.html" target="_self" >Logger</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -181,6 +279,94 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEmailValid"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isEmailValid
+                        </b>
+                        <a href="#isEmailValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isEmailValid()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/contact/contact.component.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function called as part of expression condition for Email input for class application.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isNameValid"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isNameValid
+                        </b>
+                        <a href="#isNameValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isNameValid()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/contact/contact.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>A declarative way of validating the Name is supplied and is correct to apply CSS using
+ngClass.
+For more information <a href="https://angular.io/api/common/NgClass#ngclass">see</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -203,8 +389,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/contact/contact.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/contact/contact.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -220,6 +406,270 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onReset"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onReset
+                        </b>
+                        <a href="#onReset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onReset($event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/contact/contact.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Resets the contact form.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmission"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onSubmission
+                        </b>
+                        <a href="#onSubmission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmission()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/contact/contact.component.ts:48</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Function that is called when you submit the form.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="comment"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            comment</b>
+                            <a href="#comment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [Validators.required])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/contact/contact.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="contactForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            contactForm</b>
+                            <a href="#contactForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/contact/contact.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Group for the ContactForm.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="email"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            email</b>
+                            <a href="#email"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [Validators.required, Validators.email])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/contact/contact.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="name"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            name</b>
+                            <a href="#name"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(50)])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/contact/contact.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Name - Input element that will store the name of the commentator.
+Email - Email identification for the person sending in the contact, only for records.
+Comments - Actual comment supplied.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
 </section>
 
 </div>
@@ -227,10 +677,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-
+import { FormControl, FormGroup, AbstractControl } from &#x27;@angular/forms&#x27;;
+import { Logger } from &#x27;../shared/log.service&#x27;;
+import { Validators } from &#x27;@angular/forms&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 /**
  * Reactive form to allow user to add details to be allowed to contacted.
- * &lt;a href&#x3D;&quot;https://angular.io/guide/reactive-forms&quot;&gt;Reactive&lt;/a&gt;
+ * &lt;a href&#x3D;&quot;https://angular.io/guide/reactive-forms&quot;&gt;see this link&lt;/a&gt;
+ * Reactive form is built around observable streams.
  */
 @Component({
   selector: &#x27;app-contact&#x27;,
@@ -238,10 +692,82 @@
   styleUrls: [&#x27;./contact.component.css&#x27;]
 })
 export class ContactComponent implements OnInit {
+  /**
+   * Group for the ContactForm.
+   */
+  public contactForm: FormGroup;
+  /**
+   * Name - Input element that will store the name of the commentator.
+   * Email - Email identification for the person sending in the contact, only for records.
+   * Comments - Actual comment supplied.
+   */
+  public name: FormControl &#x3D; new FormControl(&#x27;&#x27;, [Validators.required, Validators.maxLength(50)]);
+  public email: FormControl &#x3D; new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]);
+  public comment: FormControl &#x3D; new FormControl(&#x27;&#x27;, [Validators.required]);
 
-  constructor() { }
+  constructor(private logger: Logger, private route: ActivatedRoute, private router: Router) {
+    this.contactForm &#x3D; new FormGroup({
+      comment: this.comment
+    });
+
+    this.contactForm.addControl(&#x27;name&#x27;, this.name);
+    this.contactForm.addControl(&#x27;email&#x27;, this.email);
+
+  }
 
   ngOnInit() {
+    this.logger.log(&#x27; ngOnInit called for ContactComponent.&#x27;);
+  }
+
+  /**
+   * Function that is called when you submit the form.
+   * @param value  string Value of form control elements binded in the form group.
+   */
+  public onSubmission(): void {
+    const values &#x3D; this.contactForm.value;
+
+    this.logger.log(&#x27; Submit called from contactcomponent.&#x27;);
+    this.logger.log(&#x27; Values: &#x27; + JSON.stringify(values));
+    this.router.navigate([&#x27;/tyu&#x27;], {
+      queryParams: { message: &#x27;Your message has been sent.&#x27; }
+    });
+  }
+
+  /**
+   * Resets the contact form.
+   */
+  public onReset($event: Event): void {
+    this.name.reset();
+    this.email.reset();
+    this.comment.reset();
+    this.contactForm.reset();
+    $event.stopImmediatePropagation();
+  }
+  /**
+   * A declarative way of validating the Name is supplied and is correct to apply CSS using
+   * ngClass.
+   * For more information &lt;a href&#x3D;&quot;https://angular.io/api/common/NgClass#ngclass&quot;&gt;see&lt;/a&gt;
+   */
+  public isNameValid(): boolean {
+    const name: AbstractControl &#x3D; this.contactForm.get(&#x27;name&#x27;);
+    if (name.touched) {
+      return name.invalid;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   * Function called as part of expression condition for Email input for class application.
+   */
+  public isEmailValid(): boolean {
+    const email: AbstractControl &#x3D; this.contactForm.get(&#x27;email&#x27;);
+
+    if (email.touched) {
+      return email.invalid;
+    }
+
+    return false;
   }
 
 }
@@ -249,22 +775,52 @@ export class ContactComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 20rem;&quot;&gt;
-  &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;../../assets/images/contactus.png&quot; alt&#x3D;&quot;Card image cap&quot;&gt;
-  &lt;div class&#x3D;&quot;card-body&quot;&gt;
-    &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Contact Form&lt;/h5&gt;
-    &lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.
-    &lt;/p&gt;
-  &lt;/div&gt;
-  &lt;ul class&#x3D;&quot;list-group list-group-flush&quot;&gt;
-    &lt;li class&#x3D;&quot;list-group-item&quot;&gt;Cras justo odio&lt;/li&gt;
-    &lt;li class&#x3D;&quot;list-group-item&quot;&gt;Dapibus ac facilisis in&lt;/li&gt;
-    &lt;li class&#x3D;&quot;list-group-item&quot;&gt;Vestibulum at eros&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;div class&#x3D;&quot;card-body&quot;&gt;
-    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Card link&lt;/a&gt;
-    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Another link&lt;/a&gt;
-  &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+  &lt;form (ngSubmit)&#x3D;&quot;onSubmission()&quot; [formGroup]&#x3D;&quot;contactForm&quot;  aria-autocomplete&#x3D;&quot;none&quot;&gt;
+    &lt;div class&#x3D;&quot;card justify-content-center&quot; style&#x3D;&quot;width: 35rem;&quot;&gt;
+      &lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;../../assets/images/contactus.png&quot; alt&#x3D;&quot;Card image cap&quot; width&#x3D;&quot;305&quot; height&#x3D;&quot;180&quot;&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Contact Form&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s
+          content.
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;!--
+      Reactive form - Code driven instead of template driven.
+      From the documentation
+      Each change to the form state returns a new state, which maintains the integrity of the model between changes.
+      Reactive forms are built around observable streams, where form inputs and values are provided as streams of
+      input values, which can be accessed synchronously.
+      Use form control to set values in the coponent programmatically.
+    --&gt;
+
+      &lt;ul class&#x3D;&quot;list-group list-group-flush&quot;&gt;
+        &lt;li class&#x3D;&quot;list-group-item&quot;&gt;
+          &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot; #name formControlName&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Name&quot; required
+            aria-describedby&#x3D;&quot;nameHelp&quot; [ngClass]&#x3D;&quot;{ &#x27;errorInput&#x27;: isNameValid()} &quot; /&gt;
+          &lt;small id&#x3D;&quot;nameHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt;What you would like us to address you as?&lt;/small&gt;
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;list-group-item&quot;&gt;
+          &lt;input type&#x3D;&quot;email&quot; #email name&#x3D;&quot;email&quot; formControlName&#x3D;&quot;email&quot; placeholder&#x3D;&quot;Email&quot;
+            aria-describedby&#x3D;&quot;emailHelp&quot; required [ngClass]&#x3D;&quot;{ &#x27;errorInput&#x27;: isEmailValid()}&quot; /&gt;
+          &lt;small id&#x3D;&quot;emailHelp&quot; class&#x3D;&quot;form-text text-muted&quot;&gt;We&#x27;ll never share your email with anyone else.&lt;/small&gt;
+        &lt;/li&gt;
+
+        &lt;li class&#x3D;&quot;list-group-item&quot;&gt;
+          &lt;textarea name&#x3D;&quot;comment&quot; #comment id&#x3D;&quot;taComments&quot; formControlName&#x3D;&quot;comment&quot; placeholder&#x3D;&quot;Comments&quot; rows&#x3D;&quot;10&quot;
+            class&#x3D;&quot;form-control&quot; required&gt;&lt;/textarea&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;
+          &lt;input type&#x3D;&quot;submit&quot; value&#x3D;&quot;Submit&quot; [disabled]&#x3D;&quot;!contactForm.valid&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;
+          &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Reset&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;onReset()&quot;&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -273,7 +829,21 @@ export class ContactComponent implements OnInit {
                 <p class="comment">
                     <code>./contact.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.errorInput {
+  border-right: 4px solid red;
+}
+
+img {
+  max-width: 305;
+  max-height: 180;
+  align-content: center;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -301,8 +871,8 @@ export class ContactComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="card" style="width: 20rem;">  <img class="card-img-top" src="../../assets/images/contactus.png" alt="Card image cap">  <div class="card-body">    <h5 class="card-title">Contact Form</h5>    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.    </p>  </div>  <ul class="list-group list-group-flush">    <li class="list-group-item">Cras justo odio</li>    <li class="list-group-item">Dapibus ac facilisis in</li>    <li class="list-group-item">Vestibulum at eros</li>  </ul>  <div class="card-body">    <a href="#" class="card-link">Card link</a>    <a href="#" class="card-link">Another link</a>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'}];
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex justify-content-center">  <form (ngSubmit)="onSubmission()" [formGroup]="contactForm"  aria-autocomplete="none">    <div class="card justify-content-center" style="width: 35rem;">      <img class="card-img-top" src="../../assets/images/contactus.png" alt="Card image cap" width="305" height="180">      <div class="card-body">        <h5 class="card-title">Contact Form</h5>        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s          content.        </p>      </div>      <!--      Reactive form - Code driven instead of template driven.      From the documentation      Each change to the form state returns a new state, which maintains the integrity of the model between changes.      Reactive forms are built around observable streams, where form inputs and values are provided as streams of      input values, which can be accessed synchronously.      Use form control to set values in the coponent programmatically.    -->      <ul class="list-group list-group-flush">        <li class="list-group-item">          <input type="text" name="name" #name formControlName="name" placeholder="Name" required            aria-describedby="nameHelp" [ngClass]="{ \'errorInput\': isNameValid()} " />          <small id="nameHelp" class="form-text text-muted">What you would like us to address you as?</small>        </li>        <li class="list-group-item">          <input type="email" #email name="email" formControlName="email" placeholder="Email"            aria-describedby="emailHelp" required [ngClass]="{ \'errorInput\': isEmailValid()}" />          <small id="emailHelp" class="form-text text-muted">We\'ll never share your email with anyone else.</small>        </li>        <li class="list-group-item">          <textarea name="comment" #comment id="taComments" formControlName="comment" placeholder="Comments" rows="10"            class="form-control" required></textarea>        </li>      </ul>      <div class="card-body">        <a href="#" class="card-link">          <input type="submit" value="Submit" [disabled]="!contactForm.valid" class="btn btn-primary">        </a>        <a href="#" class="card-link">          <input type="button" value="Reset" class="btn btn-secondary" (click)="onReset()">        </a>      </div>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'ThankyouComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ContactComponent'};
 </script>
