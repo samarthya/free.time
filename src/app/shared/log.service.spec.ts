@@ -20,37 +20,50 @@ describe(' Service LoggerService', () => {
 
 
   it(' Check for the warn method being called.', () => {
-    logger.debugMode = false;
+    spyOn(console, 'warn');
+    spyOn(logger, 'warn').and.callThrough();
 
-    const mockConsoleLogger = spyOn(logger, 'warn').and.callFake((msg: string) => {
-      return 1;
-    });
     // Calling the warn
     logger.warn(' Warn to be called.');
+
     expect(logger.warn).toHaveBeenCalled();
+    expect(console.warn).toHaveBeenCalled();
+
   });
 
   it(' check if log method was called', () => {
+    spyOn(console, 'log');
+    spyOn(logger, 'log').and.callThrough();
 
-    const mockConsoleLogger = spyOn(logger, 'log').and.callFake((msg: string) => {
-      return 1;
-    });
     logger.log(' Log to be called');
+
     expect(logger.log).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalled();
   });
 
   it(' check if error method was called.', () => {
-    const mockConsoleLogger = spyOn(logger, 'error').and.callFake((msg: string) => {
-      return 1;
-    });
+    spyOn(console, 'error');
+    spyOn(logger, 'error').and.callThrough();
+
     logger.error(' Error to be called.');
+
     expect(logger.error).toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalled();
   });
 
-  it(' check if the setDebugMode is called.', () => {
+  it(' check if the setDebugMode (False) is called.', () => {
     logger.debugMode = false;
+    spyOn(console, 'error');
+    spyOn(logger, 'error');
+
+    logger.error(' Will not be called!');
 
     expect(mockSetLogger).toHaveBeenCalled();
+
+    expect(logger.debugMode).toBeFalsy();
+    expect(mockGetLogger).toHaveBeenCalled();
+    expect(console.error).not.toHaveBeenCalled();
+    expect(logger.error).toHaveBeenCalled();
   });
 
   it(' check if the getDebugMode is called.', () => {

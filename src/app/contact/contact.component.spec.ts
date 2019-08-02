@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
 import { Logger } from '../shared/log.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -36,7 +36,7 @@ describe('Component ContactComponent', () => {
     mockRouteService = jasmine.createSpyObj(['navigate']);
 
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
       declarations: [ ContactComponent ],
       providers: [
         Logger,
@@ -101,32 +101,68 @@ describe('Component ContactComponent', () => {
   });
 
 
-  it('should check the Email class validation for NgClass is done.', () => {
-
-
-    // Check for valid
+  it(' Should check the Email class validation for NgClass is done.', () => {
     component.contactForm.get('email').setValue('sau');
     const email = debugElement.query(By.css('[name=\'email\']'));
     email.nativeElement.dispatchEvent(new Event('blur'));
 
     fixture.detectChanges();
 
-    console.log(email.classes);
     expect(component.contactForm.get('email').hasError('email')).toBeTruthy();
     expect(spyOnEmailValid).toHaveBeenCalled();
     expect(component.contactForm.valid).toBeFalsy();
-    // console.log(email.classes);
     expect(email.nativeElement.classList).toContain('errorInput');
   });
 
-  it('should check if the Name maxlength validations.', () => {
-    component.contactForm.get('name').setValue('ABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCD');
+  it(' Should check for the Name maxlength validations violation.', () => {
+    component.contactForm.get('name').setValue(`ABCDABCDABCDABCDABCDABCD
+                                                ABCDABCDABCDABCDABCDABCD
+                                                ABCDABCDABCDABCDABCDABCD
+                                                ABCDABCD`);
     expect(component.contactForm.get('name').hasError('maxlength')).toBeTruthy();
+    expect(component.contactForm.valid).toBeFalsy();
   });
 
-  it('should check comments control validations.', () => {
+  it(' Should check comments control validations indicates invalid.', () => {
     component.contactForm.get('comment').setValue('');
     expect(component.contactForm.get('comment').valid).toBeFalsy();
+    expect(component.contactForm.valid).toBeFalsy();
   });
 
+
+  it( ' Check for the form submission.', () => {
+    spyOn(component, 'onSubmission').and.callThrough();
+
+    const submitButton = debugElement.query(By.css('[type=\'submit\''));
+    const email = debugElement.query(By.css('[name=\'email\']'));
+    const nameN = debugElement.query(By.css('[name=\'name\']'));
+    const comment = debugElement.query(By.css('#taComments'));
+    const formContact = debugElement.query(By.css('form'));
+
+    email.nativeElement.dispatchEvent(new Event('blur'));
+    nameN.nativeElement.dispatchEvent(new Event('blur'));
+    comment.nativeElement.dispatchEvent(new Event('blur'));
+
+
+    component.contactForm.get('name').setValue('saurabh777@gmail.com');
+    component.contactForm.get('email').setValue('saurabh777@gmail.com');
+    component.contactForm.get('comment').setValue('Some dummy comment');
+
+
+    fixture.detectChanges();
+
+    submitButton.triggerEventHandler('ngSubmit', null);
+    formContact.triggerEventHandler('submit', { });
+
+
+    expect(component.contactForm.valid).toBeTruthy();
+    expect(component.onSubmission).toHaveBeenCalled();
+  });
+
+  it( ' Check for the form reset.', () => {
+    spyOn(component, 'onReset').and.callThrough();
+    const submitButton = debugElement.query(By.css('[type=\'button\''));
+    submitButton.triggerEventHandler('click', null);
+    expect(component.onReset).toHaveBeenCalled();
+  });
 });
