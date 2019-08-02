@@ -6,7 +6,8 @@ import { Injectable, Optional } from '@angular/core';
 @Injectable()
 export class Logger {
   private dateInstance: Date = new Date();
-  private debugMode = true;
+  private _debugMode = true;
+
   constructor( ) {
 
   }
@@ -18,9 +19,7 @@ export class Logger {
   log(msg: any) {
     if (this.debugMode === true) {
        console.log(this.dateInstance.getDate() + ' : ' + msg);
-      } else {
-        return;
-    }
+      }
   }
 
   /**
@@ -30,16 +29,20 @@ export class Logger {
   error(msg: any) {
     if (this.debugMode === true) {
       console.error(this.dateInstance.getDate() + ' : ' + msg);
-    } else {
-      return;
     }
   }
 
   warn(msg: any) {
     if (this.debugMode === true) {
       console.warn(this.dateInstance.getDate() + ' : ' + msg);
-    } else {
-      return;
     }
+  }
+
+  public get debugMode() {
+    return this._debugMode;
+  }
+
+  public set debugMode(value) {
+    this._debugMode = value;
   }
 }

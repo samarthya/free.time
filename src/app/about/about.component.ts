@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IProfile } from '../models/profiles.model';
 import { Logger } from '../shared/log.service';
 
@@ -10,13 +10,11 @@ import { Logger } from '../shared/log.service';
  * [passed](https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding).
  */
 @Component({
-  selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  private _descriptionContent: string;
-
+  private description: string;
 
 
   public profiles: IProfile[] = [
@@ -47,16 +45,16 @@ export class AboutComponent implements OnInit {
   ];
 
   constructor(private logger: Logger) {
-    this._descriptionContent = 'A short introduction to the about page, which can be moderated later'
-                                + ' through a service or any other source.';
+    this.description = 'A short introduction to the about page, which can be moderated later'
+                        + ' through a service or any other source.';
   }
 
-  get description(): string {
-    return this._descriptionContent;
+  get descriptionStr(): string {
+    return this.description;
   }
 
-  set description(value: string) {
-    this._descriptionContent = value;
+  set descriptionStr(value: string) {
+    this.description = value;
   }
 
   ngOnInit() {
