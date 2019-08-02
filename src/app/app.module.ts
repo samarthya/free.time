@@ -18,10 +18,14 @@ import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/thankyou/thankyou.component';
 import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
 /**
+ * <p>
  * The root module to be bootstrapped by angular for more information
- * look at https://angular.io/guide/bootstrapping
+ * look <a href="https://angular.io/guide/bootstrapping">here</a>
+ * </p>
+ * <p>
  * NgModules are the compilation context for all the components
  * declared, defined for consumption.
+ * </p>
  */
 @NgModule({
   /**

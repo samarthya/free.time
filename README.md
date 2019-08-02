@@ -203,3 +203,5 @@ beforeEach(async(() => {
 ## Good links to read
 
 * Jasmine how to [spy](https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612)
+* Progressive web app & Service worker [intro](https://angular.io/guide/service-worker-intro)
+* Can I [use](https://caniuse.com/)
