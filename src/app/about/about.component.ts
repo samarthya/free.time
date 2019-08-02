@@ -3,20 +3,30 @@ import { IProfile } from '../models/profiles.model';
 import { Logger } from '../shared/log.service';
 
 /**
- * About page
- * This should display information about the authors and contributors of the page.
- * You should be aware about binding and component interaction to undestand how
+ * <h2>About page component</h2>
+ * <p>
+ * This should display information about the authors and contributors of the SPA.
+ * For more clarity, you should be aware about binding and component interaction, to undestand how
  * the information is being
- * [passed](https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding).
+ * <a href="https://angular.io/guide/component-interaction#pass-data-from-parent-to-child-with-input-binding">passed.</a>
+ * </p>
  */
 @Component({
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+
+  /**
+   * It is a static string variable that is initalized with basic information about
+   * the context.
+   */
   private description: string;
 
 
+  /**
+   * @ignore
+   */
   public profiles: IProfile[] = [
     {
       title: 'Software Engineer',
@@ -44,19 +54,33 @@ export class AboutComponent implements OnInit {
     }
   ];
 
+  /**
+   * Basic initialization constructor that includes
+   * a basic console logging service.
+   * @param logger {Logger} Logger service end point.
+   */
   constructor(private logger: Logger) {
     this.description = 'A short introduction to the about page, which can be moderated later'
                         + ' through a service or any other source.';
   }
 
+  /**
+   * Getter method for the static string.
+   */
   get descriptionStr(): string {
     return this.description;
   }
 
+  /**
+   * Setter method for the {@link AboutComponent #description}
+   */
   set descriptionStr(value: string) {
     this.description = value;
   }
 
+  /**
+   * The {OnInit} hook method.
+   */
   ngOnInit() {
     this.logger.log(' ngOnInit called for AboutComponent.');
   }

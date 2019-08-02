@@ -253,11 +253,14 @@
             <h3>Description</h3>
         </p>
         <p class="comment">
-            <p>The root module to be bootstrapped by angular for more information
-look at <a href="https://angular.io/guide/bootstrapping">https://angular.io/guide/bootstrapping</a>
+            <p>
+The root module to be bootstrapped by angular for more information
+look <a href="https://angular.io/guide/bootstrapping">here</a>
+</p>
+<p>
 NgModules are the compilation context for all the components
-declared, defined for consumption.</p>
-
+declared, defined for consumption.
+</p>
         </p>
 
 
@@ -337,15 +340,19 @@ import { Logger } from &#x27;./shared/log.service&#x27;;
 import { FontAwesomeModule } from &#x27;@fortawesome/angular-fontawesome&#x27;;
 import { library } from &#x27;@fortawesome/fontawesome-svg-core&#x27;;
 import { faLinkedin, faTwitter, faGit, faBlogger } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
-import { faAnchor, faThumbsUp, faThumbsDown } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { ContactComponent } from &#x27;./contact/contact.component&#x27;;
 import { ThankyouComponent } from &#x27;./shared/thankyou/thankyou.component&#x27;;
 import { ErrorpageComponent } from &#x27;./shared/errorpage/errorpage.component&#x27;;
 /**
+ * &lt;p&gt;
  * The root module to be bootstrapped by angular for more information
- * look at https://angular.io/guide/bootstrapping
+ * look &lt;a href&#x3D;&quot;https://angular.io/guide/bootstrapping&quot;&gt;here&lt;/a&gt;
+ * &lt;/p&gt;
+ * &lt;p&gt;
  * NgModules are the compilation context for all the components
  * declared, defined for consumption.
+ * &lt;/p&gt;
  */
 @NgModule({
   /**
@@ -385,7 +392,7 @@ import { ErrorpageComponent } from &#x27;./shared/errorpage/errorpage.component&
 })
 export class AppModule {
   constructor() {
-    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor);
+    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor, faSignInAlt);
   }
 }
 </code></pre>
