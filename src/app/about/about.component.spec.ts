@@ -4,7 +4,7 @@ import { AboutComponent } from './about.component';
 import { PersonComponent } from '../shared/person/person.component';
 import { Logger } from '../shared/log.service';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('Component AboutComponent', () => {
@@ -14,8 +14,7 @@ describe('Component AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent],
-      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ AboutComponent, PersonComponent, FaIconComponent ],
       providers: [Logger]
     })
     .compileComponents();
@@ -47,5 +46,9 @@ describe('Component AboutComponent', () => {
     expect(debugElement.queryAll(By.css('hr'))).toBeDefined();
     expect(debugElement.queryAll(By.css('p'))).toBeDefined();
     expect(debugElement.queryAll(By.css('.card-deck'))).toBeDefined();
+  });
+
+  it('should check for the child component - PersonComponent', () => {
+    expect(debugElement.queryAll(By.directive(PersonComponent)).length).toBe(3);
   });
 });
