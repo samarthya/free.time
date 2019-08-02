@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
 import { Logger } from '../log.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('Component NavbarComponent', () => {
   let component: NavbarComponent;
@@ -12,7 +13,8 @@ describe('Component NavbarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NavbarComponent],
       providers: [Logger],
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
