@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IProfile } from '../models/profiles.model';
-import { Logger } from '../shared/index';
+import { Logger } from '../shared/log.service';
 
 /**
  * <h2>About page component</h2>

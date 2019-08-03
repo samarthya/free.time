@@ -1,13 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PersonComponent } from './person.component';
-import { DebugElement, DebugNode } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { userProfile1 } from 'src/app/data/test/data.values';
-
 import { By } from '@angular/platform-browser';
-
 import { Logger } from '../log.service';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FaIconComponent, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 /**
@@ -26,9 +24,8 @@ describe('Component PersonComponent', () => {
      * that we want our component under test to live in
      */
     TestBed.configureTestingModule({
-      declarations: [ PersonComponent ],
-      providers: [ Logger ],
-      schemas: [NO_ERRORS_SCHEMA]
+      declarations: [ PersonComponent, FaIconComponent],
+      providers: [ Logger ]
     })
     .compileComponents();
   }));
@@ -63,9 +60,8 @@ describe('Component PersonComponent', () => {
 
     spanFace.forEach(element => {
       expect(element.attributes.class).toEqual('card-link');
-      element.childNodes.forEach( (node: DebugElement) => {
-        expect(node.nativeElement).toBeDefined();
-        console.log(node.nativeElement);
+      element.childNodes.forEach( node => {
+        expect(node.nativeNode.childElementCount).toEqual(1);
       });
     });
 

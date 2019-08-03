@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorpageComponent } from './errorpage.component';
 import { Logger } from '../log.service';
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 describe('Component ErrorpageComponent', () => {
@@ -15,8 +15,7 @@ describe('Component ErrorpageComponent', () => {
       declarations: [ErrorpageComponent],
       providers: [
         Logger
-      ],
-      schemas: [NO_ERRORS_SCHEMA]
+      ]
     })
       .compileComponents();
   }));

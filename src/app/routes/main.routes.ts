@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
 import { HomeComponent } from '../home/home.component';
 import { ContactComponent } from '../contact/contact.component';
-import { ThankyouComponent } from '../shared/components/thankyou/thankyou.component';
-import { ThankyouResolver } from '../shared/components/thankyou/thankyou.resolver.service';
-import { ErrorpageComponent } from '../shared/components/errorpage/errorpage.component';
+import { ThankyouComponent } from '../shared/thankyou/thankyou.component';
+import { ThankyouResolver } from '../shared/thankyou/thankyou.resolver.service';
+import { ErrorpageComponent } from '../shared/errorpage/errorpage.component';
 
 /**
  * Defines the routes for the main application.
