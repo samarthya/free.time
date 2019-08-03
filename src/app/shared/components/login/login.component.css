@@ -13,3 +13,8 @@
     float: right;
   }
 }
+
+boxSize {
+  min-width: 500px;
+  min-height: 400px;
+}
