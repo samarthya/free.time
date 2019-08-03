@@ -12,10 +12,11 @@ import {
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { appRoutes } from '../routes/main.routes';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { RouterModule } from '@angular/router';
     PersonComponent,
     NavbarComponent,
     ThankyouComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   exports: [
     ErrorpageComponent,
@@ -44,6 +46,6 @@ import { RouterModule } from '@angular/router';
 })
 export class SharedModule {
   constructor() {
-    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor, faSignInAlt);
+    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor, faSignInAlt, faFacebook, faGoogle);
   }
 }
