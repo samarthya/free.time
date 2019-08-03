@@ -32,8 +32,8 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="d-block nav-item">
-        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Log In/Sign Up </a>
+      <li class="d-block d-sm-none nav-item">
+        <a class="nav-link d-lg-inline" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']" >Sign In</a>
       </li>
     </ul>
 
@@ -43,8 +43,8 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
-    <a class="d-lg-inline mr-2" href="#" tabindex="-1" aria-disabled="false">
-      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block"></fa-icon>
+    <a class="d-lg-inline mr-2 nav-link" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']">
+      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" ></fa-icon>
     </a>
 
   </div>

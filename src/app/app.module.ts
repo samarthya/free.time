@@ -15,9 +15,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
 import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { ContactComponent } from './contact/contact.component';
-import { ThankyouComponent } from './shared/thankyou/thankyou.component';
-import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
-import { LoginComponent } from './login/login.component';
+
+import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
+
+
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
