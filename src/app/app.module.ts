@@ -44,7 +44,8 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     ThankyouComponent,
     ContactComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    LoginComponent
   ],
   /**
    * For browser specific functionality you need this module.
