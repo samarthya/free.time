@@ -40,7 +40,7 @@ export class AboutComponent implements OnInit {
       title: 'Software Engineer',
       subTitle: 'Lead 2',
       description: 'I am Bhawna',
-      imageUrl: '../../assets/images/1.png',
+      imageUrl: '../../assets/images/bb.jpg',
       linkedIn: '',
       giturl: ''
     },

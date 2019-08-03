@@ -17,6 +17,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/fr
 import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/thankyou/thankyou.component';
 import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
+import { LoginComponent } from './login/login.component';
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
@@ -41,7 +42,8 @@ import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
     FooterComponent,
     ThankyouComponent,
     ContactComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    LoginComponent
   ],
   /**
    * For browser specific functionality you need this module.
