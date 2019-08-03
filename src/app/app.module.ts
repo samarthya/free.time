@@ -1,22 +1,14 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
-import { PersonComponent } from './shared/person/person.component';
 import { HomeComponent } from './home/home.component';
-import { appRoutes } from './routes/main.routes';
-import { FooterComponent } from './footer/footer.component';
-import { Logger } from './shared/log.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLinkedin, faTwitter, faGit, faBlogger } from '@fortawesome/free-brands-svg-icons';
-import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { ContactComponent } from './contact/contact.component';
-import { ThankyouComponent } from './shared/thankyou/thankyou.component';
-import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
+
+import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
+
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
@@ -34,14 +26,9 @@ import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
    */
   declarations: [
     AppComponent,
-    NavbarComponent,
     AboutComponent,
-    PersonComponent,
     HomeComponent,
-    FooterComponent,
-    ThankyouComponent,
-    ContactComponent,
-    ErrorpageComponent
+    ContactComponent
   ],
   /**
    * For browser specific functionality you need this module.
@@ -50,12 +37,10 @@ import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    FontAwesomeModule,
     // RouterModule.forRoot(appRoutes, { enableTracing: true })
-    RouterModule.forRoot(appRoutes)
+    RouterModule,
+    SharedModule
   ],
-
-  providers: [Logger],
 
   /**
    * Root component that is inserted in the index.html.
@@ -64,7 +49,4 @@ import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor, faSignInAlt);
-  }
 }

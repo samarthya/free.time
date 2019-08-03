@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { Logger } from '../shared/log.service';
+import { Logger } from '../shared/components/log.service';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
  * <p>Every <b>root component</b> connects Component Hierarchy with Page DOM.</p>
  */
 @Component({
-  selector: 'app-root',
+  selector: 'ft-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
