@@ -46,6 +46,10 @@ import { LoginComponent } from './components/login/login.component';
 })
 export class SharedModule {
   constructor() {
-    library.add(faTwitter, faLinkedin, faGit, faBlogger, faThumbsUp, faThumbsDown, faAnchor, faSignInAlt, faFacebook, faGoogle);
+    library.add(
+      faTwitter, faLinkedin,
+      faGit, faBlogger, faThumbsUp,
+      faThumbsDown, faAnchor, faSignInAlt,
+      faFacebook, faGoogle);
   }
 }
