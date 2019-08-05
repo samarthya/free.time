@@ -4,9 +4,12 @@ import { Logger } from '../shared/index';
 import { Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 /**
+ * <p>
  * Reactive form to allow user to add details to be allowed to contacted.
  * <a href="https://angular.io/guide/reactive-forms">see this link</a>
  * Reactive form is built around observable streams.
+ * </p>
+ * <img src="https://angular.io/generated/images/guide/forms-overview/key-diff-reactive-forms.png"/>
  */
 @Component({
   selector: 'app-contact',
