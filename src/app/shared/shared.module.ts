@@ -7,7 +7,9 @@ import {
   PersonComponent,
   NavbarComponent,
   ErrorpageComponent,
-  FooterComponent
+  FooterComponent,
+  RegisterComponent,
+  LoginComponent
 } from './index';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -16,7 +18,8 @@ import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@
 import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { appRoutes } from '../routes/main.routes';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
+
+
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { LoginComponent } from './components/login/login.component';
     NavbarComponent,
     ThankyouComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   exports: [
     ErrorpageComponent,
