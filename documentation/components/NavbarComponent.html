@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/navbar/navbar.component.ts</code>
+    <code>src/app/shared/components/navbar/navbar.component.ts</code>
 </p>
 
     <p class="comment">
@@ -164,7 +164,7 @@ brand icon and other information to guide the navigation.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/navbar/navbar.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -234,7 +234,7 @@ brand icon and other information to guide the navigation.</p>
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/shared/navbar/navbar.component.ts:18</a></div>
+                            class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -317,7 +317,7 @@ export class NavbarComponent implements OnInit {
         &lt;/div&gt;
       &lt;/li&gt;
       &lt;li class&#x3D;&quot;d-block d-sm-none nav-item&quot;&gt;
-        &lt;a class&#x3D;&quot;nav-link d-lg-inline&quot; href&#x3D;&quot;#&quot; tabindex&#x3D;&quot;-1&quot; aria-disabled&#x3D;&quot;false&quot;&gt;Sign In&lt;/a&gt;
+        &lt;a class&#x3D;&quot;nav-link d-lg-inline&quot; href&#x3D;&quot;#&quot; tabindex&#x3D;&quot;-1&quot; aria-disabled&#x3D;&quot;false&quot; [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; &gt;Sign In&lt;/a&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
 
@@ -327,8 +327,8 @@ export class NavbarComponent implements OnInit {
       &lt;button class&#x3D;&quot;btn btn-outline-success my-2 my-sm-0&quot; type&#x3D;&quot;submit&quot;&gt;Search&lt;/button&gt;
     &lt;/form&gt;
 
-    &lt;a class&#x3D;&quot;d-lg-inline mr-2&quot; href&#x3D;&quot;#&quot; tabindex&#x3D;&quot;-1&quot; aria-disabled&#x3D;&quot;false&quot;&gt;
-      &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;sign-in-alt&#x27;]&quot; size&#x3D;&quot;2x&quot; class&#x3D;&quot;mr-2&quot; class&#x3D;&quot;d-none d-sm-block&quot;&gt;&lt;/fa-icon&gt;
+    &lt;a class&#x3D;&quot;d-lg-inline mr-2 nav-link&quot; href&#x3D;&quot;#&quot; tabindex&#x3D;&quot;-1&quot; aria-disabled&#x3D;&quot;false&quot; [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot;&gt;
+      &lt;fa-icon [icon]&#x3D;&quot;[&#x27;fas&#x27;, &#x27;sign-in-alt&#x27;]&quot; size&#x3D;&quot;2x&quot; class&#x3D;&quot;mr-2&quot; class&#x3D;&quot;d-none d-sm-block&quot; &gt;&lt;/fa-icon&gt;
     &lt;/a&gt;
 
   &lt;/div&gt;
@@ -368,8 +368,8 @@ export class NavbarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-dark bg-dark">  <a class="navbar-brand" href="#"><img src="../../../assets/images/brand.png"></a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    <span class="navbar-toggler-icon"></span>  </button>  <div class="collapse navbar-collapse" id="navbarSupportedContent">    <ul class="navbar-nav mr-auto">      <li class="nav-item active">        <a class="nav-link" [routerLink]="[\'/home\']" routerLinkActive="router-link-active">          Home <span class="sr-only">(current)</span>        </a>      </li>      <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/about\']" routerLinkActive="router-link-active">About <span            class="sr-only">(current)</span></a>      </li>      <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/contact\']" routerLinkActive="router-link-active">Contact</a>      </li>      <li class="nav-item dropdown">        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"          aria-haspopup="true" aria-expanded="false">          P-Holder        </a>        <div class="dropdown-menu" aria-labelledby="navbarDropdown">          <a class="dropdown-item" href="#">Action</a>          <a class="dropdown-item" href="#">Another action</a>          <div class="dropdown-divider"></div>          <a class="dropdown-item" href="#">Something else here</a>        </div>      </li>      <li class="d-block d-sm-none nav-item">        <a class="nav-link d-lg-inline" href="#" tabindex="-1" aria-disabled="false">Sign In</a>      </li>    </ul>    <form class="form-inline my-2 my-lg-0 mr-2">      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>    </form>    <a class="d-lg-inline mr-2" href="#" tabindex="-1" aria-disabled="false">      <fa-icon [icon]="[\'fas\', \'sign-in-alt\']" size="2x" class="mr-2" class="d-none d-sm-block"></fa-icon>    </a>  </div></nav></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'ThankyouComponent', 'selector': ''}];
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-lg navbar-dark bg-dark">  <a class="navbar-brand" href="#"><img src="../../../assets/images/brand.png"></a>  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    <span class="navbar-toggler-icon"></span>  </button>  <div class="collapse navbar-collapse" id="navbarSupportedContent">    <ul class="navbar-nav mr-auto">      <li class="nav-item active">        <a class="nav-link" [routerLink]="[\'/home\']" routerLinkActive="router-link-active">          Home <span class="sr-only">(current)</span>        </a>      </li>      <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/about\']" routerLinkActive="router-link-active">About <span            class="sr-only">(current)</span></a>      </li>      <li class="nav-item">        <a class="nav-link" [routerLink]="[\'/contact\']" routerLinkActive="router-link-active">Contact</a>      </li>      <li class="nav-item dropdown">        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"          aria-haspopup="true" aria-expanded="false">          P-Holder        </a>        <div class="dropdown-menu" aria-labelledby="navbarDropdown">          <a class="dropdown-item" href="#">Action</a>          <a class="dropdown-item" href="#">Another action</a>          <div class="dropdown-divider"></div>          <a class="dropdown-item" href="#">Something else here</a>        </div>      </li>      <li class="d-block d-sm-none nav-item">        <a class="nav-link d-lg-inline" href="#" tabindex="-1" aria-disabled="false" [routerLink]="[\'/login\']" >Sign In</a>      </li>    </ul>    <form class="form-inline my-2 my-lg-0 mr-2">      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>    </form>    <a class="d-lg-inline mr-2 nav-link" href="#" tabindex="-1" aria-disabled="false" [routerLink]="[\'/login\']">      <fa-icon [icon]="[\'fas\', \'sign-in-alt\']" size="2x" class="mr-2" class="d-none d-sm-block" ></fa-icon>    </a>  </div></nav></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'ft-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ThankyouComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
 </script>
