@@ -1,0 +1,42 @@
+<div>
+  <form action=""class="form-group">
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="">First and last name</span>
+          </div>
+          <input type="text" class="form-control">
+          <input type="text" class="form-control">
+        </div>
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="imageFile">Please select a profile pic</label>
+      <input type="file" class="form-control-file" id="imageFile">
+      <img src="" style="min-height: 50px; min-width: 50px" class="img-thumbnail">
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input position-static" type="checkbox" id="subscribeCheckBox" value="1" aria-label="Subscribe">Subscribe to our newsletter?
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm"><fa-icon [icon]="['fab','git']"></fa-icon></span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm"><fa-icon [icon]="['fab','google']"></fa-icon></span>
+      </div>
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
