@@ -2,14 +2,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RegisterComponent } from './register.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-describe('RegisterComponent', () => {
+describe('Component RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ],
+      imports: [FormsModule],
+      declarations: [ RegisterComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
@@ -21,7 +23,7 @@ describe('RegisterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it(' Should create the object', () => {
     expect(component).toBeTruthy();
   });
 });

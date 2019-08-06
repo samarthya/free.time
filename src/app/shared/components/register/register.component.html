@@ -27,7 +27,7 @@
         <label for="inputPassword" class="pt-2">Password</label>
         <input type="password" name="password" class="form-control" id="inputPassword1" [(ngModel)]="user.password" placeholder="Password">
         <label for="inputPassword" class="pt-2">Confirm</label>
-        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        <input type="password" class="form-control" name="cp" id="inputPassword2" placeholder="Password" required [(ngModel)]="confirmPassword" [ngClass]="{invalid: !isPasswordValid(password.getValue(), cp.getValue())}">
       </div>
 
       <!-- Profile Image -->
@@ -76,7 +76,7 @@
       </div>
 
       <!-- Submit -->
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!registerUser.valid">Submit</button>
     </form>
   </div>
   {{user | json}}
