@@ -8,15 +8,15 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="">First and last name</span>
         </div>
-        <input type="text" class="form-control" id="name" [(ngModel)]="user.name" name="name" required>
-        <input type="text" class="form-control" [(ngModel)]="user.lastName" name="lastName" id="surname">
+        <input type="text" class="form-control" id="name" [(ngModel)]="user.profile.name" name="name" required>
+        <input type="text" class="form-control" [(ngModel)]="user.profile.lastName" name="lastName" id="surname">
       </div>
 
       <!-- Email Address -->
       <div class="form-group pt-2">
         <label for="inputEmail">Email address</label>
         <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" id="email"
-          [(ngModel)]="user.email"
+          [(ngModel)]="user.user.email"
           placeholder="Enter email"
           required>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -25,15 +25,15 @@
       <!-- Password and confirm password -->
       <div class="form-group pt-2">
         <label for="inputPassword" class="pt-2">Password</label>
-        <input type="password" name="password" class="form-control" id="inputPassword1" [(ngModel)]="user.password" placeholder="Password">
+        <input type="password" name="password" class="form-control" id="inputPassword1" [(ngModel)]="user.user.password" placeholder="Password">
         <label for="inputPassword" class="pt-2">Confirm</label>
-        <input type="password" class="form-control" name="cp" id="inputPassword2" placeholder="Password" required [(ngModel)]="confirmPassword" [ngClass]="{invalid: !isPasswordValid(password.getValue(), cp.getValue())}">
+        <input type="password" class="form-control" name="cp" id="inputPassword2" placeholder="" required [(ngModel)]="confirmPassword" [ngClass]="{invalid: !isPasswordValid()}" required>
       </div>
 
       <!-- Profile Image -->
       <div class="form-group">
         <label for="imageFile">Please select a profile pic</label>
-        <input type="file" class="form-control-file" id="imageFile" name="imageUrl" [(ngModel)]="user.imageUrl">
+        <input type="file" class="form-control-file" id="imageFile" name="imageUrl" [(ngModel)]="user.profile.imageUrl">
       </div>
 
       <!-- Subscribe to the EMAIL list.-->
@@ -54,7 +54,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Description</span>
         </div>
-        <textarea class="form-control" aria-label="With textarea" id="description" name="description" [(ngModel)]="user.description"></textarea>
+        <textarea class="form-control" aria-label="With textarea" id="description" name="description" [(ngModel)]="user.details.description"></textarea>
       </div>
 
       <!-- Social symbols. -->
@@ -64,7 +64,7 @@
               <fa-icon [icon]="['fab','git']"></fa-icon>
             </span>
           </div>
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="gitUrl" name="gitProfile" [(ngModel)]="user.gitProfile">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="gitUrl" name="gitProfile" [(ngModel)]="user.details.gitProfile">
         </div>
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
@@ -72,7 +72,7 @@
               <fa-icon [icon]="['fab','google']"></fa-icon>
             </span>
           </div>
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="googleUrl" name="googleProfile" [(ngModel)]="user.googleProfile">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="googleUrl" name="googleProfile" [(ngModel)]="user.details.googleProfile">
       </div>
 
       <!-- Submit -->

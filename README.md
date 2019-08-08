@@ -205,3 +205,6 @@ beforeEach(async(() => {
 * Jasmine how to [spy](https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612)
 * Progressive web app & Service worker [intro](https://angular.io/guide/service-worker-intro)
 * Can I [use](https://caniuse.com/)
+* In memory web [API](https://github.com/angular/in-memory-web-api)
+* Redux [store](https://redux.js.org/api/api-reference)
+* When to use [Store](https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/)

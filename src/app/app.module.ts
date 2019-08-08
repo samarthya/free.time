@@ -8,8 +8,15 @@ import { ContactComponent } from './contact/contact.component';
 
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { Logger } from './shared';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 /**
  * <p>
@@ -41,7 +48,25 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     // RouterModule.forRoot(appRoutes, { enableTracing: true })
     RouterModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
+
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+
+    EffectsModule.forRoot([AppEffects])
   ],
 
   /**
@@ -51,4 +76,8 @@ import { RouterModule } from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(private logger: Logger) {
+    this.logger.log(' AppModule initialised.');
+  }
 }
+

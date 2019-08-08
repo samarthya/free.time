@@ -19,15 +19,21 @@ import { Logger } from '../log.service';
 export class RegisterComponent implements OnInit {
 
   private userP: IUserProfile = {
-    name: '',
-    lastName: '',
-    email: '',
-    password: '',
-    subscribeToEmail: 0,
-    gitProfile: '',
-    googleProfile: '',
-    imageUrl: '',
-    description: ''
+    user: {
+      email: '',
+      password: '',
+    },
+    profile: {
+      name: '',
+      lastName: '',
+      imageUrl: '',
+    },
+    details: {
+      subscribeToEmail: 0,
+      gitProfile: '',
+      googleProfile: '',
+      description: ''
+    }
   };
 
   private passwordConfirm: string;
@@ -47,7 +53,9 @@ export class RegisterComponent implements OnInit {
     this.logger.log(' Register ngOnInit called');
   }
 
-  isPasswordValid(p1: string, p2: string): boolean {
+  isPasswordValid(): boolean {
+    const p1: string =  this.userP.user.password;
+    const p2: string = this.confirmPassword;
     if (p1 != null && p2 != null) {
       if (p1.length !== 0 && p2.length !== 0) {
         if (p1.search(p2) === 0 && p1.length === p2.length) {

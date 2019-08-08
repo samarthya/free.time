@@ -18,7 +18,7 @@ import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@
 import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { appRoutes } from '../routes/main.routes';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
   ],
