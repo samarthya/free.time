@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { ThankyouComponent } from './shared/components/thankyou/thankyou.component';
 import { ErrorpageComponent } from './shared/components/errorpage/errorpage.component';
 import { LoginComponent } from './shared/components/login/login.component';
+import { RegisterComponent } from './shared/components/register/register.component';
 // import { RouterModule } from '@angular/router';
 
 
@@ -40,6 +41,7 @@ import { LoginComponent } from './shared/components/login/login.component';
    * Components should be declared in only one NgModule class.
    */
   declarations: [
+    RegisterComponent,
     AppComponent,
     NavbarComponent,
     AboutComponent,

@@ -14,8 +14,9 @@ import { appRoutes } from './routes/main.routes';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { ThankyouComponent } from './shared/thankyou/thankyou.component';
-import { ErrorpageComponent } from './shared/errorpage/errorpage.component';
+import { ThankyouComponent } from './shared/components/thankyou/thankyou.component';
+import { ErrorpageComponent } from './shared/components/errorpage/errorpage.component';
+import { RegisterComponent } from './shared/components/register/register.component';
 
 library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
@@ -40,6 +41,7 @@ describe('Component AppComponent', () => {
       declarations: [
         AppComponent,
         NavbarComponent,
+        RegisterComponent,
         PersonComponent,
         FooterComponent,
         HomeComponent,
