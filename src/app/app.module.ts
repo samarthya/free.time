@@ -17,7 +17,10 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/fr
 import { ContactComponent } from './contact/contact.component';
 
 import { SharedModule } from './shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { ThankyouComponent } from './shared/components/thankyou/thankyou.component';
+import { ErrorpageComponent } from './shared/components/errorpage/errorpage.component';
+import { LoginComponent } from './shared/components/login/login.component';
+// import { RouterModule } from '@angular/router';
 
 
 

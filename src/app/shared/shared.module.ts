@@ -8,7 +8,7 @@ import {
   NavbarComponent,
   ErrorpageComponent,
   FooterComponent,
-  RegisterComponent,
+  // RegisterComponent,
   LoginComponent
 } from './index';
 
@@ -40,7 +40,7 @@ import { FormsModule } from '@angular/forms';
     ThankyouComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    // RegisterComponent
   ],
   exports: [
     ErrorpageComponent,
