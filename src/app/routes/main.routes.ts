@@ -6,7 +6,7 @@ import { ThankyouComponent } from '../shared/components/thankyou/thankyou.compon
 
 import { ErrorpageComponent } from '../shared/components/errorpage/errorpage.component';
 import { LoginComponent } from '../shared/components/login/login.component';
-// import { RegisterComponent } from '../shared';
+import { RegisterComponent } from '../shared/components/register/register.component';
 
 /**
  * Defines the routes for the main application.
@@ -22,7 +22,7 @@ export const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: ErrorpageComponent}
 ];
