@@ -21,6 +21,7 @@ import { ThankyouComponent } from './shared/components/thankyou/thankyou.compone
 import { ErrorpageComponent } from './shared/components/errorpage/errorpage.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { RegisterComponent } from './shared/components/register/register.component';
+import { HelpComponent } from './help/help.component';
 // import { RouterModule } from '@angular/router';
 
 
@@ -51,7 +52,8 @@ import { RegisterComponent } from './shared/components/register/register.compone
     ThankyouComponent,
     ContactComponent,
     ErrorpageComponent,
-    LoginComponent
+    LoginComponent,
+    HelpComponent
   ],
   /**
    * For browser specific functionality you need this module.

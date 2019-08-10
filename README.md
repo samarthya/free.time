@@ -89,6 +89,11 @@ You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+### Adding a new component to your application
+
+ng generate component test-component
+
+
 ### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
@@ -154,6 +159,12 @@ Always provide comment to any changes that you shall commit.
 ```bash
 git commit -m "Added some basic components and guidelines"
 ```
+In case your code gets dirty with your changes:
+Get the updated code from repo and then apply your changes to it, for storing your changes use stashing:
+1) git stash (This will save your  locally)
+2) git pull origin (This will pull the latest code from repo)
+3) git stash apply (This will apply the latest stash)
+
 
 ## What are we building & why
 

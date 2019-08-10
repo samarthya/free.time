@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '../log.service';
+//import { Logger } from '../log.service';
 
 /**
  * Login component
@@ -12,10 +12,11 @@ import { Logger } from '../log.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private logger: Logger) { }
+  //constructor(private logger: Logger) { }
+  constructor() { }
 
   ngOnInit() {
-    this.logger.log(' ngOnInit called for LoginComponent.');
+    //this.logger.log(' ngOnInit called for LoginComponent.');
   }
 
 }
