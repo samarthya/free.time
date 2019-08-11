@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './shared/components/thankyou/thankyou.component';
 import { ErrorpageComponent } from './shared/components/errorpage/errorpage.component';
 import { RegisterComponent } from './shared/components/register/register.component';
+import { LoginComponent } from './shared';
 
 library.add(faGit, faLinkedin, faBlogger, faTwitter);
 
@@ -47,6 +48,7 @@ describe('Component AppComponent', () => {
         HomeComponent,
         AboutComponent,
         ContactComponent,
+        LoginComponent,
         ErrorpageComponent,
         ThankyouComponent
       ],
