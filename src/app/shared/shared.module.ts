@@ -31,7 +31,6 @@ import { StoreModule } from '@ngrx/store';
     ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
-    
   ],
   providers: [
     Logger

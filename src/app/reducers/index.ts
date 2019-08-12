@@ -3,15 +3,16 @@ import {
   MetaReducer,
   createReducer,
   on,
-  ActionReducerMap
+  ActionReducerMap,
+  Action
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import { AppState, initialAppState, getEmptyUser, State } from '../state/app.state';
 import * as LoginActions from '../actions/login.action';
 
 
-
-export const loginReducer: ActionReducer<AppState> = createReducer(
+const loginReducer =
+createReducer(
   initialAppState,
   on(LoginActions.login, (state, { principal }) => {
     return {
@@ -35,8 +36,12 @@ export const loginReducer: ActionReducer<AppState> = createReducer(
   }))
 );
 
+export function reducer(state: AppState | undefined, action: Action) {
+  return loginReducer(state, action);
+}
+
 export const ROOT_REDUCERS: ActionReducerMap<State> = {
-  state: loginReducer,
+  state: reducer,
 };
 
 
