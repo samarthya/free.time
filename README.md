@@ -81,11 +81,11 @@ options:
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
 
-### Running the development server - Application testing.
+### Running the development server - Application testing
 
 You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Build - Use --prod for production build.
+### Build - Use --prod for production build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
@@ -216,3 +216,6 @@ beforeEach(async(() => {
 * Jasmine how to [spy](https://medium.com/@juanlizarazo/how-to-spy-on-a-property-getter-or-setter-with-jasmine-ad06c00ba612)
 * Progressive web app & Service worker [intro](https://angular.io/guide/service-worker-intro)
 * Can I [use](https://caniuse.com/)
+* In memory web [API](https://github.com/angular/in-memory-web-api)
+* Redux [store](https://redux.js.org/api/api-reference)
+* When to use [Store](https://blog.angular-university.io/angular-2-redux-ngrx-rxjs/)
