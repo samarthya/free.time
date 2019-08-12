@@ -10,9 +10,6 @@ import { Router } from '@angular/router';
 import { Action } from '@ngrx/store';
 
 
-
-
-
 /**
  * Key concepts
  * - Effects when used along with Store, decrease the responsibility of the component
@@ -50,14 +47,14 @@ export class AppEffects {
     { dispatch: false }
   );
 
-  init$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(ROOT_EFFECTS_INIT),
-      tap(() => {
-        console.log(' INIT called. ');
-      })
-    )
-  );
+  // init$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(ROOT_EFFECTS_INIT),
+  //     tap(() => {
+  //       console.log(' INIT called. ');
+  //     })
+  //   )
+  // );
 
 
   constructor(

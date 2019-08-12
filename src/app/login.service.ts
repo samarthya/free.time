@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Logger } from './components/index';
 import { Observable, of } from 'rxjs';
-import { IUserProfile } from './models/user.model';
+import { IUserProfile, dummyUser } from './models/user.model';
 import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -60,10 +60,10 @@ export class LoginService {
   }
 
   public loginUser(userName: string, password: string): Observable<IUserProfile> {
-    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(tap((user: any) => {
-      console.log(' User logged in ' + user);
+    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(tap((user: IUserProfile) => {
+      console.log(' User logged in ' + user.user.email);
     })).pipe(catchError(err => {
-      return of(false);
+      return of( dummyUser );
     }));
   }
 }

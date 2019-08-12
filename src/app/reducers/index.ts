@@ -9,7 +9,9 @@ import { environment } from '../../environments/environment';
 import { AppState, initialAppState, getEmptyUser, State } from '../state/app.state';
 import * as LoginActions from '../components/actions/login.action';
 
-
+/**
+ * The login reducer
+ */
 const loginReducer =
 createReducer(
   initialAppState,

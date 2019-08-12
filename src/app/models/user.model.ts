@@ -63,3 +63,21 @@ export interface IUserProfile {
    */
   details: IDetails;
 }
+
+export const dummyUser: IUserProfile = {
+  user: {
+    email: 'saurabh777@gmail.com',
+    password: 'ABCDEF123456',
+  },
+  profile: {
+    name: 'Saurabh',
+    lastName: 'Sharma',
+    imageUrl: '',
+  },
+  details: {
+    subscribeToEmail: 1,
+    gitProfile: 'https://www.github.com/samarthya',
+    googleProfile: '',
+    description: 'This lad is still learning.'
+  }
+};

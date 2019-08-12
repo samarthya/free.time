@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '../log.service';
-import { FormControl } from '@angular/forms';
+
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
@@ -19,8 +19,8 @@ import { IPrincipal } from 'src/app/models/user.model';
 export class NavbarComponent implements OnInit {
 
   private currentUser$: Observable<AppState> = this.store.select(state => state.state );
-  private loggedInUser: AppState;
-  userInfo: IPrincipal;
+  private loggedInUser: IPrincipal;
+
 
   constructor(private logger: Logger, private store: Store<State>) {
     this.loggedInUser = null;
@@ -29,14 +29,27 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.logger.log(' ngOnInit for NavBarComponent called.');
     this.currentUser$.subscribe((userInfo: AppState) => {
-      this.logger.log('Welcome ' + userInfo.userInfo.email);
-      this.loggedInUser = userInfo;
+
+      if (userInfo.loggedIn) {
+        this.loggedInUser = userInfo.userInfo;
+        this.logger.log('Welcome ' + this.loggedInUser.email);
+      }
     });
 
   }
 
+  /**
+   * Returns the logged in user.
+   */
+  public getUserEmail(): string {
+    return this.loggedInUser.email;
+  }
+
+  /**
+   * Property to check whether the user has logged in.
+   */
   public userLoggedIn(): boolean {
-    return (this.loggedInUser != null) && (this.loggedInUser.userInfo.email.length > 0);
+    return (this.loggedInUser != null) && (this.loggedInUser.email.length > 0);
   }
 
 }

@@ -14,6 +14,7 @@ describe('Component NavbarComponent', () => {
   let store: MockStore<{
     loggedIn: false,
   }>;
+
   const initialState: AppState = {
     loggedIn: false,
     userInfo: {

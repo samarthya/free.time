@@ -21,7 +21,8 @@ import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { appRoutes } from './routes/main.routes';
 
-import { AboutComponent, ContactComponent,
+import {
+  AboutComponent, ContactComponent,
   Logger, HomeComponent,
   ErrorpageComponent, PersonComponent,
   NavbarComponent, ThankyouComponent,
@@ -82,6 +83,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, delay: 500 }
     ),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
@@ -89,8 +91,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([AppEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    EffectsModule.forRoot([AppEffects])
   ],
 
   /**
@@ -100,6 +101,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
   constructor(private logger: Logger) {
     this.logger.log(' AppModule initialised.');
     library.add(
