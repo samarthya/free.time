@@ -4,8 +4,9 @@ import { Store } from '@ngrx/store';
 import { IPrincipal } from 'src/app/models/user.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as AppActions from 'src/app/actions/login.action';
-import { AuthState } from 'src/app/reducers';
+
 import { Observable } from 'rxjs';
+import { State } from 'src/app/state/app.state';
 
 /**
  * Login component
@@ -18,12 +19,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  private currentUser$: Observable<AuthState>;
+  private currentUser$: Observable<State>;
   username: FormControl;
   password: FormControl;
   formLogin: FormGroup;
 
-  constructor(private logger: Logger, private store: Store<AuthState>) {
+  constructor(private logger: Logger, private store: Store<State>) {
   this.username = new FormControl('', Validators.required);
   this.password = new FormControl('', Validators.required);
 
@@ -50,6 +51,6 @@ export class LoginComponent implements OnInit {
       password: this.password.value
     };
 
-    this.store.dispatch(AppActions.LOGIN({payload: principal}));
+    this.store.dispatch(AppActions.login({ principal }));
   }
 }

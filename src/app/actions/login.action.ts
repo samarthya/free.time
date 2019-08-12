@@ -1,33 +1,24 @@
-import { createAction, props, Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { IPrincipal, IUserProfile } from '../models/user.model';
 
-export enum ActionTypes {
-  LOGIN_ACTION = '[Login Initiatied] Login',
-  LOGIN_SUCCESS = '[Login Success] Login',
-  LOGIN_FAILURE = '[Login Failure] Login',
-  LOGOUT = '[Logout initiated] logout'
-}
+
 
 /**
- * LOGIN Action
+ * Actions are POJO's with type and optional Payload.
  */
-// export class LoginAction implements Action {
-//   type: ActionTypes.LOGIN_ACTION;
-//   constructor(public payload: IPrincipal) {
-
-//   }
-// }
-
-export const LOGIN = createAction(
-  ActionTypes.LOGIN_ACTION,
-  props<{ payload: IPrincipal }>()
-  );
-
-export const LOGIN_SUCCESS = createAction(
-  ActionTypes.LOGIN_SUCCESS,
-  props<{ payload: IUserProfile }>()
+export const login = createAction('[Login Initiatied] Login',
+  props<{ principal: IPrincipal }>()
 );
 
+export const loginSuccess = createAction('[Login Success] Login',
+  props<{ userProfile: IUserProfile }>()
+);
 
-export const LOGIN_FAILURE: Action = createAction(ActionTypes.LOGIN_FAILURE);
-export const LOGOUT: Action = createAction(ActionTypes.LOGOUT);
+export const loginFailure = createAction('[Login Failure] Login',
+  props<{ message: any }>()
+);
+
+export const logout = createAction('[Logout initiated] logout');
+
+
+

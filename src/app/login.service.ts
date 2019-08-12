@@ -46,4 +46,24 @@ export class LoginService {
       catchError(this.handleError<IUserProfile[]>('login', []))
     );
   }
+
+  private getBasicHeader(userName: string, password: string) {
+    const authorizationData: string = 'Basic ' + btoa(userName + ':' + password);
+
+    return {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: authorizationData,
+      })
+    };
+
+  }
+
+  public loginUser(userName: string, password: string): Observable<IUserProfile> {
+    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(tap((user: any) => {
+      console.log(' User logged in ' + user);
+    })).pipe(catchError(err => {
+      return of(false);
+    }));
+  }
 }

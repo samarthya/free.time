@@ -1,40 +1,46 @@
 import {
   ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
-  MetaReducer
+  MetaReducer,
+  createReducer,
+  on,
+  ActionReducerMap
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import { IPrincipal } from '../models/user.model';
+import { AppState, initialAppState, getEmptyUser, State } from '../state/app.state';
+import * as LoginActions from '../actions/login.action';
+
+
+
+export const loginReducer: ActionReducer<AppState> = createReducer(
+  initialAppState,
+  on(LoginActions.login, (state, { principal }) => {
+    return {
+      ...state,
+      userInfo: principal,
+      loggedIn: false
+    };
+  }),
+  on(
+    LoginActions.loginSuccess, (state, { userProfile }) => {
+      return {
+        ...state,
+        userInfo: userProfile.user,
+        loggedIn: true
+      };
+    }),
+  on(LoginActions.logout, (state) => ({
+    ...state,
+    userInfo: getEmptyUser(),
+    loggedIn: false
+  }))
+);
+
+export const ROOT_REDUCERS: ActionReducerMap<State> = {
+  state: loginReducer,
+};
+
 
 /**
- * Store state is READONLY and it is modified
- * only via reducers and actions.
- * Messages from Application to store are actions.
+ * Meta-reducers allow developers to pre-process actions before normal reducers are invoked.
  */
-export interface State {
-  currentUser: AuthState
-}
-
-export interface AuthState {
-  userInfo: IPrincipal;
-  loggedIn: boolean;
-}
-
-export const initialState: State = {
-  currentUser: {
-    userInfo: {
-      email: '',
-      password: ''
-    },
-    loggedIn: false
-  }
-};
-
-export const reducers: ActionReducerMap<State> = {
-
-};
-
-
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

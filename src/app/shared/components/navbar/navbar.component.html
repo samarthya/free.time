@@ -44,7 +44,11 @@
     </form>
 
     <a class="d-lg-inline mr-2 nav-link" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']">
-      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" ></fa-icon>
+      <div *ngIf="userLoggedIn">
+          <fa-icon [icon]="['fas', 'sign-out-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="userLoggedIn()"></fa-icon>
+          <!-- Can show a welcome message as well. -->
+      </div>
+      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="!userLoggedIn()"></fa-icon>
     </a>
 
   </div>

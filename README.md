@@ -81,11 +81,11 @@ options:
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
 
-### Running the development server - Application testing.
+### Running the development server - Application testing
 
 You can use `ng serve` for the dev server & navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### Build - Use --prod for production build.
+### Build - Use --prod for production build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 

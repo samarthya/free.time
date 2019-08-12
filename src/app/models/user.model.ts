@@ -42,6 +42,8 @@ export interface IDetails {
    */
   description: string;
 }
+
+
 /**
  * Model class that specifies the New user profile information.
  */
@@ -50,13 +52,14 @@ export interface IUserProfile {
    * User information
    */
   user: IPrincipal;
+
   /**
    * User information
    */
   profile: IUser;
+
   /**
    * User details
    */
   details: IDetails;
-
 }

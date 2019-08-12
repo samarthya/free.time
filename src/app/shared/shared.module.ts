@@ -15,7 +15,7 @@ import {
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { appRoutes } from '../routes/main.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -57,6 +57,7 @@ export class SharedModule {
       faTwitter, faLinkedin,
       faGit, faBlogger, faThumbsUp,
       faThumbsDown, faAnchor, faSignInAlt,
-      faFacebook, faGoogle);
+      faFacebook, faGoogle,
+      faSignOutAlt);
   }
 }
