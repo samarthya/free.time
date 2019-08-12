@@ -17,12 +17,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
   /**
    * Group for the ContactForm.
    */
   public contactForm: FormGroup;
-
   /**
    * Name - Input element that will store the name of the commentator.
    * Email - Email identification for the person sending in the contact, only for records.
@@ -68,6 +66,7 @@ export class ContactComponent implements OnInit {
     this.email.reset();
     this.comment.reset();
     this.contactForm.reset();
+    $event.stopImmediatePropagation();
   }
   /**
    * A declarative way of validating the Name is supplied and is correct to apply CSS using

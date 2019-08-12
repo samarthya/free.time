@@ -6,7 +6,7 @@ import { Logger } from './components';
  * <p>Every <b>root component</b> connects Component Hierarchy with Page DOM.</p>
  */
 @Component({
-  selector: 'ft-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

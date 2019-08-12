@@ -1,38 +1,41 @@
 <div class="card bg-dark text-white">
   <img class="card-img" src="./assets/images/learn_together.jpeg" alt="Card image">
-  <div class="card-img-overlay mx-auto">
-    <div class="card border-secondary d-flex mx-md-auto ml-sm-0 boxSize" style="width: 20rem;">
-      <div class="card-body cardLogin">
+  <div class="card-img-overlay mx-auto" >
+     <div class="card border-secondary d-flex mx-md-auto ml-sm-0 boxSize" style="width: 25rem; margin-top: 140px" >
+      <div class="card-body cardLogin" style="color:red" >
         <div>
-          <span class="mx-auto">Sign In With</span>
+          <span class="mx-auto" style="color:black" >Sign In With</span>
+         
           <a href="#" class="btn">
-            <fa-icon [icon]="['fab', 'facebook']" size="2x"></fa-icon>
+              <i class="fa fa-facebook-official" style="font-size:30px;color:blue; margin-left: 20px" ></i>
+           <!--- <fa-icon [icon]="['fa', 'fa-facebook']" size="2x"></fa-icon> -->
           </a>
           <a href="#" class="btn">
-            <fa-icon [icon]="['fab', 'google']" size="2x"></fa-icon>
+              <i class="fa fa-google-plus-official" style="font-size:35px;color:red; margin-left: 20px" ></i>
+           <!---- <fa-icon [icon]="['fab', 'google']" size="2x"></fa-icon>  -->
           </a>
         </div>
         <hr />
         <form [formGroup]="formLogin" (ngSubmit)="doLogin()" >
           <div class="card-text">
             <div class="form-group d-block d-sm-inline">
-              <input type="text" formControlName="username" class="form-control" id="usrname" aria-describedby="usernameHelp"
-                placeholder="Username" >
-              <small id="usernameHelp" class="form-text text-muted d-none d-md-block">The unique username provided to
-                you.</small>
+                <input type="text" #username name="username" formControlName="username"  placeholder="Username" required
+                aria-describedby="usernameHelp" [ngClass]="{ 'errorInput': isUsernameValid()} " />
+                <small id="usernameHelp" class="form-text text-muted d-none d-md-block">The unique username provided to
+                  you.</small>
             </div>
             <div class="form-group d-block d-sm-inline">
-              <input type="password" formControlName="password" class="form-control" id="inputPassword" placeholder="Password"
-                aria-describedby="passwordHelp">
+                <input type="password" #password name="password" formControlName="password"  placeholder="Password"
+                aria-describedby="passwordHelp" [ngClass]="{ 'errorInput': isPasswordValid()} " />
               <small id="passwordHelp" class="form-text text-muted d-none d-md-block">Your secure password.</small>
-            </div>
+              </div>
           </div>
 
             <div class="inlineD">
               <a id="exampleCheck1" href=""><small>Forgot password?</small></a>
             </div>
             <div class="inlineD dx-sm-auto">
-              <button type="submit" class="btn btn-primary" [disabled]="!formLogin.valid">Submit</button>
+              <button type="submit" value="submit" class="btn btn-primary" >Submit</button>
             </div>
         </form>
       </div>

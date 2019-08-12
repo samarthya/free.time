@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Logger } from '../log.service';
 import { Store } from '@ngrx/store';
 import { IPrincipal } from 'src/app/models/user.model';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import * as AppActions from '../actions/login.action';
 
 import { Observable } from 'rxjs';
@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(private logger: Logger, private store: Store<State>) {
-  this.username = new FormControl('', Validators.required);
-  this.password = new FormControl('', Validators.required);
+  this.username = new FormControl('', [Validators.required,Validators.maxLength(30)]);
+  this.password = new FormControl('', [Validators.required]);
 
   this.formLogin = new FormGroup({
     username: this.username,
@@ -53,4 +53,24 @@ export class LoginComponent implements OnInit {
 
     this.store.dispatch(AppActions.login({ principal }));
   }
+
+  public isUsernameValid(): boolean {
+    const username: AbstractControl = this.formLogin.get('username');
+    if(username.touched) {
+      return username.invalid;
+    } else {
+      return false;
+    }
+  }
+
+  public isPasswordValid(): boolean {
+    const password: AbstractControl = this.formLogin.get('password');
+    if(password.touched) {
+      return password.invalid;
+    } else {
+      return false;
+    }
+  }  
+
 }
+

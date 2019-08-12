@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+//import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 
@@ -50,8 +51,11 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
    * Components should be declared in only one NgModule class.
    */
   declarations: [
+    RegisterComponent,
     AppComponent,
+    NavbarComponent,
     AboutComponent,
+    PersonComponent,
     HomeComponent,
     ContactComponent,
     ErrorpageComponent,

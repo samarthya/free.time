@@ -3,9 +3,7 @@ import { Injectable, Optional } from '@angular/core';
 /**
  * A place holder class to simplify logging to console at the moment.
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class Logger {
   private dateInstance: Date = new Date();
   private _debugMode = true;

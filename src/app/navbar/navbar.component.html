@@ -32,6 +32,9 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+      <li class="d-block d-sm-none nav-item">
+        <a class="nav-link d-lg-inline" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']" >Sign In</a>
+      </li>
     </ul>
 
 
@@ -41,12 +44,7 @@
     </form>
 
     <a class="d-lg-inline mr-2 nav-link" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']">
-      <div *ngIf="userLoggedIn">
-          <fa-icon [icon]="['fas', 'sign-out-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="userLoggedIn()"></fa-icon>
-          <div *ngIf="userLoggedIn()">Welcome {{getUserEmail()!}}</div>
-          <!-- Can show a welcome message as well. -->
-      </div>
-      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="!userLoggedIn()"></fa-icon>
+      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" ></fa-icon>
     </a>
 
   </div>
