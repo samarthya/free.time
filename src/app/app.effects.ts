@@ -30,16 +30,16 @@ export class AppEffects {
 
 
   login$: Observable<Action> = createEffect(() =>
-  this.actions$.pipe(
-    ofType(AppActions.login),
-    map( action => action.principal),
-    exhaustMap( (principal: IPrincipal) =>
-      this.loginService.loginUser(principal.email, principal.password).pipe(
-        map( (userProfile) => of( AppActions.loginSuccess({ userProfile })),
-        catchError(message => of( AppActions.loginFailure({ message })))
+    this.actions$.pipe(
+      ofType(AppActions.login),
+      map(action => action.principal),
+      exhaustMap((principal: IPrincipal) =>
+        this.loginService.loginUser(principal.email, principal.password).pipe(
+          map((userProfile) => AppActions.loginSuccess({userProfile})),
+          catchError(message => of({ type: '[Login Failure] Login', payload: message }))
+        )
       )
     )
-  )
   );
 
   loginSuccess$ = createEffect(

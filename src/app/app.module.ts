@@ -53,12 +53,11 @@ import { environment } from '../environments/environment';
     SharedModule,
     HttpClientModule,
 
-    EffectsModule.forRoot([AppEffects]),
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
+      InMemoryDataService, { dataEncapsulation: false, delay: 500 }
     ),
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
@@ -67,6 +66,7 @@ import { environment } from '../environments/environment';
         strictActionImmutability: true
       }
     }),
+    EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
 

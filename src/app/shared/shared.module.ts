@@ -19,6 +19,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
 import { appRoutes } from '../routes/main.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -30,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
+    
   ],
   providers: [
     Logger
