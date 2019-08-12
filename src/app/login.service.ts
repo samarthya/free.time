@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { Logger } from './shared';
+import { Logger } from './components/index';
 import { Observable, of } from 'rxjs';
 import { IUserProfile } from './models/user.model';
 import { catchError, map, tap } from 'rxjs/operators';

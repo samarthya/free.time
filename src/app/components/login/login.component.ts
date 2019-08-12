@@ -3,7 +3,7 @@ import { Logger } from '../log.service';
 import { Store } from '@ngrx/store';
 import { IPrincipal } from 'src/app/models/user.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import * as AppActions from 'src/app/actions/login.action';
+import * as AppActions from '../actions/login.action';
 
 import { Observable } from 'rxjs';
 import { State } from 'src/app/state/app.state';

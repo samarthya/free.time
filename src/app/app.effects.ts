@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, ROOT_EFFECTS_INIT } from '@ngrx/effects';
-import { Logger } from './shared';
-import * as AppActions from './actions/login.action';
+import * as AppActions from './components/index';
 import { LoginService } from './login.service';
 import { IPrincipal } from './models/user.model';
 import { map, catchError, tap, exhaustMap } from 'rxjs/operators';
@@ -46,7 +45,7 @@ export class AppEffects {
     () =>
       this.actions$.pipe(
         ofType(AppActions.loginSuccess),
-        tap(() => this.routerService.navigate(['/']))
+        tap(() => this.routerService.navigate(['/home']))
       ),
     { dispatch: false }
   );
@@ -63,7 +62,7 @@ export class AppEffects {
 
   constructor(
     private actions$: Actions,
-    private logger: Logger,
+    private logger: AppActions.Logger,
     private loginService: LoginService,
     private routerService: Router) {
     this.logger.log(' AppEffects called.');

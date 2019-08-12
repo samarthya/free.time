@@ -1,12 +1,9 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from '../about/about.component';
-import { HomeComponent } from '../home/home.component';
-import { ContactComponent } from '../contact/contact.component';
-import { ThankyouComponent } from '../shared/components/thankyou/thankyou.component';
-
-import { ErrorpageComponent } from '../shared/components/errorpage/errorpage.component';
-import { LoginComponent } from '../shared/components/login/login.component';
-import { RegisterComponent } from '../shared';
+import {
+  ThankyouComponent, HomeComponent,
+  AboutComponent, ContactComponent,
+  LoginComponent, RegisterComponent,
+  ErrorpageComponent } from '../components/index';
 
 /**
  * Defines the routes for the main application.

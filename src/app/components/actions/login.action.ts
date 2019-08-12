@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IPrincipal, IUserProfile } from '../models/user.model';
+import { IPrincipal, IUserProfile } from '../../models/user.model';
 
 
 

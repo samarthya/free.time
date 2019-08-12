@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IProfile } from '../models/profiles.model';
-import { Logger } from '../shared/index';
+import { IProfile } from '../../models/profiles.model';
+import { Logger } from '../log.service';
 
 /**
  * <h2>About page component</h2>
@@ -57,7 +57,7 @@ export class AboutComponent implements OnInit {
   /**
    * Basic initialization constructor that includes
    * a basic console logging service.
-   * @param logger {Logger} Logger service end point.
+   * @param logger Logger service end point.
    */
   constructor(private logger: Logger) {
     this.description = 'A short introduction to the about page, which can be moderated later'

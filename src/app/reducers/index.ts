@@ -1,5 +1,4 @@
 import {
-  ActionReducer,
   MetaReducer,
   createReducer,
   on,
@@ -8,7 +7,7 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
 import { AppState, initialAppState, getEmptyUser, State } from '../state/app.state';
-import * as LoginActions from '../actions/login.action';
+import * as LoginActions from '../components/actions/login.action';
 
 
 const loginReducer =

@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AboutComponent } from './about.component';
 
-import { PersonComponent } from '../shared/components/person/person.component';
-import { Logger } from '../shared/components/log.service';
+import { PersonComponent } from '../person/person.component';
+import { Logger } from '../log.service';
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 

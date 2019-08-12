@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, AbstractControl } from '@angular/forms';
-import { Logger } from '../shared/index';
+import { Logger } from '../log.service';
 import { Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 /**

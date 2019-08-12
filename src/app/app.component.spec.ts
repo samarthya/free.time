@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { Logger } from './shared/components/log.service';
+import { Logger } from './components/index';
 
 
 describe('Component AppComponent', () => {

@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
 
-import { SharedModule } from './shared/shared.module';
+
+
+
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,12 +13,26 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
-import { Logger } from './shared';
+
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { appRoutes } from './routes/main.routes';
 
+import { AboutComponent, ContactComponent,
+  Logger, HomeComponent,
+  ErrorpageComponent, PersonComponent,
+  NavbarComponent, ThankyouComponent,
+  FooterComponent, LoginComponent,
+  RegisterComponent } from '../app/components/index';
+
+
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
@@ -39,7 +52,18 @@ import { environment } from '../environments/environment';
     AppComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ErrorpageComponent,
+    PersonComponent,
+    NavbarComponent,
+    ThankyouComponent,
+    FooterComponent,
+    LoginComponent,
+    FooterComponent,
+    RegisterComponent
+  ],
+  providers: [
+    Logger
   ],
   /**
    * For browser specific functionality you need this module.
@@ -48,9 +72,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    // RouterModule.forRoot(appRoutes, { enableTracing: true })
-    RouterModule,
-    SharedModule,
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
     HttpClientModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -79,6 +102,12 @@ import { environment } from '../environments/environment';
 export class AppModule {
   constructor(private logger: Logger) {
     this.logger.log(' AppModule initialised.');
+    library.add(
+      faTwitter, faLinkedin,
+      faGit, faBlogger, faThumbsUp,
+      faThumbsDown, faAnchor, faSignInAlt,
+      faFacebook, faGoogle,
+      faSignOutAlt);
   }
 }
 
