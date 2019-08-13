@@ -5,7 +5,10 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@free-time/*": ["./src/app/*"]
+    }
   },
   "files": [
     "src/test.ts",

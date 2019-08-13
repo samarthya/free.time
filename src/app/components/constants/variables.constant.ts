@@ -1,4 +1,4 @@
-import { IUserProfile } from 'src/app/models/user.model';
+import { IUserProfile } from '@free-time/models/user.model';
 
 export const MESSAGE = 'message';
 export const MAX_USER_LENGTH = 30;

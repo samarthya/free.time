@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { DUMMY_USER_PROFILE, Logger } from './components/index';
-import { IUserProfile } from './models/user.model';
+import { DUMMY_USER_PROFILE, Logger } from '@free-time/components/index';
+import { IUserProfile } from '@free-time/models/user.model';
 
 /**
  * Singleton instance for the login service.
