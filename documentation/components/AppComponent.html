@@ -92,7 +92,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>ft-root</code></td>
+                <td class="col-md-9"><code>app-root</code></td>
             </tr>
 
             <tr>
@@ -119,6 +119,54 @@
 </section>
 
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(logger: <a href="../injectables/Logger.html">Logger</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/Logger.html" target="_self" >Logger</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -131,18 +179,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Logger } from &#x27;./components&#x27;;
 
 /**
  * &lt;h2&gt;The angular-bootstrapped class&lt;/h2&gt;
  * &lt;p&gt;Every &lt;b&gt;root component&lt;/b&gt; connects Component Hierarchy with Page DOM.&lt;/p&gt;
  */
 @Component({
-  selector: &#x27;ft-root&#x27;,
+  selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.css&#x27;]
 })
-export class AppComponent {
 
+export class AppComponent {
+  constructor(private logger: Logger) {
+    this.logger.log(&#x27; AppComponent created.&#x27;);
+  }
 }
 </code></pre>
     </div>
@@ -198,7 +250,7 @@ export class AppComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!--The content below is only a placeholder and can be replaced.--><ft-navbar></ft-navbar><div class="container topMargin">  <!--    The RouterOutlet is a directive from the router library that is used like a component.    More information at: https://angular.io/guide/router#router-outlet  -->  <router-outlet></router-outlet>  <ft-footer></ft-footer></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'ft-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ThankyouComponent', 'selector': ''}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ThankyouComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

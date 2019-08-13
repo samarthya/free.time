@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/about/about.component.ts</code>
+    <code>src/app/components/about/about.component.ts</code>
 </p>
 
     <p class="comment">
@@ -193,7 +193,7 @@ the information is being
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/about/about.component.ts:55</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/components/about/about.component.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -271,7 +271,7 @@ a basic console logging service.</p>
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/about/about.component.ts:84</a></div>
+                            class="link-to-prism">src/app/components/about/about.component.ts:84</a></div>
                 </td>
             </tr>
 
@@ -316,7 +316,7 @@ a basic console logging service.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/about/about.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/about/about.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -352,7 +352,7 @@ the context.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/about/about.component.ts:70</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/components/about/about.component.ts:70</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -374,7 +374,7 @@ the context.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/about/about.component.ts:77</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/components/about/about.component.ts:77</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -424,8 +424,8 @@ the context.</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
-import { IProfile } from &#x27;../models/profiles.model&#x27;;
-import { Logger } from &#x27;../shared/index&#x27;;
+import { IProfile } from &#x27;../../models/profiles.model&#x27;;
+import { Logger } from &#x27;../log.service&#x27;;
 
 /**
  * &lt;h2&gt;About page component&lt;/h2&gt;
@@ -482,7 +482,7 @@ export class AboutComponent implements OnInit {
   /**
    * Basic initialization constructor that includes
    * a basic console logging service.
-   * @param logger {Logger} Logger service end point.
+   * @param logger Logger service end point.
    */
   constructor(private logger: Logger) {
     this.description &#x3D; &#x27;A short introduction to the about page, which can be moderated later&#x27;
@@ -562,7 +562,7 @@ export class AboutComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div>  <h1>About Us</h1>  <hr/>  <p>{{ descriptionStr }}</p>  <div class="card-deck">    <!-- NGFOR Structure directive.-->      <ft-person [profile]=ele *ngFor="let ele of profiles"></ft-person>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'ft-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ThankyouComponent', 'selector': ''}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'ErrorpageComponent', 'selector': 'app-errorpage'},{'name': 'FooterComponent', 'selector': 'ft-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'ft-navbar'},{'name': 'PersonComponent', 'selector': 'ft-person'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ThankyouComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AboutComponent'};
 </script>
