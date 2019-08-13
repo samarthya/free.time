@@ -1,10 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { Logger } from './components/index';
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IUserProfile, dummyUser } from './models/user.model';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { DUMMY_USER_PROFILE, Logger } from './components/index';
+import { IUserProfile } from './models/user.model';
 
+/**
+ * Singleton instance for the login service.
+ */
 @Injectable({
   providedIn: 'root'
 })
@@ -47,7 +50,7 @@ export class LoginService {
     );
   }
 
-  private getBasicHeader(userName: string, password: string) {
+  public getBasicHeader(userName: string, password: string) {
     const authorizationData: string = 'Basic ' + btoa(userName + ':' + password);
 
     return {
@@ -60,10 +63,20 @@ export class LoginService {
   }
 
   public loginUser(userName: string, password: string): Observable<IUserProfile> {
-    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(tap((user: IUserProfile) => {
-      console.log(' User logged in ' + user.user.email);
-    })).pipe(catchError(err => {
-      return of( dummyUser );
+    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(
+        tap((user: IUserProfile) => {
+        console.log(' User logged in ' + user.user.email);
+      })
+    ).pipe(catchError(err => {
+      // TODO: Handle the error properly.
+      return of( DUMMY_USER_PROFILE );
     }));
+  }
+
+  /**
+   * Returns the base login URL
+   */
+  public get baseURL(): string {
+    return this.baseLoginURL;
   }
 }

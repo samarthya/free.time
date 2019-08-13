@@ -69,6 +69,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
   ],
   providers: [
     Logger
+    /* Did not add a provider entry for login.service as the providedIn prop is set in @injectable. */
   ],
   /**
    * For browser specific functionality you need this module.
