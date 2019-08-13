@@ -6,8 +6,8 @@ import {
   Action
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import { AppState, initialAppState, getEmptyUser, State } from '../state/app.state';
-import * as LoginActions from '../components/actions/login.action';
+import { AppState, initialAppState, getEmptyUser, State } from '@free-time/state/app.state';
+import * as LoginActions from '@free-time/components/actions/login.action';
 
 /**
  * The login reducer

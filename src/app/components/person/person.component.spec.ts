@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PersonComponent } from './person.component';
+
 import { DebugElement, DebugNode } from '@angular/core';
-import { userProfile1 } from 'src/app/data/test/data.values';
+import { userProfile1 } from '@free-time/data/test/data.values';
 
 import { By } from '@angular/platform-browser';
 
-import { Logger } from '../log.service';
+import { Logger, PersonComponent } from '@free-time/components/index';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 

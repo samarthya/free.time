@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactComponent } from '@free-time/components/contact/contact.component';
-import { Logger } from '@free-time/components/log.service';
+import { ContactComponent, Logger } from '@free-time/components/index';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DebugElement } from '@angular/core';

@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Logger, RegisterComponent } from '@free-time/components/index';
 
-import { RegisterComponent } from './register.component';
+
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Logger } from '../log.service';
 
 describe('Component RegisterComponent', () => {
   let component: RegisterComponent;

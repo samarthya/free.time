@@ -1,4 +1,4 @@
-import { IProfile } from '../../models/profiles.model';
+import { IProfile } from '@free-time/models/profiles.model';
 
 export const userProfile1: IProfile = {
   title: 'Saurabh Sharma',
@@ -6,6 +6,6 @@ export const userProfile1: IProfile = {
   description: 'I am good engineer.',
   giturl: 'https://samarthya.github.io',
   imageUrl: '../../../assets/images/1.png',
-  linkedIn: 'https://www.linkedin.com/in/samarthyasaurabh'
-
+  linkedIn: 'https://www.linkedin.com/in/samarthyasaurabh',
 }
+

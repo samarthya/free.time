@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoginComponent } from './login.component';
-import { Logger } from '../log.service';
+import { reducer } from '@free-time/reducers';
+import { Logger, LoginComponent } from '@free-time/components/index';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from 'src/app/reducers';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DebugElement } from '@angular/core';

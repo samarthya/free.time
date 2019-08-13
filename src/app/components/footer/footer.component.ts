@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '../log.service';
+import { Logger } from '@free-time/components/index';
 
 /**
  * Footer component shall contain the basic links to the website and with the appropriate

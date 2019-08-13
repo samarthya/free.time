@@ -2,8 +2,8 @@ import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { Logger } from './components/index';
+import { AppComponent } from '@free-time/app.component';
+import { Logger } from '@free-time/components/index';
 
 
 describe('Component AppComponent', () => {

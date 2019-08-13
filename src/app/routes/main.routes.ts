@@ -3,7 +3,7 @@ import {
   ThankyouComponent, HomeComponent,
   AboutComponent, ContactComponent,
   LoginComponent, RegisterComponent,
-  ErrorpageComponent } from '../components/index';
+  ErrorpageComponent } from '@free-time/components/index';
 
 /**
  * Defines the routes for the main application.

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '../log.service';
+import { Logger } from '@free-time/components/index';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { MESSAGE } from '../constants/variables.constant';
+import { MESSAGE } from '@free-time/components/constants/variables.constant';
 
 @Component({
   templateUrl: './thankyou.component.html',

@@ -1,6 +1,6 @@
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { Logger } from '../log.service';
-import { MESSAGE } from '../constants/variables.constant';
+import { Logger } from '@free-time/components/index';
+import { MESSAGE } from '@free-time/components/constants/variables.constant';
 import { Injectable } from '@angular/core';
 
 @Injectable()

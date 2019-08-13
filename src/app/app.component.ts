@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Logger } from './components';
+import { Logger } from '@free-time/components/index';
 
 /**
  * <h2>The angular-bootstrapped class</h2>

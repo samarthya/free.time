@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { AboutComponent } from './about.component';
-
+import { AboutComponent, Logger } from '@free-time/components/index';
 import { PersonComponent } from '../person/person.component';
-import { Logger } from '../log.service';
-
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { DebugElement } from '@angular/core';

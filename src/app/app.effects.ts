@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, ROOT_EFFECTS_INIT } from '@ngrx/effects';
-import * as AppActions from './components/index';
-import { LoginService } from './login.service';
-import { IPrincipal } from './models/user.model';
+import * as AppActions from '@free-time/components/index';
+import { LoginService } from '@free-time/login.service';
+import { IPrincipal } from '@free-time/models/user.model';
 import { map, catchError, tap, exhaustMap } from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 
