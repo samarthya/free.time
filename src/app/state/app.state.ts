@@ -21,7 +21,7 @@ export interface AppState {
  */
 export interface State {
   state: AppState;
-
+}
 
 /**
  * Utility function to return the EMPTY user for the AppState
@@ -46,6 +46,7 @@ export function getEmptyState(): State {
     }
   };
 }
+
 export function getEmptyAppState(): AppState {
   return {
     userInfo: getEmptyUser(),
