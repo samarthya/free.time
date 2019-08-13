@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '@free-time/components/index';
+import { Logger } from '@free-time/components/log.service';
 
 /**
  * Error page component is a view that is meant for displaying error message for any

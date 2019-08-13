@@ -8,6 +8,7 @@ import {
 import { environment } from '../../environments/environment';
 import { AppState, initialAppState, getEmptyUser, State } from '@free-time/state/app.state';
 import * as LoginActions from '@free-time/components/actions/login.action';
+import * as fromRouter from '@ngrx/router-store';
 
 /**
  * The login reducer

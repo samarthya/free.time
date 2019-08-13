@@ -35,6 +35,7 @@ import {
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
@@ -96,7 +97,8 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    StoreRouterConnectingModule.forRoot()
   ],
 
   /**

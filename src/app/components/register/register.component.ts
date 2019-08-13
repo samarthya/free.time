@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserProfile } from '@free-time/models/user.model';
-import { Logger } from '@free-time/components/index';
+import { Logger } from '@free-time/components/log.service';
 
 /**
  * It allows user to be registered for the portal. The basic information expected is

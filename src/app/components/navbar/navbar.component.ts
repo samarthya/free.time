@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '@free-time/components/index';
+import { Logger } from '@free-time/components/log.service';
 
 import { Store } from '@ngrx/store';
 
