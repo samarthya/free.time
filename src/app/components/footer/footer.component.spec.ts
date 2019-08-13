@@ -4,7 +4,7 @@ import { FooterComponent } from './footer.component';
 import { Logger } from '../log.service';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+
 
 describe('Component FooterComponent', () => {
   let component: FooterComponent;
@@ -13,7 +13,7 @@ describe('Component FooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent, FaIconComponent],
+      declarations: [ FooterComponent],
       providers: [ Logger ],
       schemas: [NO_ERRORS_SCHEMA]
     })
