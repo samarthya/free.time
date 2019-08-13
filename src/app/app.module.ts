@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '@free-time/app.component';
 
 
 
@@ -11,16 +11,16 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from '@free-time/in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
 
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './app.effects';
+import { AppEffects } from '@free-time/app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { appRoutes } from './routes/main.routes';
+import { appRoutes } from '@free-time/routes/main.routes';
 
 import {
   AboutComponent, ContactComponent,
@@ -28,7 +28,7 @@ import {
   ErrorpageComponent, PersonComponent,
   NavbarComponent, ThankyouComponent,
   FooterComponent, LoginComponent,
-  RegisterComponent } from '../app/components/index';
+  RegisterComponent } from '@free-time/components/index';
 
 
 
@@ -69,6 +69,7 @@ import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@
   ],
   providers: [
     Logger
+    /* Did not add a provider entry for login.service as the providedIn prop is set in @injectable. */
   ],
   /**
    * For browser specific functionality you need this module.

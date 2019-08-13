@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Logger } from '../log.service';
+import { Logger } from '@free-time/components/index';
 
 /**
  * A basic component that shall have a background image (which we will generalize away from CSS)

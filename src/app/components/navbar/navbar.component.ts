@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '../log.service';
+import { Logger } from '@free-time/components/index';
 
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
-import { State, AppState } from 'src/app/state/app.state';
-import { IPrincipal } from 'src/app/models/user.model';
+import { State, AppState } from '@free-time/state/app.state';
+import { IPrincipal } from '@free-time/models/user.model';
 
 /**
  * Navigation component that holds the navigation links,

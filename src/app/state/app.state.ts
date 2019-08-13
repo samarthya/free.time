@@ -1,4 +1,5 @@
-import { IPrincipal } from '../models/user.model';
+import { IPrincipal } from '@free-time/models/user.model';
+import { createSelector } from '@ngrx/store';
 
 /**
  * Representation of application state.
@@ -45,10 +46,11 @@ export function getEmptyState(): State {
     }
   };
 }
+
 export function getEmptyAppState(): AppState {
   return {
-      userInfo: getEmptyUser(),
-      loggedIn: false
+    userInfo: getEmptyUser(),
+    loggedIn: false
   };
 }
 
@@ -57,5 +59,10 @@ export const initialState: State = getEmptyState();
 
 
 /**
- * Seelctors
+ * Selectors
  */
+
+export const selectAppStateFromState = (state: State): AppState => state.state;
+// export const selectUserInfomationFromState = (state: AppState): IPrincipal => state.userInfo;
+
+export const selectUserInfomationFromState = createSelector(selectAppStateFromState, (appState) => appState.userInfo);
