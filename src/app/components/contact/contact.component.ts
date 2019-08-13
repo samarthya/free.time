@@ -67,6 +67,7 @@ export class ContactComponent implements OnInit {
     this.comment.reset();
     this.contactForm.reset();
   }
+
   /**
    * A declarative way of validating the Name is supplied and is correct to apply CSS using
    * ngClass.

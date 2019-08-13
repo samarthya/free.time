@@ -22,13 +22,7 @@ describe('LoginComponent', () => {
   let spyOnPasswordValid: any;
 
   beforeEach(async(() => {
-    mockActivatedRoute = {
-      snapshot: {
-        queryParams: {
-          message: 'An attempt to login.'
-        }
-      }
-    };
+    mockActivatedRoute = {};
 
     mockRouteService = jasmine.createSpyObj(['navigate']);
 
@@ -60,17 +54,17 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the login-component', () => {
+  it(' Should create the login-component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should check if the Username, Password and the sign-in tabs are present.', () => {
+  it(' Should check if the Username, Password and the sign-in tabs are present.', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(1);
   });
 
-  it('should check the UserName and Password validations.', () => {
+  it(' Should check the UserName and Password validations.', () => {
     expect(component.formLogin.get('username').valid).toBeFalsy();
     expect(component.formLogin.get('password').valid).toBeFalsy();
 
@@ -78,13 +72,13 @@ describe('LoginComponent', () => {
     expect(component.formLogin.get('username').hasError('required')).toBeTruthy();
   });
 
-  it(' should check length of username', () => {
+  it(' Should check length of username', () => {
     component.formLogin.get('username').setValue('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX');
     expect(component.formLogin.get('username').hasError('maxlength')).toBeTruthy();
     expect(component.formLogin.valid).toBeFalsy();
   });
 
-  it(' should check when sign-in is clicked.', () => {
+  it(' Should check when sign-in is clicked.', () => {
     spyOn(component, 'doLogin').and.callThrough();
 
     const signinButton = debugElement.query(By.css('[type=\'submit\''));
@@ -95,13 +89,16 @@ describe('LoginComponent', () => {
     console.log(username.nativeElement.dispatchEvent(new Event('blur')));
     console.log(password.nativeElement.dispatchEvent(new Event('blur')));
 
+    console.log(username.nativeElement.dispatchEvent(new Event('click')));
+    console.log(password.nativeElement.dispatchEvent(new Event('click')));
+
     component.formLogin.get('username').setValue('bhawnabhardwaj@123.com');
     component.formLogin.get('password').setValue('xyz@123');
 
     fixture.detectChanges();
 
     // signinButton.triggerEventHandler('ngSubmit', null);
-    formContact.triggerEventHandler('submit', {});
+    formContact.triggerEventHandler('ngSubmit', {});
 
     expect(component.formLogin.valid).toBeTruthy();
     expect(component.doLogin).toHaveBeenCalled();
