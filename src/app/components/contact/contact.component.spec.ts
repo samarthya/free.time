@@ -159,7 +159,7 @@ describe('Component ContactComponent', () => {
     expect(component.onSubmission).toHaveBeenCalled();
   });
 
-  it( ' Check for the form reset.', () => {
+  it( ' should check for the form reset.', () => {
     spyOn(component, 'onReset').and.callThrough();
     const submitButton = debugElement.query(By.css('[type=\'button\''));
     submitButton.triggerEventHandler('click', null);

@@ -159,12 +159,13 @@ Always provide comment to any changes that you shall commit.
 ```bash
 git commit -m "Added some basic components and guidelines"
 ```
+
 In case your code gets dirty with your changes:
 Get the updated code from repo and then apply your changes to it, for storing your changes use stashing:
+
 1) git stash (This will save your  locally)
 2) git pull origin (This will pull the latest code from repo)
 3) git stash apply (This will apply the latest stash)
-
 
 ## What are we building & why
 
