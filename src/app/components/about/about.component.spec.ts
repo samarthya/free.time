@@ -5,7 +5,7 @@ import { PersonComponent } from '../person/person.component';
 import { Logger } from '../log.service';
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
+
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
@@ -13,6 +13,7 @@ describe('Component AboutComponent', () => {
   let component: AboutComponent;
   let fixture: ComponentFixture<AboutComponent>;
   let debugElement: DebugElement;
+
   let spyOnDescriptionSet: any;
   let spyOnDescriptionGet: any;
   let originalContent: string;
@@ -22,21 +23,32 @@ describe('Component AboutComponent', () => {
    */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent, PersonComponent, FaIconComponent ],
-      providers: [Logger]
+      declarations: [
+        AboutComponent,
+        PersonComponent
+      ],
+      providers: [
+        Logger
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
+    // Component creation.
     fixture = TestBed.createComponent(AboutComponent);
+
+    // Arrange
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
     originalContent = component.descriptionStr;
 
+    // Act
     spyOnDescriptionSet = spyOnProperty(component, 'descriptionStr', 'set').and.callThrough();
-    spyOnDescriptionGet = spyOnProperty(component, 'descriptionStr', 'get').and.returnValue('should change the description');
-
+    spyOnDescriptionGet = spyOnProperty(component, 'descriptionStr', 'get').and.callThrough();
     fixture.detectChanges();
   });
 
@@ -44,15 +56,15 @@ describe('Component AboutComponent', () => {
 
 
   it('Check for description value and did the getter function get called. (Using mock value)', () => {
-
-    expect(component.descriptionStr).toContain('should change the description');
+    // Assert
     expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).not.toBeNull();
     expect(spyOnDescriptionGet).toHaveBeenCalled();
   });
 
   it('Check for description value in the DOM element.', () => {
+    component.descriptionStr = 'should change the description';
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).toContain(originalContent);
+    expect(component.descriptionStr).toContain('should change the description');
   });
 
   it('Check for the Description P and setter', () => {
@@ -61,7 +73,6 @@ describe('Component AboutComponent', () => {
 
     expect(spyOnDescriptionSet).toHaveBeenCalled();
     expect(fixture.nativeElement.querySelectorAll('p')[0].textContent).toContain('Change value');
-    expect(true).toBeTruthy();
   });
 
   it('Check for the child component DOM is present, by checking the child element count.', () => {

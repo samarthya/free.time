@@ -7,6 +7,7 @@ import * as AppActions from '../actions/login.action';
 
 import { Observable } from 'rxjs';
 import { State } from 'src/app/state/app.state';
+import { MAX_USER_LENGTH } from '../constants/variables.constant';
 
 /**
  * Login component
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   formLogin: FormGroup;
 
   constructor(private logger: Logger, private store: Store<State>) {
-  this.username = new FormControl('', [Validators.required,Validators.maxLength(30)]);
+  this.username = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(MAX_USER_LENGTH)]);
   this.password = new FormControl('', [Validators.required]);
 
   this.formLogin = new FormGroup({
@@ -43,8 +44,8 @@ export class LoginComponent implements OnInit {
   /**
    * Fires the login event.
    */
-  doLogin(): void {
-    this.logger.log(' Login invoked. ');
+  public doLogin(): void {
+    this.logger.log(' doLogin() invoked. ');
 
     const principal: IPrincipal = {
       email: this.username.value,
@@ -56,7 +57,7 @@ export class LoginComponent implements OnInit {
 
   public isUsernameValid(): boolean {
     const username: AbstractControl = this.formLogin.get('username');
-    if(username.touched) {
+    if ( username.touched ) {
       return username.invalid;
     } else {
       return false;
@@ -65,12 +66,12 @@ export class LoginComponent implements OnInit {
 
   public isPasswordValid(): boolean {
     const password: AbstractControl = this.formLogin.get('password');
-    if(password.touched) {
+    if ( password.touched ) {
       return password.invalid;
     } else {
       return false;
     }
-  }  
+  }
 
 }
 
