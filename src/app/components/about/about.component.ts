@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IProfile } from '@free-time/models/profiles.model';
-import { Logger } from '@free-time/components/index';
+import { Logger } from '@free-time/components/log.service';
 
 /**
  * <h2>About page component</h2>
@@ -18,7 +18,7 @@ import { Logger } from '@free-time/components/index';
 export class AboutComponent implements OnInit {
 
   /**
-   * It is a static string variable that is initalized with basic information about
+ * It is a static string variable that is initalized with basic information about
    * the context.
    */
   private description: string;

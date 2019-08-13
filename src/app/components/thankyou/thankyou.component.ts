@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Logger } from '@free-time/components/index';
+import { Logger } from '@free-time/components/log.service';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
