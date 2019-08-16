@@ -32,9 +32,9 @@ import {
 
 
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+// import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 /**
  * <p>
@@ -111,12 +111,12 @@ export class AppModule {
 
   constructor(private logger: Logger) {
     this.logger.log(' AppModule initialised.');
-    library.add(
-      faTwitter, faLinkedin,
-      faGit, faBlogger, faThumbsUp,
-      faThumbsDown, faAnchor, faSignInAlt,
-      faFacebook, faGoogle,
-      faSignOutAlt);
+    // library.add(
+    //   faTwitter, faLinkedin,
+    //   faGit, faBlogger, faThumbsUp,
+    //   faThumbsDown, faAnchor, faSignInAlt,
+    //   faFacebook, faGoogle,
+    //   faSignOutAlt);
   }
 }
 

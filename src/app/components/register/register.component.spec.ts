@@ -4,6 +4,7 @@ import { Logger, RegisterComponent } from '@free-time/components/index';
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Component RegisterComponent', () => {
   let component: RegisterComponent;
@@ -11,7 +12,7 @@ describe('Component RegisterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [FormsModule, HttpClientTestingModule],
       providers: [Logger],
       declarations: [ RegisterComponent],
       schemas: [NO_ERRORS_SCHEMA]

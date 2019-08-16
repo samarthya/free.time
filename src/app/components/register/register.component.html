@@ -80,4 +80,8 @@
     </form>
   </div>
   {{user | json}}
+  <div>
+    <input type="button" value="ZenCall" (click)="callGitZen()">
+    <span class="d-block" *ngIf="config != null"> {{ config }}</span>
+  </div>
 </div>

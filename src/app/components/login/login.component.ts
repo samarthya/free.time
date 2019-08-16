@@ -8,7 +8,7 @@ import * as AppActions from '../actions/login.action';
 import { Observable } from 'rxjs';
 import { State } from 'src/app/state/app.state';
 import { MAX_USER_LENGTH } from '../constants/variables.constant';
-
+import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
 /**
  * Login component
  * Add some more description.
@@ -24,9 +24,14 @@ export class LoginComponent implements OnInit {
   username: FormControl;
   password: FormControl;
   formLogin: FormGroup;
+  faFacebook = faFacebook;
+  faGoogle = faGoogle;
 
   constructor(private logger: Logger, private store: Store<State>) {
-  this.username = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(MAX_USER_LENGTH)]);
+  this.username = new FormControl('', [
+                                  Validators.required,
+                                  Validators.email,
+                                  Validators.maxLength(MAX_USER_LENGTH)]);
   this.password = new FormControl('', [Validators.required]);
 
   this.formLogin = new FormGroup({
@@ -55,23 +60,18 @@ export class LoginComponent implements OnInit {
     this.store.dispatch(AppActions.login({ principal }));
   }
 
+  public isFormValid(): boolean {
+    return this.formLogin.valid;
+  }
+
   public isUsernameValid(): boolean {
     const username: AbstractControl = this.formLogin.get('username');
-    if ( username.touched ) {
-      return username.invalid;
-    } else {
-      return false;
-    }
+    return username.valid;
   }
 
   public isPasswordValid(): boolean {
     const password: AbstractControl = this.formLogin.get('password');
-    if ( password.touched ) {
-      return password.invalid;
-    } else {
-      return false;
-    }
+    return password.valid;
   }
-
 }
 

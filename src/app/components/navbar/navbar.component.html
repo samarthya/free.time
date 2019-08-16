@@ -40,14 +40,25 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
-    <a class="d-lg-inline mr-2 nav-link" href="#" tabindex="-1" aria-disabled="false" [routerLink]="['/login']">
-      <div *ngIf="userLoggedIn">
-          <fa-icon [icon]="['fas', 'sign-out-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="userLoggedIn()"></fa-icon>
-          <div *ngIf="userLoggedIn()">Welcome {{getUserEmail()!}}</div>
-          <!-- Can show a welcome message as well. -->
+    <div class="d-lg-inline nav-link mr-2 ml-n2" aria-disabled="false">
+      <a class="" [routerLink]="['/login']">
+        <fa-icon [icon]="faSignin" size="2x" class="d-sm-block" *ngIf="!userLoggedIn()"></fa-icon>
+      </a>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" *ngIf="userLoggedIn()">
+          <div *ngIf="userLoggedIn()"class="badge badge-primary">{{ getUserEmail()! }}</div>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#" [routerLink]="['/logout']">
+            <fa-icon [icon]="faSignout" class="mr-2" *ngIf="userLoggedIn()">
+            </fa-icon>
+          </a>
+          <a class="dropdown-item" href="#">Edit profile</a>
+        </div>
       </div>
-      <fa-icon [icon]="['fas', 'sign-in-alt']" size="2x" class="mr-2" class="d-none d-sm-block" *ngIf="!userLoggedIn()"></fa-icon>
-    </a>
+    </div>
 
   </div>
 </nav>

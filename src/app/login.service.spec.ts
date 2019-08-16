@@ -5,6 +5,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Logger, DUMMY_USER_PROFILE } from './components';
 import { IUserProfile } from './models/user.model';
 import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe(' Login service tests', () => {
   let loginService: LoginService;
@@ -15,7 +16,8 @@ describe(' Login service tests', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ HttpClientTestingModule ],
-      providers: [ Logger, LoginService ]
+      providers: [ Logger, LoginService ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
 
     httpClient = TestBed.get(HttpClient);
