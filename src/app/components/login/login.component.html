@@ -3,15 +3,17 @@
     <div class="card-img-overlay mx-auto">
       <div class="card border-secondary d-flex mx-md-auto ml-sm-0 boxSize" style="width: 20rem;">
         <div class="card-body cardLogin">
-          <div>
-            <span class="mx-auto">Sign In With</span>
-            <a href="#" class="btn">
-              <fa-icon [icon]="faFacebook" size="2x"></fa-icon>
-            </a>
-            <a href="#" class="btn">
-              <fa-icon [icon]="faGoogle" size="2x"></fa-icon>
-            </a>
-          </div>
+
+
+              <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group" role="group" aria-label="First group">
+                      <a href=""><fa-icon [icon]="faFacebook" size="2x" class="btn btn-sm"></fa-icon></a>
+                      <a href=""><fa-icon [icon]="faGit" size="2x" class="btn btn-sm"></fa-icon></a>
+                      <a href=""><fa-icon [icon]="faGoogle" size="2x" class="btn btn-sm"></fa-icon></a>
+                  </div>
+              </div>
+
+
           <hr />
           <form [formGroup]="formLogin" (ngSubmit)="doLogin()" >
             <div class="card-text">

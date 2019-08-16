@@ -8,7 +8,7 @@ import * as AppActions from '../actions/login.action';
 import { Observable } from 'rxjs';
 import { State } from 'src/app/state/app.state';
 import { MAX_USER_LENGTH } from '../constants/variables.constant';
-import {faFacebook, faGoogle} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faGoogle, faGit} from '@fortawesome/free-brands-svg-icons';
 /**
  * Login component
  * Add some more description.
@@ -24,8 +24,13 @@ export class LoginComponent implements OnInit {
   username: FormControl;
   password: FormControl;
   formLogin: FormGroup;
+
+  /**
+   * Using icons.
+   */
   faFacebook = faFacebook;
   faGoogle = faGoogle;
+  faGit = faGit;
 
   constructor(private logger: Logger, private store: Store<State>) {
   this.username = new FormControl('', [
