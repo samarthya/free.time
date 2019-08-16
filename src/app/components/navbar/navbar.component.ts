@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { State, AppState } from '@free-time/state/app.state';
 import { IPrincipal } from '@free-time/models/user.model';
-
+import {faSignInAlt, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 /**
  * Navigation component that holds the navigation links,
  * brand icon and other information to guide the navigation.
@@ -21,6 +21,8 @@ export class NavbarComponent implements OnInit {
   private currentUser$: Observable<AppState> = this.store.select(state => state.state );
   private loggedInUser: IPrincipal;
 
+  faSignin = faSignInAlt;
+  faSignout = faSignOutAlt;
 
   constructor(private logger: Logger, private store: Store<State>) {
     this.loggedInUser = null;

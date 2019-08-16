@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserProfile } from '@free-time/models/user.model';
 import { Logger } from '@free-time/components/log.service';
+import { GitService } from '@free-time/components/git.service';
 
 /**
  * It allows user to be registered for the portal. The basic information expected is
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
     this.userP = user;
   }
 
-  constructor(private logger: Logger) {
+  constructor(private logger: Logger, private gitService: GitService) {
   }
 
   ngOnInit() {
@@ -71,5 +72,13 @@ export class RegisterComponent implements OnInit {
   }
   public set confirmPassword(value: string) {
     this.passwordConfirm = value;
+  }
+
+  public config: string = '';
+
+  public callGitZen() {
+    this.gitService.getZen().subscribe( response => {
+      this.config = response;
+    });
   }
 }

@@ -11,6 +11,7 @@ export * from './person/person.component';
 export * from './register/register.component';
 export * from './thankyou/thankyou.component';
 export * from './log.service';
+
 /**
  * Barrel file.
  */

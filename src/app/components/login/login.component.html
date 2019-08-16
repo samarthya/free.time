@@ -1,41 +1,42 @@
 <div class="card bg-dark text-white">
-  <img class="card-img" src="./assets/images/learn_together.jpeg" alt="Card image">
-  <div class="card-img-overlay mx-auto">
-    <div class="card border-secondary d-flex mx-md-auto ml-sm-0 boxSize" style="width: 25rem; margin-top: 140px">
-      <div class="card-body cardLogin" style="color:red">
-        <div>
-          <span class="mx-auto" style="color:black">Sign In With</span>
+    <img class="card-img" src="./assets/images/learn_together.jpeg" alt="Card image">
+    <div class="card-img-overlay mx-auto">
+      <div class="card border-secondary d-flex mx-md-auto ml-sm-0 boxSize" style="width: 20rem;">
+        <div class="card-body cardLogin">
 
-          <a href="#" class="btn">
-            <fa-icon [icon]="['fa', 'fa-facebook']" size="2x"></fa-icon>
-          </a>
-          <a href="#" class="btn">
-            <fa-icon [icon]="['fab', 'google']" size="2x"></fa-icon>
-          </a>
+
+              <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                  <div class="btn-group" role="group" aria-label="First group">
+                      <a href=""><fa-icon [icon]="faFacebook" size="2x" class="btn btn-sm"></fa-icon></a>
+                      <a href=""><fa-icon [icon]="faGit" size="2x" class="btn btn-sm"></fa-icon></a>
+                      <a href=""><fa-icon [icon]="faGoogle" size="2x" class="btn btn-sm"></fa-icon></a>
+                  </div>
+              </div>
+
+
+          <hr />
+          <form [formGroup]="formLogin" (ngSubmit)="doLogin()" >
+            <div class="card-text">
+              <div class="form-group d-block d-sm-inline">
+                <input type="email" name="username" formControlName="username" class="form-control" id="username" aria-describedby="usernameHelp"
+                  placeholder="Username: Email" [ngClass]="{ 'errorInput': !isUsernameValid()}" required>
+                <small id="usernameHelp" class="form-text text-muted d-none d-md-block">The unique username provided to
+                  you.</small>
+              </div>
+              <div class="form-group d-block d-sm-inline">
+                <input type="password" name="password" formControlName="password" class="form-control" id="inputPassword" placeholder="Password"
+                  aria-describedby="passwordHelp" required [ngClass]="{ 'errorInput': !isPasswordValid()}">
+                <small id="passwordHelp" class="form-text text-muted d-none d-md-block">Your secure password.</small>
+              </div>
+            </div>
+
+              <div class="inlineD">
+                <a id="exampleCheck1" href=""><small>Forgot password?</small></a>
+              </div>
+              <div class="inlineD dx-sm-auto">
+                <button type="submit" class="btn btn-primary" [disabled]="!isFormValid()">Submit</button>
+              </div>
+          </form>
         </div>
-        <hr />
-        <form (ngSubmit)="doLogin()" [formGroup]="formLogin">
-          <div class="card-text">
-            <div class="form-group d-block d-sm-inline">
-              <input type="email" #username name="username" formControlName="username" placeholder="Username" required
-                aria-describedby="usernameHelp" [ngClass]="{ 'errorInput': isUsernameValid()} " />
-              <small id="usernameHelp" class="form-text text-muted d-none d-md-block">The unique username provided to
-                you.</small>
-            </div>
-            <div class="form-group d-block d-sm-inline">
-              <input type="password" #password name="password" formControlName="password" placeholder="Password"
-                aria-describedby="passwordHelp" [ngClass]="{ 'errorInput': isPasswordValid()} " />
-              <small id="passwordHelp" class="form-text text-muted d-none d-md-block">Your secure password.</small>
-            </div>
-          </div>
-
-          <div class="inlineD">
-            <a id="exampleCheck1" href=""><small>Forgot password?</small></a>
-          </div>
-          <div class="inlineD dx-sm-auto">
-            <button type="submit" value="submit" class="btn btn-primary" [disabled]="!formLogin.valid">Submit</button>
-          </div>
-        </form>
       </div>
     </div>
-  </div>
