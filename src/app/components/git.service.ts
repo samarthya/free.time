@@ -15,7 +15,7 @@ import { tap, catchError } from 'rxjs/operators';
 export class GitService {
 
   private baseGitURL = 'zen';
-  private zen = 'zen';
+
   constructor(private http: HttpClient, private logger: Logger) {
 
   }
@@ -24,9 +24,8 @@ export class GitService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'text/html,application/xhtml+xml,application/xml',
-      // tslint:disable-next-line: max-line-length
-      'User-Agent': 'my agent'
+      'Content-Type':  'text/html,application/xhtml,application/xml',
+      'User-Agent': 'Firefox'
     }),
     reportProgress: true,
     responseType: 'text' as 'json'
