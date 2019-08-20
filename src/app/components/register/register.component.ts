@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUserProfile } from '@free-time/models/user.model';
 import { Logger } from '@free-time/components/log.service';
 import { GitService } from '@free-time/components/git.service';
-
+import { faGoogle, faGit } from '@fortawesome/free-brands-svg-icons';
 /**
  * It allows user to be registered for the portal. The basic information expected is
  * <code>
@@ -18,6 +18,10 @@ import { GitService } from '@free-time/components/git.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  public config: string;
+
+  faGoogle = faGoogle;
+  faGit = faGit;
 
   private userP: IUserProfile = {
     user: {
@@ -55,7 +59,7 @@ export class RegisterComponent implements OnInit {
   }
 
   isPasswordValid(): boolean {
-    const p1: string =  this.userP.user.password;
+    const p1: string = this.userP.user.password;
     const p2: string = this.confirmPassword;
     if (p1 != null && p2 != null) {
       if (p1.length !== 0 && p2.length !== 0) {
@@ -74,10 +78,8 @@ export class RegisterComponent implements OnInit {
     this.passwordConfirm = value;
   }
 
-  public config: string = '';
-
   public callGitZen() {
-    this.gitService.getZen().subscribe( response => {
+    this.gitService.getZen().subscribe(response => {
       this.config = response;
     });
   }

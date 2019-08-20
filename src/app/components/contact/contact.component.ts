@@ -61,7 +61,7 @@ export class ContactComponent implements OnInit {
   /**
    * Resets the contact form.
    */
-  public onReset($event: Event): void {
+  public onReset(): void {
     this.name.reset();
     this.email.reset();
     this.comment.reset();

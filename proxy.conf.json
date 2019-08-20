@@ -1,6 +1,6 @@
 {
   "/zen": {
-    "target": "https://api.github.com/",
+    "target": "http://api.github.com",
     "secure": true,
     "logLevel": "debug",
     "changeOrigin": true
