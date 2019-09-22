@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '../log.service';
-import { Store } from '@ngrx/store';
-import { IPrincipal } from 'src/app/models/user.model';
+import { Store, select } from '@ngrx/store';
+import { IPrincipal, IUserProfile } from 'src/app/models/user.model';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import * as AppActions from '../actions/login.action';
+import * as appActions from '../actions/login.action';
 
-import { Observable } from 'rxjs';
-import { State } from 'src/app/state/app.state';
+import { Observable, of } from 'rxjs';
 import { MAX_USER_LENGTH } from '../constants/variables.constant';
 import {faFacebook, faGoogle, faGit} from '@fortawesome/free-brands-svg-icons';
+import { map } from 'rxjs/operators';
+
+import * as fromStore from '@free-time/state/index';
+import * as fromAuthState from '@free-time/state/auth.state';
+
 /**
  * Login component
  * Add some more description.
@@ -18,9 +22,10 @@ import {faFacebook, faGoogle, faGit} from '@fortawesome/free-brands-svg-icons';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
-  private currentUser$: Observable<State>;
+  private currentUser$: Observable<IUserProfile>;
   username: FormControl;
   password: FormControl;
   formLogin: FormGroup;
@@ -32,23 +37,37 @@ export class LoginComponent implements OnInit {
   faGoogle = faGoogle;
   faGit = faGit;
 
-  constructor(private logger: Logger, private store: Store<State>) {
-  this.username = new FormControl('', [
+
+  /**
+   * Constructor for the application.
+   * @param logger 
+   * @param store 
+   */
+  constructor(
+    private logger: Logger, 
+    private store: Store<fromStore.State>) {
+      this.logger.log(' Login Component - Constructor');
+      this.username = new FormControl('', [
                                   Validators.required,
                                   Validators.email,
                                   Validators.maxLength(MAX_USER_LENGTH)]);
-  this.password = new FormControl('', [Validators.required]);
+      this.password = new FormControl('', [Validators.required]);
 
-  this.formLogin = new FormGroup({
-    username: this.username,
-    password: this.password
-  });
-
+      this.formLogin = new FormGroup({
+        username: this.username,
+        password: this.password
+      });
   }
 
+  /**
+   * The NgInit
+   */
   ngOnInit() {
     this.logger.log(' ngOnInit called for LoginComponent.');
-    this.currentUser$ = this.store.select(state => state);
+    this.currentUser$ = this.store.pipe(select(fromStore.getUserProfile));
+    this.currentUser$.subscribe( iP => {
+      console.log('This is the detail I got ' + JSON.stringify(iP));
+    });
   }
 
   /**
@@ -57,12 +76,15 @@ export class LoginComponent implements OnInit {
   public doLogin(): void {
     this.logger.log(' doLogin() invoked. ');
 
-    const principal: IPrincipal = {
+    const userPrincipal: IPrincipal = {
       email: this.username.value,
       password: this.password.value
     };
 
-    this.store.dispatch(AppActions.login({ principal }));
+    /**
+     * Dispatch the action.
+     */
+    this.store.dispatch(appActions.login({ principal: userPrincipal }));
   }
 
   public isFormValid(): boolean {

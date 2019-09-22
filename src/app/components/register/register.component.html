@@ -1,5 +1,8 @@
 <!-- Deliberately no user identifiable information has been put. -->
 <div class="">
+  <div class="container" *ngIf="loggedIn !=false">
+    Welcome {{user.user.email}}!
+  </div>
   <img id="profilePic" src="https://via.placeholder.com/80" class="img-thumbnail d-none d-md-block imgSize mb-2">
   <div class="d-flex bd-highlight">
     <form #registerUser="ngForm" action="" class="form-group">
@@ -23,7 +26,7 @@
       </div>
 
       <!-- Password and confirm password -->
-      <div class="form-group pt-2">
+      <div class="form-group pt-2" *ngIf="loggedIn === false">
         <label for="inputPassword" class="pt-2">Password</label>
         <input type="password" name="password" class="form-control" id="inputPassword1" [(ngModel)]="user.user.password" placeholder="Password">
         <label for="inputPassword" class="pt-2">Confirm</label>
@@ -31,7 +34,7 @@
       </div>
 
       <!-- Profile Image -->
-      <div class="form-group">
+      <div class="form-group" *ngIf="loggedIn === false">
         <label for="imageFile">Please select a profile pic</label>
         <input type="file" class="form-control-file" id="imageFile" name="imageUrl" [(ngModel)]="user.profile.imageUrl">
       </div>
@@ -46,8 +49,6 @@
         <input readonly type="text" class="form-control" aria-label="Text input with checkbox"
           value="Do you wish to subscribe to our newsletter?" id="newsLetter" name="labelSubscription">
       </div>
-
-
 
       <!-- About you. -->
       <div class="input-group my-2">

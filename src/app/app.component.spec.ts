@@ -4,13 +4,26 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from '@free-time/app.component';
 import { Logger } from '@free-time/components/index';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Store } from '@ngrx/store';
+import { State } from '@free-time/state';
 
 
 describe('Component AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
+  
+  let store: MockStore<{ userState: {
+    loggedIn: false,
+    userProfile: undefined
+  } }>;
+
   let debugElement: DebugElement;
 
+  const initialState = { userState: {
+    loggedIn: false,
+    userProfile: undefined
+  } };
 
   beforeEach(async(() => {
     /**
@@ -21,7 +34,10 @@ describe('Component AppComponent', () => {
       declarations: [
         AppComponent,
       ],
-      providers: [Logger],
+      providers: [
+        Logger, 
+        provideMockStore({ initialState })
+      ],
       schemas: [
         NO_ERRORS_SCHEMA
       ]
@@ -32,6 +48,8 @@ describe('Component AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement.componentInstance;
+
+    store = TestBed.get<Store<State>>(Store);
 
     fixture.detectChanges();
   });

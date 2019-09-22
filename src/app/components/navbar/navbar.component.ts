@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from '@free-time/components/log.service';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
-import { State, AppState } from '@free-time/state/app.state';
-import { IPrincipal } from '@free-time/models/user.model';
+
+import { IPrincipal, IUserProfile } from '@free-time/models/user.model';
 import {faSignInAlt, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import { map } from 'rxjs/operators';
+
+import * as fromStore from '@free-time/state/index';
+import * as fromAuth from '@free-time/state/auth.state';
+
 /**
  * Navigation component that holds the navigation links,
  * brand icon and other information to guide the navigation.
@@ -18,26 +23,23 @@ import {faSignInAlt, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
 
-  private currentUser$: Observable<AppState> = this.store.select(state => state.state );
+  private currentUser$: Observable<IUserProfile>;
   private loggedInUser: IPrincipal;
 
   faSignin = faSignInAlt;
   faSignout = faSignOutAlt;
 
-  constructor(private logger: Logger, private store: Store<State>) {
+  constructor(private logger: Logger, private store: Store<fromStore.State>) {
     this.loggedInUser = null;
+    this.currentUser$ = this.store.pipe(select(fromStore.getUserProfile));
+    this.currentUser$.subscribe((user: IUserProfile) => {
+      this.loggedInUser = user.user;
+      this.logger.log('Welcome ' + this.loggedInUser.email);
+    });
   }
 
   ngOnInit() {
     this.logger.log(' ngOnInit for NavBarComponent called.');
-    this.currentUser$.subscribe((userInfo: AppState) => {
-
-      if (userInfo.loggedIn) {
-        this.loggedInUser = userInfo.userInfo;
-        this.logger.log('Welcome ' + this.loggedInUser.email);
-      }
-    });
-
   }
 
   /**

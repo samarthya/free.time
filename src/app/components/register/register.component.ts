@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { faGoogle, faGit } from '@fortawesome/free-brands-svg-icons';
+
 import { IUserProfile } from '@free-time/models/user.model';
 import { Logger } from '@free-time/components/log.service';
 import { GitService } from '@free-time/components/git.service';
-import { faGoogle, faGit } from '@fortawesome/free-brands-svg-icons';
+import * as fromState from '@free-time/state/index';
+import * as fromAuth from '@free-time/state/auth.state';
+import * as fromConstants from '@free-time/components/constants/variables.constant';
 /**
  * It allows user to be registered for the portal. The basic information expected is
  * <code>
@@ -18,28 +25,16 @@ import { faGoogle, faGit } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  private currentState$: Observable<fromAuth.ActiveUserState>;
+  
+  public loggedIn: boolean;
   public config: string;
+  public editMode: boolean;
 
   faGoogle = faGoogle;
   faGit = faGit;
 
-  private userP: IUserProfile = {
-    user: {
-      email: '',
-      password: '',
-    },
-    profile: {
-      name: '',
-      lastName: '',
-      imageUrl: '',
-    },
-    details: {
-      subscribeToEmail: 0,
-      gitProfile: '',
-      googleProfile: '',
-      description: ''
-    }
-  };
+  private userP: IUserProfile = fromConstants.BLANK_USER_PROFILE;
 
   private passwordConfirm: string;
 
@@ -51,11 +46,26 @@ export class RegisterComponent implements OnInit {
     this.userP = user;
   }
 
-  constructor(private logger: Logger, private gitService: GitService) {
+  /**
+   * 
+   * @param logger Logger information.
+   * @param gitService 
+   * @param store 
+   */
+  constructor(private logger: Logger,
+    private gitService: GitService,
+    private store: Store<fromState.State>) {
+    this.editMode = false;
+
+    this.currentState$ = this.store.pipe(select(fromState.selectActiveUserState));
   }
 
   ngOnInit() {
     this.logger.log(' Register ngOnInit called');
+    this.currentState$.subscribe(state => {
+      this.userP = state.userProfile;
+      this.loggedIn = state.loggedIn;
+    });
   }
 
   isPasswordValid(): boolean {

@@ -51,11 +51,11 @@
           <div *ngIf="userLoggedIn()"class="badge badge-primary">{{ getUserEmail()! }}</div>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#" [routerLink]="['/logout']">
+          <a class="dropdown-item" [routerLink]="['/logout']">
             <fa-icon [icon]="faSignout" class="mr-2" *ngIf="userLoggedIn()">
             </fa-icon>
           </a>
-          <a class="dropdown-item" href="#">Edit profile</a>
+          <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
         </div>
       </div>
     </div>

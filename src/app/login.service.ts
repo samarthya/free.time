@@ -62,6 +62,10 @@ export class LoginService {
 
   }
 
+  public isAuthorized(): Observable<IUserProfile> {
+    return null;
+  }
+
   public loginUser(userName: string, password: string): Observable<IUserProfile> {
     return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(
         tap((user: IUserProfile) => {

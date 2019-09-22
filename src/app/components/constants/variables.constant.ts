@@ -20,3 +20,23 @@ export const DUMMY_USER_PROFILE: IUserProfile = {
     description: 'This lad is still learning.'
   }
 };
+
+export const BLANK_USER_PROFILE: IUserProfile = {
+  user: {
+    email: '',
+    password: '',
+  },
+  profile: {
+    name: '',
+    lastName: '',
+    imageUrl: '',
+  },
+  details: {
+    subscribeToEmail: 0,
+    gitProfile: '',
+    googleProfile: '',
+    description: ''
+  }
+};
+
+

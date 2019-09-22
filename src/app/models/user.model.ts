@@ -1,3 +1,10 @@
+/**
+ * This file is meant to define the basic user structure that will be consumed in the application.
+ */
+
+/**
+ * Represents the basic user principal.
+ */
 export interface IPrincipal {
   /**
    * Email, Registered user name for the user.
@@ -9,6 +16,9 @@ export interface IPrincipal {
   password: string;
 }
 
+/**
+ * Represents the user entity.
+ */
 export interface IUser {
   /**
    * First name for the user.
@@ -24,6 +34,9 @@ export interface IUser {
   imageUrl: string;
 }
 
+/**
+ * Represents the User details.
+ */
 export interface IDetails {
   /**
    * Subsciption to email.

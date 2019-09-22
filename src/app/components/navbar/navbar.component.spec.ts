@@ -1,37 +1,45 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { ROOT_REDUCERS, reducer } from '@free-time/reducers';
 import { Logger, NavbarComponent } from '@free-time/components/index';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { AppState } from 'src/app/state/app.state';
+
 import { Store, StoreModule } from '@ngrx/store';
+import { ActiveUserState } from '@free-time/state/auth.state';
+import { State } from '@free-time/state';
 
 describe('Component NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
   let store: MockStore<{
-    loggedIn: false,
+    userState: {
+      loggedIn: false,
+      userProfile: undefined
+    }
   }>;
 
-  const initialState: AppState = {
+  const initialState: ActiveUserState = {
     loggedIn: false,
-    userInfo: {
-      email: 'saurabh777@gmail.com',
-      password: '1234567'
+    userProfile: {
+      user: {
+        email: 'saurabh777@gmail.com',
+        password: '1234567'
+      },
+      details: undefined,
+      profile: undefined
     }
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NavbarComponent],
-      providers: [Logger],
+      providers: [
+        Logger,
+        provideMockStore({initialState})
+      ],
       imports: [
-        RouterTestingModule,
-        StoreModule.forRoot({
-          state: reducer
-        })
+        RouterTestingModule
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -41,6 +49,8 @@ describe('Component NavbarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
+    store = TestBed.get<Store<State>>(Store);
+
     fixture.detectChanges();
   });
 

@@ -13,12 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '@free-time/in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
-import { ROOT_REDUCERS, metaReducers } from './reducers';
 
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from '@free-time/app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../environments/environment';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { appRoutes } from '@free-time/routes/main.routes';
 
@@ -27,15 +26,16 @@ import {
   Logger, HomeComponent,
   ErrorpageComponent, PersonComponent,
   NavbarComponent, ThankyouComponent,
-  FooterComponent, LoginComponent,
+  FooterComponent, 
+  LoginComponent,
   RegisterComponent } from '@free-time/components/index';
 
 
 
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faLinkedin, faTwitter, faGit, faBlogger, faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-// import { faAnchor, faThumbsUp, faThumbsDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { IamModule } from './iam/iam.module';
+import {metaReducers, reducers} from '@free-time/state/index';
+
 /**
  * <p>
  * The root module to be bootstrapped by angular for more information
@@ -80,24 +80,24 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     ReactiveFormsModule,
     FormsModule,
     FontAwesomeModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    HttpClientModule,
-
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, delay: 500 }
     ),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreModule.forRoot(ROOT_REDUCERS, {
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    HttpClientModule,
+    IamModule,
+    StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true
       }
     }),
-    EffectsModule.forRoot([AppEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    //EffectsModule.forRoot([AppEffects]),
     StoreRouterConnectingModule.forRoot()
   ],
 
