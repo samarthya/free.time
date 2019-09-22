@@ -1,13 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { reducer } from '@free-time/reducers';
 import { Logger, LoginComponent } from '@free-time/components/index';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { StoreModule } from '@ngrx/store';
-import { FormsModule } from '@angular/forms';
+
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Store } from '@ngrx/store';
+import { State } from '@free-time/state';
+
 
 
 describe('LoginComponent', () => {
@@ -17,6 +20,17 @@ describe('LoginComponent', () => {
 
   let mockActivatedRoute: any;
   let mockRouteService: any;
+
+  let store: MockStore<{ userState: {
+    loggedIn: false,
+    userProfile: undefined
+  } }>;
+
+  const initialState = { userState: {
+    loggedIn: false,
+    userProfile: undefined
+  } };
+
   let spyOnUsernameValid: any;
   let spyOnPasswordValid: any;
 
@@ -27,15 +41,11 @@ describe('LoginComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [LoginComponent],
-      imports: [
-        StoreModule.forRoot({
-          state: reducer
-        })
-      ],
       providers: [
         Logger,
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: Router, useValue: mockRouteService }
+        { provide: Router, useValue: mockRouteService },
+        provideMockStore({ initialState })
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -50,6 +60,7 @@ describe('LoginComponent', () => {
     spyOnUsernameValid = spyOn(component, 'isUsernameValid').and.callThrough();
     spyOnPasswordValid = spyOn(component, 'isPasswordValid').and.callThrough();
 
+    store = TestBed.get<Store<State>>(Store);
     fixture.detectChanges();
   });
 

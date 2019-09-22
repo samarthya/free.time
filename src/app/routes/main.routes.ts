@@ -12,15 +12,27 @@ import {
  * The order of the routes in the configuration matters and this is by design.
  */
 export const appRoutes: Routes = [
-  { path: 'tyu', component: ThankyouComponent, data: {
-    message: 'Thank you for contacting us.'
-  } },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: ErrorpageComponent}
+  {
+    path: 'tyu', component: ThankyouComponent,
+    data: {
+      message: 'Thank you for contacting us.'
+    }
+  },
+  {
+    path: 'home', component: HomeComponent },
+  {
+    path: 'about', component: AboutComponent },
+  {
+    path: 'contact', component: ContactComponent },
+  {
+    path: 'login', component: LoginComponent },
+  {
+    path: 'profile', redirectTo: '/register'},
+  {
+    path: 'register', component: RegisterComponent },
+  {
+    path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '**', component: ErrorpageComponent}
 ];
 
