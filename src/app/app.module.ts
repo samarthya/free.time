@@ -11,8 +11,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-//import { InMemoryDataService } from '@free-time/in-memory-data.service';
-import { MysqlserviceService } from './services/mysqlservice.service';
+import { InMemoryDataService } from '@free-time/in-memory-data.service';
 import { StoreModule } from '@ngrx/store';
 
 import { EffectsModule } from '@ngrx/effects';
@@ -70,8 +69,7 @@ import {metaReducers, reducers} from '@free-time/state/index';
     RegisterComponent
   ],
   providers: [
-    Logger,
-    MysqlserviceService
+    Logger
     /* Did not add a provider entry for login.service as the providedIn prop is set in @injectable. */
   ],
   /**
@@ -85,10 +83,9 @@ import {metaReducers, reducers} from '@free-time/state/index';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    /*
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false, delay: 500 }
-    ),*/
+    ),
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     HttpClientModule,
     IamModule,
