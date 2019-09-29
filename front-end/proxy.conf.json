@@ -1,0 +1,14 @@
+{
+  "/zen": {
+    "target": "http://api.github.com",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/*": {
+    "target": "http://localhost:4000",
+    "logLevel": "debug",
+    "secure": true,
+    "changeOrigin": true
+  }
+}
