@@ -59,6 +59,13 @@
             <code>src/app/login.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Singleton instance for the login service.</p>
+
+            </p>
 
 
 
@@ -78,6 +85,10 @@
                                     <span class="modifier">Private</span>
                                 <a href="#baseLoginURL">baseLoginURL</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#baseLogoutUrl">baseLogoutUrl</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -94,7 +105,7 @@
                                 <a href="#doLogin">doLogin</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Public</span>
                                 <a href="#getBasicHeader">getBasicHeader</a>
                             </li>
                             <li>
@@ -103,7 +114,15 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#isAuthorized">isAuthorized</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#loginUser">loginUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#logoutUser">logoutUser</a>
                             </li>
                         </ul>
                     </td>
@@ -113,6 +132,20 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#baseURL">baseURL</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
@@ -128,7 +161,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/login.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -205,8 +238,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/login.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/login.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -232,7 +265,7 @@ It takes in argument as IUserProfile</p>
                     <a name="getBasicHeader"></a>
                     <span class="name">
                         <b>
-                            <span class="modifier">Private</span>
+                            <span class="modifier">Public</span>
                             getBasicHeader
                         </b>
                         <a href="#getBasicHeader"><span class="icon ion-ios-link"></span></a>
@@ -249,8 +282,8 @@ It takes in argument as IUserProfile</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/login.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/login.service.ts:54</a></div>
                 </td>
             </tr>
 
@@ -333,8 +366,8 @@ It takes in argument as IUserProfile</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/login.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/login.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -429,6 +462,47 @@ More information <a href="https://angular.io/tutorial/toh-pt6"> here </a></li>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="isAuthorized"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isAuthorized
+                        </b>
+                        <a href="#isAuthorized"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isAuthorized()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/login.service.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;IUserProfile&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="loginUser"></a>
                     <span class="name">
                         <b>
@@ -449,8 +523,8 @@ More information <a href="https://angular.io/tutorial/toh-pt6"> here </a></li>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/app/login.service.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/login.service.ts:70</a></div>
                 </td>
             </tr>
 
@@ -509,6 +583,80 @@ More information <a href="https://angular.io/tutorial/toh-pt6"> here </a></li>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logoutUser"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            logoutUser
+                        </b>
+                        <a href="#logoutUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>logoutUser(userName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/login.service.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Logout user.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
             <section>
     
@@ -541,7 +689,40 @@ More information <a href="https://angular.io/tutorial/toh-pt6"> here </a></li>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/login.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/login.service.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="baseLogoutUrl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            baseLogoutUrl</b>
+                            <a href="#baseLogoutUrl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;api/logout&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/login.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -550,23 +731,65 @@ More information <a href="https://angular.io/tutorial/toh-pt6"> here </a></li>
         </table>
 </section>
 
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="baseURL"></a>
+                        <span class="name"><b>baseURL</b><a href="#baseURL"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>baseURL()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/login.service.ts:100</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns the base login URL</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
-import { Inject, Injectable } from &#x27;@angular/core&#x27;;
-import { Logger } from &#x27;./components/index&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable, of } from &#x27;rxjs&#x27;;
-import { IUserProfile, dummyUser } from &#x27;./models/user.model&#x27;;
-import { catchError, map, tap } from &#x27;rxjs/operators&#x27;;
+import { catchError, tap } from &#x27;rxjs/operators&#x27;;
+import { DUMMY_USER_PROFILE, Logger } from &#x27;@free-time/components/index&#x27;;
+import { IUserProfile } from &#x27;@free-time/models/user.model&#x27;;
 
+/**
+ * Singleton instance for the login service.
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class LoginService {
 
   private baseLoginURL &#x3D; &#x27;api/login&#x27;;
+  private baseLogoutUrl &#x3D; &#x27;api/logout&#x27;;
 
   constructor(private http: HttpClient, private logger: Logger) {
 
@@ -603,7 +826,7 @@ export class LoginService {
     );
   }
 
-  private getBasicHeader(userName: string, password: string) {
+  public getBasicHeader(userName: string, password: string) {
     const authorizationData: string &#x3D; &#x27;Basic &#x27; + btoa(userName + &#x27;:&#x27; + password);
 
     return {
@@ -615,12 +838,42 @@ export class LoginService {
 
   }
 
+  public isAuthorized(): Observable&lt;IUserProfile&gt; {
+    return null;
+  }
+
   public loginUser(userName: string, password: string): Observable&lt;IUserProfile&gt; {
-    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(tap((user: IUserProfile) &#x3D;&gt; {
-      console.log(&#x27; User logged in &#x27; + user.user.email);
-    })).pipe(catchError(err &#x3D;&gt; {
-      return of( dummyUser );
+    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(
+        tap((user: IUserProfile) &#x3D;&gt; {
+        console.log(&#x27; User logged in &#x27; + user.user.email);
+      })
+    ).pipe(catchError(err &#x3D;&gt; {
+      // TODO: Handle the error properly.
+      return of( DUMMY_USER_PROFILE );
     }));
+  }
+
+  /**
+   * Logout user.
+   * @param userName
+   */
+  public logoutUser(userName: string): Observable&lt;any&gt; {
+    return this.http.post(this.baseLogoutUrl, {}).pipe(
+      tap( (status) &#x3D;&gt; {
+        this.logger.log(&#x27; Logout returned: &#x27; + status);
+      }),
+      catchError(err &#x3D;&gt; {
+      // TODO: Handle the error properly.
+      this.logger.log(&#x27; Logout &#x27; + err);
+      return of(false);
+    }));
+  }
+
+  /**
+   * Returns the base login URL
+   */
+  public get baseURL(): string {
+    return this.baseLoginURL;
   }
 }
 </code></pre>

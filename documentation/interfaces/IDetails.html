@@ -64,6 +64,13 @@
             <code>src/app/models/user.model.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represents the User details.</p>
+
+            </p>
 
 
         <section>
@@ -257,6 +264,9 @@
   password: string;
 }
 
+/**
+ * Represents the user entity.
+ */
 export interface IUser {
   /**
    * First name for the user.
@@ -272,6 +282,9 @@ export interface IUser {
   imageUrl: string;
 }
 
+/**
+ * Represents the User details.
+ */
 export interface IDetails {
   /**
    * Subsciption to email.
@@ -311,24 +324,6 @@ export interface IUserProfile {
    */
   details: IDetails;
 }
-
-export const dummyUser: IUserProfile &#x3D; {
-  user: {
-    email: &#x27;saurabh777@gmail.com&#x27;,
-    password: &#x27;ABCDEF123456&#x27;,
-  },
-  profile: {
-    name: &#x27;Saurabh&#x27;,
-    lastName: &#x27;Sharma&#x27;,
-    imageUrl: &#x27;&#x27;,
-  },
-  details: {
-    subscribeToEmail: 1,
-    gitProfile: &#x27;https://www.github.com/samarthya&#x27;,
-    googleProfile: &#x27;&#x27;,
-    description: &#x27;This lad is still learning.&#x27;
-  }
-};
 </code></pre>
     </div>
 </div>

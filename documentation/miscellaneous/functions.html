@@ -58,16 +58,10 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#getEmptyAppState" title="src/app/state/app.state.ts"><b>getEmptyAppState</b>&nbsp;&nbsp;&nbsp;(src/.../app.state.ts)</a>
+                            <a href="#getEmptyState" title="src/app/state/index.ts"><b>getEmptyState</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
                         </li>
                         <li>
-                            <a href="#getEmptyState" title="src/app/state/app.state.ts"><b>getEmptyState</b>&nbsp;&nbsp;&nbsp;(src/.../app.state.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#getEmptyUser" title="src/app/state/app.state.ts"><b>getEmptyUser</b>&nbsp;&nbsp;&nbsp;(src/.../app.state.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#reducer" title="src/app/reducers/index.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../index.ts)</a>
+                            <a href="#reducer" title="src/app/state/auth.state.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(src/.../auth.state.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -76,42 +70,9 @@
     </table>
 </section>
 
-    <h3>src/app/state/app.state.ts</h3>
+    <h3>src/app/state/index.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getEmptyAppState"></a>
-                    <span class="name">
-                        <b>
-                            getEmptyAppState
-                        </b>
-                        <a href="#getEmptyAppState"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getEmptyAppState()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/AppState.html" target="_self" >AppState</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
@@ -146,42 +107,7 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getEmptyUser"></a>
-                    <span class="name">
-                        <b>
-                            getEmptyUser
-                        </b>
-                        <a href="#getEmptyUser"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getEmptyUser()</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Utility function to return the EMPTY user for the AppState</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/IPrincipal.html" target="_self" >IPrincipal</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>src/app/reducers/index.ts</h3>
+</section>    <h3>src/app/state/auth.state.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -198,7 +124,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>reducer(state, action)</code>
+<code>reducer(activeState, action)</code>
                 </td>
             </tr>
 
@@ -219,7 +145,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>state</td>
+                                    <td>activeState</td>
 
                                     <td>
                                         No

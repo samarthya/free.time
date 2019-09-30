@@ -51,8 +51,8 @@
           <div *ngIf="userLoggedIn()"class="badge badge-primary">{{ getUserEmail()! }}</div>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" [routerLink]="['/logout']">
-            <fa-icon [icon]="faSignout" class="mr-2" *ngIf="userLoggedIn()">
+          <a class="dropdown-item">
+            <fa-icon [icon]="faSignout" class="mr-2" *ngIf="userLoggedIn()" (click)="doLogout()">
             </fa-icon>
           </a>
           <a class="dropdown-item" [routerLink]="['/profile']">Profile</a>
