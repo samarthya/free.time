@@ -46,6 +46,22 @@ export class AppEffects {
       ),
     { dispatch: false }
   );
+  
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AppActions.logout),
+      map(action => action.userName),
+      exhaustMap((userName: string) =>
+        this.loginService.logoutUser(userName).pipe(
+          map( (status) => {
+            this.logger.log( ' Error: ' + status)
+          })
+        )
+      )
+    ),
+    { dispatch: false }
+  );
+
 
   // init$ = createEffect(() =>
   //   this.actions$.pipe(

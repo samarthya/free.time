@@ -9,8 +9,10 @@ import { IPrincipal, IUserProfile } from '@free-time/models/user.model';
 import {faSignInAlt, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 import { map } from 'rxjs/operators';
 
+import * as appActions from '../actions/login.action';
 import * as fromStore from '@free-time/state/index';
 import * as fromAuth from '@free-time/state/auth.state';
+import { Router } from '@angular/router';
 
 /**
  * Navigation component that holds the navigation links,
@@ -29,12 +31,15 @@ export class NavbarComponent implements OnInit {
   faSignin = faSignInAlt;
   faSignout = faSignOutAlt;
 
-  constructor(private logger: Logger, private store: Store<fromStore.State>) {
+  constructor(private logger: Logger, private router: Router, private store: Store<fromStore.State>) {
     this.loggedInUser = null;
     this.currentUser$ = this.store.pipe(select(fromStore.getUserProfile));
     this.currentUser$.subscribe((user: IUserProfile) => {
-      this.loggedInUser = user.user;
-      this.logger.log('Welcome ' + this.loggedInUser.email);
+
+      if( user != null || user != undefined) {
+        this.loggedInUser = user.user;
+        this.logger.log('Welcome ' + this.loggedInUser.email);
+      }
     });
   }
 
@@ -56,4 +61,9 @@ export class NavbarComponent implements OnInit {
     return (this.loggedInUser != null) && (this.loggedInUser.email.length > 0);
   }
 
+  public doLogout(): void {
+    this.logger.log(' Logout called.');
+    this.store.dispatch(appActions.logout({ userName: this.loggedInUser.email }));
+    this.router.navigate(['/home']);
+  }
 }

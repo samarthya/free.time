@@ -14,6 +14,7 @@ import { IUserProfile } from '@free-time/models/user.model';
 export class LoginService {
 
   private baseLoginURL = 'api/login';
+  private baseLogoutUrl = 'api/logout';
 
   constructor(private http: HttpClient, private logger: Logger) {
 
@@ -74,6 +75,22 @@ export class LoginService {
     ).pipe(catchError(err => {
       // TODO: Handle the error properly.
       return of( DUMMY_USER_PROFILE );
+    }));
+  }
+
+  /**
+   * Logout user.
+   * @param userName
+   */
+  public logoutUser(userName: string): Observable<any> {
+    return this.http.post(this.baseLogoutUrl, {}).pipe(
+      tap( (status) => {
+        this.logger.log(' Logout returned: ' + status);
+      }),
+      catchError(err => {
+      // TODO: Handle the error properly.
+      this.logger.log(' Logout ' + err);
+      return of(false);
     }));
   }
 

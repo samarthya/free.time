@@ -23,6 +23,7 @@ export class InMemoryDataService {
         description: 'This lad is still learning.'
       }
     };
+    const logout:  boolean = true;
     return { login };
   }
 }

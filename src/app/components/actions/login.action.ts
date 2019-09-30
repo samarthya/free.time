@@ -50,7 +50,9 @@ export const loginFailure = createAction('[Login Failure] Login',
 /**
  * Action-Logout
  */
-export const logout = createAction('[Logout initiated] logout');
+export const logout = createAction('[Logout initiated] logout', 
+props<{ userName: string}>()
+);
 
 /**
  * Action-Edit-Profile

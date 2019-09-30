@@ -27,7 +27,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -36,11 +36,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li>ThankyouResolver</li>
+  <li>Injectables</li>
+  <li>MysqlserviceService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -53,19 +51,18 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
-            </p>
-            <p class="comment">
-                <code>src/app/components/thankyou/thankyou.resolver.service.ts</code>
-            </p>
+        </p>
+        <p class="comment">
+            <code>src/app/services/mysqlservice.service.ts</code>
+        </p>
 
 
 
 
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -80,7 +77,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#resolve">resolve</a>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#register">register</a>
                             </li>
                         </ul>
                     </td>
@@ -94,18 +95,18 @@
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(logger: <a href="../injectables/Logger.html">Logger</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/components/thankyou/thankyou.resolver.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/mysqlservice.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -123,10 +124,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>logger</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/Logger.html" target="_self" >Logger</a></code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -143,7 +156,7 @@
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -152,36 +165,34 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="resolve"></a>
+                    <a name="login"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Public</span>
-                            resolve
+                            login
                         </b>
-                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>)</code>
+                    <code>login(user: <a href="../interfaces/IUserProfile.html">IUserProfile</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/components/thankyou/thankyou.resolver.service.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/services/mysqlservice.service.ts:24</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>The method to check before the route resolves.</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -195,9 +206,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>route</td>
+                                    <td>user</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                                <code><a href="../interfaces/IUserProfile.html" target="_self" >IUserProfile</a></code>
                                     </td>
 
                                     <td>
@@ -212,7 +223,79 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            register
+                        </b>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>register(user: <a href="../interfaces/IUserProfile.html">IUserProfile</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/services/mysqlservice.service.ts:15</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/IUserProfile.html" target="_self" >IUserProfile</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -223,34 +306,50 @@
         </tbody>
     </table>
 </section>
-        </div>
+
+    </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Resolve, ActivatedRouteSnapshot } from &#x27;@angular/router&#x27;;
-import { Logger } from &#x27;@free-time/components/index&#x27;;
-import { MESSAGE } from &#x27;@free-time/components/constants/variables.constant&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { IPrincipal, IUserProfile, IUser, IDetails } from &#x27;../models/user.model&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
-@Injectable()
-export class ThankyouResolver implements Resolve&lt;any&gt; {
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class MysqlserviceService {
+  
+  constructor(private http: HttpClient,private router: Router) { }
 
-  constructor(private logger: Logger) {
-
+  public register (user: IUserProfile): Observable&lt;any&gt; {
+    const request&#x3D; this.http.post&lt;IUserProfile&gt;(&#x27;http://localhost:4000/add&#x27;,user).pipe(
+           map((data: IUserProfile)&#x3D;&gt; {
+             return data;
+           })
+    )
+    return request;
   }
 
-  /**
-   * The method to check before the route resolves.
-   */
-  public resolve(route: ActivatedRouteSnapshot) {
-    this.logger.log(&#x27; Resolve guard in play: ThankYouResolver.&#x27;);
-    return route.queryParams[MESSAGE];
+  public login(user: IUserProfile): Observable&lt;any&gt; {
+    const headers &#x3D; new HttpHeaders({&#x27;Content-Type&#x27;: &#x27;application/json&#x27;, &#x27;Access-Control-Allow-Origin&#x27;: &#x27;*&#x27; });
+    const request &#x3D;this.http.get(&#x27;http://localhost:4000/login&#x27;+user, {headers}).pipe(
+      map((data: IUserProfile)&#x3D;&gt;{
+        return data;
+      })
+    )
+    return request;
   }
-
 }
 </code></pre>
-        </div>
+    </div>
+
 </div>
+
+
 
 
 
@@ -277,8 +376,8 @@ export class ThankyouResolver implements Resolve&lt;any&gt; {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'ThankyouResolver.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MysqlserviceService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

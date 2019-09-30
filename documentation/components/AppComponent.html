@@ -125,12 +125,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(logger: <a href="../injectables/Logger.html">Logger</a>)</code>
+<code>constructor(logger: <a href="../injectables/Logger.html">Logger</a>, store: <a href="../interfaces/State.html">Store<fromStore.State></a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -159,6 +159,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/State.html" target="_self" >Store&lt;fromStore.State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -179,7 +191,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Logger } from &#x27;./components&#x27;;
+import { Logger } from &#x27;@free-time/components/index&#x27;;
+import { Store }  from &#x27;@ngrx/store&#x27;;
+
+import * as fromStore from &#x27;@free-time/state/index&#x27;;
 
 /**
  * &lt;h2&gt;The angular-bootstrapped class&lt;/h2&gt;
@@ -192,7 +207,7 @@ import { Logger } from &#x27;./components&#x27;;
 })
 
 export class AppComponent {
-  constructor(private logger: Logger) {
+  constructor(private logger: Logger, private store: Store&lt;fromStore.State&gt;) {
     this.logger.log(&#x27; AppComponent created.&#x27;);
   }
 }
