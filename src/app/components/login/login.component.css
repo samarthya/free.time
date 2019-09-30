@@ -1,0 +1,24 @@
+@media screen and (max-width: 480px) {
+
+  img {
+    background-color: grey;
+    min-height: 330px;
+  }
+
+  .inlineD {
+    display: inline;
+  }
+
+  button[type="submit"] {
+    float: right;
+  }
+}
+
+.errorInput {
+  border-right: 4px solid red;
+}
+
+boxSize {
+  min-width: 500px;
+  min-height: 400px;
+}

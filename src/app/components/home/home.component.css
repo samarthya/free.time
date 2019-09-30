@@ -1,0 +1,13 @@
+@media screen and (max-width: 480px) {
+  .size-check {
+    display: none;
+  }
+  #intro {
+    min-height: 640px;
+    width:100%;
+  }
+}
+
+.dimCheck {
+  min-height: 640px;
+}
