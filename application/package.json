@@ -1,0 +1,82 @@
+{
+  "name": "free-time",
+  "version": "0.1.0",
+  "author": {
+    "name": "Saurabh Sharma",
+    "email": "saurabh777@gmail.com",
+    "url": "https://www.samarthya.me/"
+  },
+  "keywords": [
+    "Angular",
+    "UnitTesting",
+    "Machine Learning",
+    "Social score"
+  ],
+  "contributors": [
+    {
+      "name": "Bhawna Bhardwaj"
+    },
+    {
+      "name": "Vasu Sharma"
+    }
+  ],
+  "description": "A Angular project to launch a platform for establishing the social score of professional contribution available from different sources.",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "coverage": "ng test --code-coverage",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "docs": "npx compodoc -p tsconfig.app.json -n \"Free Time\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^8.2.7",
+    "@angular/common": "^8.2.7",
+    "@angular/compiler": "^8.2.7",
+    "@angular/core": "^8.2.7",
+    "@angular/forms": "^8.2.7",
+    "@angular/platform-browser": "^8.2.7",
+    "@angular/platform-browser-dynamic": "^8.2.7",
+    "@angular/router": "^8.2.7",
+    "@fortawesome/angular-fontawesome": "^0.5.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.24",
+    "@fortawesome/free-brands-svg-icons": "^5.11.1",
+    "@fortawesome/free-solid-svg-icons": "^5.11.1",
+    "@ngrx/effects": "^8.3.0",
+    "@ngrx/router-store": "^8.3.0",
+    "@ngrx/store": "^8.3.0",
+    "@ngrx/store-devtools": "^8.3.0",
+    "angular-in-memory-web-api": "^0.8.0",
+    "bootstrap": "^4.3.1",
+    "ionic": "^5.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "rxjs": "^6.5.3",
+    "tslib": "^1.9.0",
+    "zone.js": "^0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.802.2",
+    "@angular/cli": "^8.3.5",
+    "@angular/compiler-cli": "^8.2.7",
+    "@angular/language-service": "^8.2.7",
+    "@types/jasmine": "^3.4.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.7.5",
+    "codelyzer": "^5.1.1",
+    "jasmine-core": "^3.4.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.2.0",
+    "karma-chrome-launcher": "^3.0.0",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.0",
+    "protractor": "~5.4.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.5.3"
+  }
+}
