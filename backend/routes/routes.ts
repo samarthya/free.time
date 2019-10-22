@@ -1,57 +1,53 @@
-import * as express from 'express';
-import { con } from '../server';
-import { IUserProfile } from '../../application/src/app/models/user.model';
+import * as express from "express";
+import { IUserProfile } from "../../application/src/app/models/user.model";
+import { con } from "../server";
 
 const app = express.Router();
 let up: IUserProfile;
 
 export { app as routes };
 
-//to search and show user details
-app.use('/login', (req, res) => {
-  con.getConnection(function (err1, connection) {
+// to search and show user details
+app.use("/login", (req, res) => {
+  con.getConnection((err1, connection) => {
     if (err1) {
-      console.log(' Error getting mysql_pool connection1: ' + err1);    }
-    else {  
-      let sql = "SELECT `name`,`lastName`,`imageUrl` FROM `userprofile` where email='" + req.body.email + "'"+"AND password='" + req.body.password + "'";
-      connection.query(sql, function (err, result1) {
+      console.log(" Error getting mysql_pool connection1: " + err1);
+    } else {
+      let sql = "SELECT `name`,`lastName`,`imageUrl` FROM `userprofile` where email='" + req.body.email + "'" + "AND password='" + req.body.password + "'";
+      connection.query(sql, (err, result1) => {
         if (err) {
           console.log(JSON.stringify(err));
-        }
-        else if(!result1)
-        {
+        } else if (!result1) {
           console.log("No such user exists!!");
-          //res.send(err);
-        }
-        else {
-          console.log('login result(up.profile): ' + JSON.stringify(result1));
-          result1.join(',');
-          sql="SELECT `subToEmail`,`gitProfile`,`googleProfile`,`description` FROM `userprofile` where email = '" + req.body.email + "'"+"AND password='" + req.body.password + "'";
-          connection.query(sql, function (err, result2) {
+          // res.send(err);
+        } else {
+          console.log("login result(up.profile): " + JSON.stringify(result1));
+          result1.join(",");
+          sql = "SELECT `subToEmail`,`gitProfile`,`googleProfile`,`description` FROM `userprofile` where email = '"
+                    + req.body.email + "'"
+                    + "AND password='" + req.body.password + "'";
+          connection.query(sql, (err2, result2) => {
             connection.release();
-            if (err) {
-              console.log(JSON.stringify(err));
-            }
-            else if(!result2)
-            {
+            if (err2) {
+              console.log(JSON.stringify(err2));
+            } else if (!result2) {
               console.log("No such user exists!!");
-              //res.send(err);
-            }
-            else {
-              console.log('login result(up.details): ' + JSON.stringify(result2));
-             up = {
-               user: req.body ,
-               profile: result1[0],
-               details: result2[0]
-              }
+              // res.send(err2);
+            } else {
+              console.log("login result(up.details): " + JSON.stringify(result2));
+              up = {
+                details: result2[0],
+                profile: result1[0],
+                user: req.body
+              };
               res.send(up);
             }
-          })
+          });
         }
-       })
-      }
-  })
-})
+      });
+    }
+  });
+});
 
 /*
 //To delete a record
