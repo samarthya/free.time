@@ -30,7 +30,8 @@ export class AppEffects {
       ofType(AppActions.login),
       map(action => action.principal),
       exhaustMap((principal: IPrincipal) =>
-        this.loginService.loginUser(principal.email, principal.password).pipe(
+     // this.loginService.loginUser(principal.email, principal.password).pipe(
+        this.loginService.loginUser(principal).pipe(
           map((userProfile) => AppActions.loginSuccess({userProfile})),
           catchError(message => of({ type: '[Login Failure] Login', payload: message }))
         )
@@ -47,7 +48,7 @@ export class AppEffects {
     { dispatch: false }
   );
   
-  logout$ = createEffect(() =>
+  /*logout$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AppActions.logout),
       map(action => action.userName),
@@ -62,7 +63,7 @@ export class AppEffects {
     { dispatch: false }
   );
 
-
+*/
   // init$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(ROOT_EFFECTS_INIT),
