@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "./out",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -20,7 +20,6 @@
     ],
     "paths": {
       "@free-time/*": ["./src/app/*"]
-
     }
   },
   "angularCompilerOptions": {

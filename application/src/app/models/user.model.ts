@@ -56,7 +56,6 @@ export interface IDetails {
   description: string;
 }
 
-
 /**
  * Model class that specifies the New user profile information.
  */
