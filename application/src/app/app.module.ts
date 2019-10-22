@@ -83,9 +83,10 @@ import {metaReducers, reducers} from '@free-time/state/index';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false, delay: 500 }
-    ),
+   /** HttpClientInMemoryWebApiModule.forRoot(
+    *  InMemoryDataService, { dataEncapsulation: false, delay: 500 }
+    *),
+    */
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     HttpClientModule,
     IamModule,

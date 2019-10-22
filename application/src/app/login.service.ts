@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { DUMMY_USER_PROFILE, Logger } from '@free-time/components/index';
-import { IUserProfile } from '@free-time/models/user.model';
+import { IUserProfile, IPrincipal } from '@free-time/models/user.model';
 
 /**
  * Singleton instance for the login service.
@@ -13,8 +13,9 @@ import { IUserProfile } from '@free-time/models/user.model';
 })
 export class LoginService {
 
-  private baseLoginURL = 'api/login';
+  //private baseLoginURL = 'api/login';
   private baseLogoutUrl = 'api/logout';
+  private baseLoginURL = 'http://localhost:4000/login'
 
   constructor(private http: HttpClient, private logger: Logger) {
 
@@ -67,30 +68,19 @@ export class LoginService {
     return null;
   }
 
-  public loginUser(userName: string, password: string): Observable<IUserProfile> {
-    return this.http.post(this.baseLoginURL, {}, this.getBasicHeader(userName, password)).pipe(
+    //public loginUser(userName: string, password: string): Observable<IUserProfile> {
+    public loginUser(input: IPrincipal): Observable<IUserProfile> {
+      //return this.http.post(this.baseLoginURL,JSON.stringify(this.input), this.getBasicHeader(userName,password)).pipe(
+      return this.http.post(this.baseLoginURL,JSON.stringify(input), this.getBasicHeader(input.email, input.password)).pipe(
         tap((user: IUserProfile) => {
-        console.log(' User logged in ' + user.user.email);
+        console.log(' User logged in ' + JSON.stringify(user.profile.name));
+        console.log('lastName is '+ JSON.stringify(user.profile.lastName));
+        return user;
       })
     ).pipe(catchError(err => {
       // TODO: Handle the error properly.
       return of( DUMMY_USER_PROFILE );
-    }));
-  }
-
-  /**
-   * Logout user.
-   * @param userName
-   */
-  public logoutUser(userName: string): Observable<any> {
-    return this.http.post(this.baseLogoutUrl, {}).pipe(
-      tap( (status) => {
-        this.logger.log(' Logout returned: ' + status);
-      }),
-      catchError(err => {
-      // TODO: Handle the error properly.
-      this.logger.log(' Logout ' + err);
-      return of(false);
+     // return this.http.get<IUserProfile>("http://localhost:4000/get/"+input.email)
     }));
   }
 
