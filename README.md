@@ -86,9 +86,15 @@ options:
 
 ## Testing: Application
 ```bash
-  npm test
+  npm run testa
   ```
 Allows to execute test cases from the parent.
+
+## Running: Application
+```bash
+  npm start
+  ```
+Allows application to be viewed in browser.
 
 ## What are we building & why
 
