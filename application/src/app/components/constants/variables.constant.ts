@@ -1,4 +1,5 @@
 import { IUserProfile } from '@free-time/models/user.model';
+import { State } from '@free-time/state';
 
 export const MESSAGE = 'message';
 export const MAX_USER_LENGTH = 30;
@@ -39,4 +40,10 @@ export const BLANK_USER_PROFILE: IUserProfile = {
   }
 };
 
+export const dummyState: State = {
+  userState: {
+    loggedIn: true,
+    userProfile: DUMMY_USER_PROFILE
+  }
+}
 

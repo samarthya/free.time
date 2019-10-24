@@ -8,8 +8,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { Store } from '@ngrx/store';
+import { Store, MemoizedSelector } from '@ngrx/store';
 import { State } from '@free-time/state';
+
+
+import * as fromState from '@free-time/state/index';
+import { DUMMY_USER_PROFILE } from '../constants/variables.constant';
 
 
 
@@ -17,19 +21,21 @@ describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let debugElement: DebugElement;
+  
+  let dummyState: State = {
+    userState: {
+      loggedIn: true,
+      userProfile: DUMMY_USER_PROFILE
+    }
+  }
 
   let mockActivatedRoute: any;
   let mockRouteService: any;
 
-  let store: MockStore<{ userState: {
-    loggedIn: false,
-    userProfile: undefined
-  } }>;
 
-  const initialState = { userState: {
-    loggedIn: false,
-    userProfile: undefined
-  } };
+  let store: MockStore<State>;
+
+  const initialState: State = fromState.initialState;
 
   let spyOnUsernameValid: any;
   let spyOnPasswordValid: any;
@@ -53,14 +59,14 @@ describe('LoginComponent', () => {
   }));
 
   beforeEach(() => {
+    store = TestBed.get<Store<State>>(Store);
+    store.setState(dummyState);
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
 
     spyOnUsernameValid = spyOn(component, 'isUsernameValid').and.callThrough();
     spyOnPasswordValid = spyOn(component, 'isPasswordValid').and.callThrough();
-
-    store = TestBed.get<Store<State>>(Store);
     fixture.detectChanges();
   });
 
@@ -70,6 +76,29 @@ describe('LoginComponent', () => {
 
   it(' Should check if the Username, Password and the sign-in tabs are present.', () => {
     const htmlElement: HTMLElement = fixture.nativeElement;
+
+    store.setState({
+      userState: {
+        loggedIn: false,
+        userProfile: {
+          user: {
+            email: '',
+            password: '',
+          },
+          profile: {
+            name: '',
+            lastName: '',
+            imageUrl: '',
+          },
+          details: {
+            subscribeToEmail: 0,
+            gitProfile: '',
+            googleProfile: '',
+            description: ''
+          }
+        }
+      }
+    });
     expect(htmlElement).toBeDefined();
     expect(htmlElement.childElementCount).toBe(1);
   });

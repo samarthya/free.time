@@ -17,12 +17,6 @@ export class ThankyouComponent implements OnInit {
 
   ngOnInit() {
     this.logger.log(' ngOnInit called for ThankyouComponent');
-    // this.message$ = this.route.queryParamMap.pipe(
-    //   map(param => {
-    //     return param.get(MESSAGE);
-    //   })
-    // );
-
     this.message = this.route.snapshot.queryParams[MESSAGE];
   }
 
