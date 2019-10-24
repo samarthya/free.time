@@ -84,6 +84,12 @@ options:
   
   Pretty much delete everything in the `app.component.html` file and will start from there.
 
+## Testing: Application
+```bash
+  npm test
+  ```
+Allows to execute test cases from the parent.
+
 ## What are we building & why
 
 The expectation is to start with a simple SPA that will employ Angular and some cascading style sheet framework that can either be Bootstrap or Angular Material and shall have a Navigation bar at the top. The basic topics that it should cover are
