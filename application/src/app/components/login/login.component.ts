@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators';
 
 import * as fromStore from '@free-time/state/index';
 import * as fromAuthState from '@free-time/state/auth.state';
-
+import { State } from '@free-time/state';
 /**
  * Login component
  * Add some more description.
