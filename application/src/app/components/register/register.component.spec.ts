@@ -1,50 +1,54 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Logger, RegisterComponent } from '@free-time/components/index';
 
-
+import { Store, MemoizedSelector } from '@ngrx/store';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { ActiveUserState } from '@free-time/state/auth.state';
+import { ActiveUserState, initialAppState } from '@free-time/state/auth.state';
+import { State } from '@free-time/state';
 
+import { DUMMY_USER_PROFILE } from '../constants/variables.constant';
+
+
+import * as fromState from '@free-time/state/index';
+/**
+ * Testing the register component.
+ */
 describe('Component RegisterComponent', () => {
   let component: RegisterComponent;
+
+  let dummyState: State = {
+    userState: {
+      loggedIn: true,
+      userProfile: DUMMY_USER_PROFILE
+    }
+  }
+  
+  let store: MockStore<State>;
+
   let fixture: ComponentFixture<RegisterComponent>;
 
-  let store: MockStore<{
-    userState: {
-      loggedIn: false,
-      userProfile: undefined
-    }
-  }>;
-
-  const initialState: ActiveUserState = {
-    loggedIn: false,
-    userProfile: {
-      user: {
-        email: 'saurabh777@gmail.com',
-        password: '1234567'
-      },
-      details: undefined,
-      profile: undefined
-    }
-  };
+  const initialState: fromState.State = fromState.initialState;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, HttpClientTestingModule],
       providers: [
         Logger,
-        provideMockStore({ initialState})
+        provideMockStore({ initialState })
       ],
-      declarations: [ RegisterComponent],
+      declarations: [RegisterComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
+    store = TestBed.get<Store<State>>(Store);
+    store.setState(dummyState);
+
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
